@@ -1,0 +1,56 @@
+{
+  "name": "tourika",
+  "version": "1.0.0",
+  "author": "Elegance Team",
+  "homepage": "https://elegancedesign.net/",
+  "private": true,
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "scripts": {
+    "jshint": "gulp jshint",
+    "jscs": "jscs gulpfile.js assets/scripts/*.js"
+  },
+  "engines": {
+    "node": ">= 4.5"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "bootstrap": "4.3.1"
+  },
+  "devDependencies": {
+    "asset-builder-nobower": "^1.1.2",
+    "browser-sync": "^2.24.5",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-changed": "^3.2.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-file-include": "^2.0.1",
+    "gulp-flatten": "0.4.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-less": "^3.5.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.3.0",
+    "gulp-rev": "^8.1.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "imagemin-pngcrush": "^5.1.0",
+    "jshint": "^2.9.5",
+    "jshint-stylish": "^2.2.1",
+    "lazypipe": "^1.0.1",
+    "merge-stream": "^1.0.1",
+    "minimist": "^1.2.0",
+    "run-sequence": "^2.2.1",
+    "traverse": "^0.6.6"
+  }
+}

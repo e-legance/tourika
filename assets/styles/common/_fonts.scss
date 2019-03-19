@@ -1,0 +1,169 @@
+@font-face {
+	font-family: 'FontfabricNexaThin';
+	src: url('#{$font-path}FontfabricNexaThin.eot');
+	src: url('#{$font-path}FontfabricNexaThin.eot') format('embedded-opentype'),
+			 url('#{$font-path}FontfabricNexaThin.woff2') format('woff2'),
+			 url('#{$font-path}FontfabricNexaThin.woff') format('woff'),
+			 url('#{$font-path}FontfabricNexaThin.ttf') format('truetype'),
+			 url('#{$font-path}FontfabricNexaThin.svg#FontfabricNexaThin') format('svg');
+}
+
+@font-face {
+	font-family: 'FontfabricNexaThinItalic';
+	src: url('#{$font-path}FontfabricNexaThinItalic.eot');
+	src: url('#{$font-path}FontfabricNexaThinItalic.eot') format('embedded-opentype'),
+			 url('#{$font-path}FontfabricNexaThinItalic.woff2') format('woff2'),
+			 url('#{$font-path}FontfabricNexaThinItalic.woff') format('woff'),
+			 url('#{$font-path}FontfabricNexaThinItalic.ttf') format('truetype'),
+			 url('#{$font-path}FontfabricNexaThinItalic.svg#FontfabricNexaThinItalic') format('svg');
+}
+
+@font-face {
+	font-family: 'FontfabricNexaLight';
+	src: url('#{$font-path}FontfabricNexaLight.eot');
+	src: url('#{$font-path}FontfabricNexaLight.eot') format('embedded-opentype'),
+			 url('#{$font-path}FontfabricNexaLight.woff2') format('woff2'),
+			 url('#{$font-path}FontfabricNexaLight.woff') format('woff'),
+			 url('#{$font-path}FontfabricNexaLight.ttf') format('truetype'),
+			 url('#{$font-path}FontfabricNexaLight.svg#FontfabricNexaLight') format('svg');
+}
+
+@font-face {
+	font-family: 'FontfabricNexaLightItalic';
+	src: url('#{$font-path}FontfabricNexaLightItalic.eot');
+	src: url('#{$font-path}FontfabricNexaLightItalic.eot') format('embedded-opentype'),
+			 url('#{$font-path}FontfabricNexaLightItalic.woff2') format('woff2'),
+			 url('#{$font-path}FontfabricNexaLightItalic.woff') format('woff'),
+			 url('#{$font-path}FontfabricNexaLightItalic.ttf') format('truetype'),
+			 url('#{$font-path}FontfabricNexaLightItalic.svg#FontfabricNexaLightItalic') format('svg');
+}
+
+@font-face {
+	font-family: 'FontfabricNexaBook';
+	src: url('#{$font-path}FontfabricNexaBook.eot');
+	src: url('#{$font-path}FontfabricNexaBook.eot') format('embedded-opentype'),
+			 url('#{$font-path}FontfabricNexaBook.woff2') format('woff2'),
+			 url('#{$font-path}FontfabricNexaBook.woff') format('woff'),
+			 url('#{$font-path}FontfabricNexaBook.ttf') format('truetype'),
+			 url('#{$font-path}FontfabricNexaBook.svg#FontfabricNexaBook') format('svg');
+}
+
+@font-face {
+  font-family: 'FontfabricNexaBookItalic';
+  src: url('#{$font-path}FontfabricNexaBookItalic.eot');
+  src: url('#{$font-path}FontfabricNexaBookItalic.eot') format('embedded-opentype'),
+       url('#{$font-path}FontfabricNexaBookItalic.woff2') format('woff2'),
+       url('#{$font-path}FontfabricNexaBookItalic.woff') format('woff'),
+       url('#{$font-path}FontfabricNexaBookItalic.ttf') format('truetype'),
+       url('#{$font-path}FontfabricNexaBookItalic.svg#FontfabricNexaBookItalic') format('svg');
+}
+
+@font-face {
+  font-family: 'FontfabricNexaRegular';
+  src: url('#{$font-path}FontfabricNexaRegular.eot');
+  src: url('#{$font-path}FontfabricNexaRegular.eot') format('embedded-opentype'),
+       url('#{$font-path}FontfabricNexaRegular.woff2') format('woff2'),
+       url('#{$font-path}FontfabricNexaRegular.woff') format('woff'),
+       url('#{$font-path}FontfabricNexaRegular.ttf') format('truetype'),
+       url('#{$font-path}FontfabricNexaRegular.svg#FontfabricNexaRegular') format('svg');
+}
+
+@font-face {
+  font-family: 'FontfabricNexaRegularItalic';
+  src: url('#{$font-path}FontfabricNexaRegularItalic.eot');
+  src: url('#{$font-path}FontfabricNexaRegularItalic.eot') format('embedded-opentype'),
+       url('#{$font-path}FontfabricNexaRegularItalic.woff2') format('woff2'),
+       url('#{$font-path}FontfabricNexaRegularItalic.woff') format('woff'),
+       url('#{$font-path}FontfabricNexaRegularItalic.ttf') format('truetype'),
+       url('#{$font-path}FontfabricNexaRegularItalic.svg#FontfabricNexaRegularItalic') format('svg');
+}
+
+@font-face {
+  font-family: 'FontfabricNexaBold';
+  src: url('#{$font-path}FontfabricNexaBold.eot');
+  src: url('#{$font-path}FontfabricNexaBold.eot') format('embedded-opentype'),
+       url('#{$font-path}FontfabricNexaBold.woff2') format('woff2'),
+       url('#{$font-path}FontfabricNexaBold.woff') format('woff'),
+       url('#{$font-path}FontfabricNexaBold.ttf') format('truetype'),
+       url('#{$font-path}FontfabricNexaBold.svg#FontfabricNexaBold') format('svg');
+}
+
+@font-face {
+  font-family: 'FontfabricNexaBoldItalic';
+  src: url('#{$font-path}FontfabricNexaBoldItalic.eot');
+  src: url('#{$font-path}FontfabricNexaBoldItalic.eot') format('embedded-opentype'),
+       url('#{$font-path}FontfabricNexaBoldItalic.woff2') format('woff2'),
+       url('#{$font-path}FontfabricNexaBoldItalic.woff') format('woff'),
+       url('#{$font-path}FontfabricNexaBoldItalic.ttf') format('truetype'),
+       url('#{$font-path}FontfabricNexaBoldItalic.svg#FontfabricNexaBoldItalic') format('svg');
+}
+
+@font-face {
+  font-family: 'FontfabricNexaXBold';
+  src: url('#{$font-path}FontfabricNexaXBold.eot');
+  src: url('#{$font-path}FontfabricNexaXBold.eot') format('embedded-opentype'),
+       url('#{$font-path}FontfabricNexaXBold.woff2') format('woff2'),
+       url('#{$font-path}FontfabricNexaXBold.woff') format('woff'),
+       url('#{$font-path}FontfabricNexaXBold.ttf') format('truetype'),
+       url('#{$font-path}FontfabricNexaXBold.svg#FontfabricNexaXBold') format('svg');
+}
+
+@font-face {
+  font-family: 'FontfabricNexaXBoldItalic';
+  src: url('#{$font-path}FontfabricNexaXBoldItalic.eot');
+  src: url('#{$font-path}FontfabricNexaXBoldItalic.eot') format('embedded-opentype'),
+       url('#{$font-path}FontfabricNexaXBoldItalic.woff2') format('woff2'),
+       url('#{$font-path}FontfabricNexaXBoldItalic.woff') format('woff'),
+       url('#{$font-path}FontfabricNexaXBoldItalic.ttf') format('truetype'),
+       url('#{$font-path}FontfabricNexaXBoldItalic.svg#FontfabricNexaXBoldItalic') format('svg');
+}
+
+@font-face {
+  font-family: 'FontfabricNexaHeavy';
+  src: url('#{$font-path}FontfabricNexaHeavy.eot');
+  src: url('#{$font-path}FontfabricNexaHeavy.eot') format('embedded-opentype'),
+       url('#{$font-path}FontfabricNexaHeavy.woff2') format('woff2'),
+       url('#{$font-path}FontfabricNexaHeavy.woff') format('woff'),
+       url('#{$font-path}FontfabricNexaHeavy.ttf') format('truetype'),
+       url('#{$font-path}FontfabricNexaHeavy.svg#FontfabricNexaHeavy') format('svg');
+}
+
+@font-face {
+  font-family: 'FontfabricNexaHeavy';
+  src: url('#{$font-path}FontfabricNexaHeavy.eot');
+  src: url('#{$font-path}FontfabricNexaHeavy.eot') format('embedded-opentype'),
+       url('#{$font-path}FontfabricNexaHeavy.woff2') format('woff2'),
+       url('#{$font-path}FontfabricNexaHeavy.woff') format('woff'),
+       url('#{$font-path}FontfabricNexaHeavy.ttf') format('truetype'),
+       url('#{$font-path}FontfabricNexaHeavy.svg#FontfabricNexaHeavy') format('svg');
+}
+
+@font-face {
+  font-family: 'FontfabricNexaHeavyItalic';
+  src: url('#{$font-path}FontfabricNexaHeavyItalic.eot');
+  src: url('#{$font-path}FontfabricNexaHeavyItalic.eot') format('embedded-opentype'),
+       url('#{$font-path}FontfabricNexaHeavyItalic.woff2') format('woff2'),
+       url('#{$font-path}FontfabricNexaHeavyItalic.woff') format('woff'),
+       url('#{$font-path}FontfabricNexaHeavyItalic.ttf') format('truetype'),
+       url('#{$font-path}FontfabricNexaHeavyItalic.svg#FontfabricNexaHeavyItalic') format('svg');
+}
+
+@font-face {
+  font-family: 'FontfabricNexaBlack';
+  src: url('#{$font-path}FontfabricNexaBlack.eot');
+  src: url('#{$font-path}FontfabricNexaBlack.eot') format('embedded-opentype'),
+       url('#{$font-path}FontfabricNexaBlack.woff2') format('woff2'),
+       url('#{$font-path}FontfabricNexaBlack.woff') format('woff'),
+       url('#{$font-path}FontfabricNexaBlack.ttf') format('truetype'),
+       url('#{$font-path}FontfabricNexaBlack.svg#FontfabricNexaBlack') format('svg');
+}
+
+@font-face {
+  font-family: 'FontfabricNexaBlackItalic';
+  src: url('#{$font-path}FontfabricNexaBlackItalic.eot');
+  src: url('#{$font-path}FontfabricNexaBlackItalic.eot') format('embedded-opentype'),
+       url('#{$font-path}FontfabricNexaBlackItalic.woff2') format('woff2'),
+       url('#{$font-path}FontfabricNexaBlackItalic.woff') format('woff'),
+       url('#{$font-path}FontfabricNexaBlackItalic.ttf') format('truetype'),
+       url('#{$font-path}FontfabricNexaBlackItalic.svg#FontfabricNexaBlackItalic') format('svg');
+}

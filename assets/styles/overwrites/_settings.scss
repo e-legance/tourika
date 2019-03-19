@@ -1,0 +1,114 @@
+// Remove Colors
+$colors: map-remove(
+  $colors,
+  "blue",
+  "indigo",
+  // "purple",
+  // "pink",
+  "red",
+  "orange",
+  // "yellow",
+  // "green",
+  "teal",
+  "cyan",
+  "white",
+  "gray",
+  "gray-dark"
+);
+
+// Add Colors
+$colors: map-merge((
+  "black": $black,
+  "gray-900": $gray-900
+), $colors);
+
+// Remove Theme Colors
+$theme-colors: map-remove(
+	$theme-colors, 
+  "primary",
+  "secondary",
+  "success",
+  "info",
+  "warning",
+  "danger",
+  "light",
+  "dark"
+);
+
+// Remove Theme Breakpoints
+$grid-breakpoints: map-remove(
+  $grid-breakpoints,
+  xs, sm, md, lg, xl
+);
+
+// Remove Theme Containers
+$container-max-widths: map-remove(
+  $container-max-widths,
+  xs, sm, md, lg, xl
+);
+
+// Theme Breakpoints
+$grid-breakpoints: map-merge(
+  (
+    xs: 0,
+    sm: 768px,
+    md: 992px,
+    lg: 1110px
+  ),
+  $grid-breakpoints
+);
+
+// Theme Containers
+$container-max-widths: map-merge(
+  (
+    sm: 768px,
+    md: 960px,
+    lg: 1140px,
+  ),
+  $container-max-widths
+);
+
+
+// Add Theme Colors
+$theme-colors: map-merge((
+), $theme-colors);
+
+// Add Buttons
+$btn-colors: (
+);
+
+$btn-outline-colors: (
+);
+
+// Remove Spacers ex. 5: 5px
+$spacers: map-remove(
+  $spacers, 1, 2, 3, 4, 5
+);
+
+// Add Spacers ex. 5: 5px, padding, margin
+$spacers: map-merge((
+  5: 5px,
+  10: 10px,
+  15: 15px,
+  20: 20px,
+  25: 25px,
+  30: 30px,
+  35: 35px,
+  40: 40px,
+  45: 45px,
+  50: 50px
+), $spacers);
+
+// Remove sizes width & height
+$sizes: map-remove(
+  $sizes,
+  25,
+  50,
+  75,
+  auto
+);
+
+// Add sizes width & height
+$sizes: map-merge((
+), $sizes
+);

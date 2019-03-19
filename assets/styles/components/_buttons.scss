@@ -1,0 +1,94 @@
+//
+// Base styles
+//
+
+.btn {
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  font-family: inherit;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  min-width: $btn-min-width;
+  border: $btn-border-width solid transparent;
+  @include button-size($btn-height, $btn-padding-x, $btn-font-size, $btn-line-height);
+  @include border-radius($btn-border-radius);
+
+    @at-root a#{&} {
+      @extend .d-inline-flex;
+      @extend .align-items-center;
+      @extend .justify-content-center;
+      cursor: pointer;
+    }
+    
+
+    //
+    // Button Sizes
+    //
+    &--sm {
+      min-width: $btn-min-width-sm;
+      @include button-size($btn-height-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm);
+    }
+
+    &--md {
+      min-width: $btn-min-width-md;
+      @include button-size($btn-height-md, $btn-padding-x-md, $btn-font-size-md, $btn-line-height-md);
+    }
+
+    // &__state {
+
+    //     &--default {
+
+    //         .btn__state[aria-expanded="true"] &,
+    //         .btn__state.active:not([aria-expanded]) & {
+    //           @extend .d-none;
+    //         }
+    //     }
+
+    //     &--active {
+            
+    //         .btn__state[aria-expanded="false"] &,
+    //         .btn__state:not(.active):not([aria-expanded]) & {
+    //           @extend .d-none;
+    //         }
+    //     }
+    // }
+
+}
+
+//
+// Alternate buttons
+//
+@each $color, $value in $btn-colors {
+  $text-color: map-get($value, color);
+  $background: map-get($value, background);
+  $hover-color :map-get($value, hover-color);
+  $hover-background: map-get($value, hover-background);
+
+    .btn--#{$color} {
+      @include button-variant(
+        $text-color,
+        $background,
+        $hover-color,
+        $hover-background,
+      );
+    }
+}
+
+@each $color, $value in $btn-outline-colors {
+  $text-color: map-get($value, color);
+  $border: map-get($value, border);
+  $hover-color :map-get($value, hover-color);
+  $hover-background: map-get($value, hover-background);
+  $hover-border: map-get($value, hover-border);
+
+    .btn--outline-#{$color} {
+      @include button-outline-variant(
+        $text-color,
+        $border,
+        $hover-color,
+        $hover-background,
+        $hover-border
+      );
+    }
+}

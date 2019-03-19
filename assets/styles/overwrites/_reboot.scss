@@ -1,0 +1,98 @@
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+		a {
+			display: block;
+		}
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+	padding: 0;
+	border: 0;
+	background: none;
+	appearance: none;
+
+		&:focus {
+			outline: none;
+		}
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+optgroup,
+textarea {
+	appearance: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="number"]::-webkit-inner-spin-button {
+	appearance: none;
+}
+
+label {
+	margin-bottom: 0;
+}
+
+figure,
+blockquote {
+	margin: 0;
+}
+
+img {
+	display: inline-block;
+	@include img-fluid();
+}
+
+address, ol, ul, dl, pre, {
+	margin-bottom: 0;
+}
+
+ul,
+ol {
+	@include list-unstyled();
+}
+
+b,
+strong {
+	font-family: $font-family-nexa-bold;
+	font-weight: $font-weight-bold;
+}
+
+em, i {
+	font-family: $font-family-nexa-regular-it;
+	font-style: normal;
+}
+
+a,
+button,
+input[type="submit"],
+input[type="reset"] {
+	cursor: pointer;
+
+		&:focus {
+			outline: none;
+		}
+}
+
+a {
+	color: $link-color;
+	text-decoration: $link-decoration;
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+
+		@include hover {
+			color: $link-hover-color;
+		}
+}
+
+button {
+	color: inherit;
+}

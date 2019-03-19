@@ -1,0 +1,81 @@
+// Color system
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #ecedee;
+$gray-300: #d3d3dc;
+$gray-400: #425486;
+$gray-500: #726b7a;
+$gray-600: #605667;
+$gray-700: #453C4A;
+$gray-800: #353d4a;
+$gray-900: #132968;
+$black: #000;
+
+// Colors
+$orange: #FA6B6B;
+
+$body-bg:    $white;
+$body-color: $gray-400;
+$link-color: inherit;
+$link-decoration: none;
+$link-hover-color: $link-color;
+$link-hover-decoration: none;
+
+$paragraph-margin-bottom: 0;
+$spacer: 0;
+$grid-gutter-width: rem(30);
+
+// Fonts
+
+$font-family-sans-serif: $font-family-nexa-regular;
+
+$font-weight-normal: normal;
+$font-weight-light: $font-weight-normal;
+$font-weight-lighter: $font-weight-normal;
+$font-weight-bold: $font-weight-normal;
+$font-weight-bolder: $font-weight-normal;
+
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+
+$line-height-base: (29 / 16);
+$line-height-lg: 1;
+$line-height-sm: 1;
+
+// Headings
+
+$headings-font-weight: $font-weight-normal;
+$headings-font-family: $font-family-nexa-heavy;
+$headings-color: $gray-900;
+$headings-line-height: 1;
+
+$h1-font-size: 36px;
+$h2-font-size: 24px;
+$h3-font-size: 22px;
+$h4-font-size: 20px;
+$h4-font-size: 18px;
+$h6-font-size: 16px;
+
+$display1-size: 53px;
+$display2-size: 40px;
+
+$display1-weight: $font-weight-normal;
+$display2-weight: $font-weight-normal;
+$display3-weight: $font-weight-normal;
+
+// Utilities
+$overflows: hidden;
+$positions: relative;
+
+// Resets
+$input-height-inner: 0;
+$input-height-inner-lg: 0;
+// $progress-font-size: $font-size-base;
+$input-height-inner-sm: 0;
+// $input-height-inner-lg: 60px;
+// $nav-link-height: 30px;
+// $navbar-brand-padding-y: 30px;
+// $close-font-size: 0;
+$custom-select-feedback-icon-padding-right: 0;
+$nav-link-height: 0;
