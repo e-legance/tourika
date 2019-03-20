@@ -3,12 +3,12 @@ $colors: map-remove(
   $colors,
   "blue",
   "indigo",
-  // "purple",
-  // "pink",
+  "purple",
+  "pink",
   "red",
-  "orange",
-  // "yellow",
-  // "green",
+  // "orange",
+  "yellow",
+  "green",
   "teal",
   "cyan",
   "white",
@@ -96,7 +96,8 @@ $spacers: map-merge((
   35: 35px,
   40: 40px,
   45: 45px,
-  50: 50px
+  50: 50px,
+  80: 80px
 ), $spacers);
 
 // Remove sizes width & height
