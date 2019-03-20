@@ -1,0 +1,31 @@
+.page {
+
+	&__header {
+		background-size: cover;
+		background-repeat:no-repeat; 
+		background-position:center center;
+
+		@include media-breakpoint-up(sm) {
+			height: 316px;
+		}
+
+		@include media-breakpoint-down(xs) {
+			height: 160px;
+		}
+	}
+}
+
+.entry-content {
+
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 15px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	p:not(:last-child) {
+		margin-bottom: rem(30);
+	}
+}

@@ -1,7 +1,7 @@
 // Remove Colors
 $colors: map-remove(
   $colors,
-  "blue",
+  // "blue",
   "indigo",
   "purple",
   "pink",
@@ -19,7 +19,6 @@ $colors: map-remove(
 // Add Colors
 $colors: map-merge((
   "black": $black,
-  "gray-900": $gray-900
 ), $colors);
 
 // Remove Theme Colors

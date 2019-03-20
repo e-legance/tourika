@@ -25,4 +25,21 @@
 						}
 				}
 		}
+
+		&__main {
+			border-bottom: 1px solid #F1F2F6;
+
+				&__menu {
+					
+						li {
+
+								@include media-breakpoint-up(sm) {
+
+										&:not(:last-child) {
+											margin-right: 40px;
+										}
+								}
+						}
+				}
+		}
 }

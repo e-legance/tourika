@@ -1,8 +1,8 @@
 // Color system
 $white: #fff;
-$gray-100: #f8f9fa;
-$gray-200: #ecedee;
-$gray-300: #d3d3dc;
+$gray-100: #F1F2F6;
+$gray-200: #E3E3E3;
+$gray-300: #B7B7B7;
 $gray-400: #425486;
 $gray-500: #726b7a;
 $gray-600: #605667;
@@ -12,10 +12,14 @@ $gray-900: #132968;
 $black: #000;
 
 // Colors
+$blue: #132968;
+$blue-sub: #425486;
+$blue-passive: #A1A9C3;
 $orange: #FA6B6B;
+$orange-disabled: #FDB5B5;
 
 $body-bg:    $white;
-$body-color: $gray-400;
+$body-color: $blue-sub;
 $link-color: inherit;
 $link-decoration: none;
 $link-hover-color: $link-color;
@@ -23,9 +27,13 @@ $link-hover-decoration: underline;
 
 $paragraph-margin-bottom: 0;
 $spacer: 0;
-$grid-gutter-width: rem(30);
+$grid-gutter-width: 30px;
 
-// Fonts
+// Options
+$enable-caret: false;
+$enable-print-styles: false;
+$enable-validation-icons: false;
+$enable-deprecation-messages: false;
 
 $font-family-sans-serif: $font-family-nexa-regular;
 
@@ -36,7 +44,7 @@ $font-weight-bold: $font-weight-normal;
 $font-weight-bolder: $font-weight-normal;
 
 $font-size-sm: 14px;
-$font-size-base: 16px;
+$font-size-base: 1rem;
 $font-size-lg: 18px;
 
 $line-height-base: (29 / 16);
@@ -47,7 +55,7 @@ $line-height-sm: 1;
 
 $headings-font-weight: $font-weight-normal;
 $headings-font-family: $font-family-nexa-heavy;
-$headings-color: $gray-900;
+$headings-color: $blue;
 $headings-line-height: 1;
 
 $h1-font-size: 36px;
