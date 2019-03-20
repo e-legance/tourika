@@ -19,7 +19,7 @@ $body-color: $gray-400;
 $link-color: inherit;
 $link-decoration: none;
 $link-hover-color: $link-color;
-$link-hover-decoration: none;
+$link-hover-decoration: underline;
 
 $paragraph-margin-bottom: 0;
 $spacer: 0;
@@ -63,6 +63,22 @@ $display2-size: 40px;
 $display1-weight: $font-weight-normal;
 $display2-weight: $font-weight-normal;
 $display3-weight: $font-weight-normal;
+
+$border-radius: 5px;
+
+// Buttons
+$btn-font-weight: $font-weight-normal;
+$btn-border-radius: $border-radius;
+
+$btn-height: 43px;
+$btn-padding-x: 15px;
+$btn-font-size: $font-size-sm;
+$btn-line-height: 1;
+
+$btn-height-sm: 28px;
+$btn-padding-x-sm: 24px;
+$btn-font-size-sm: 12px;
+$btn-border-radius-sm: 3px;
 
 // Utilities
 $overflows: hidden;

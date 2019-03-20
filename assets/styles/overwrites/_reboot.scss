@@ -21,7 +21,7 @@ textarea {
 	appearance: none;
 
 		&:focus {
-			outline: none;
+			outline: none !important;
 		}
 }
 

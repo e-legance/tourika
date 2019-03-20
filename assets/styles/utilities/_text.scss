@@ -3,26 +3,32 @@
 }
 
 // Font Families
-.font-family-nexa-thin { font-family: $font-family-nexa-thin !important }
-.font-family-nexa-thin-it { font-family: $font-family-nexa-thin-it !important }
-.font-family-nexa-light { font-family: $font-family-nexa-light !important }
-.font-family-nexa-light-it { font-family: $font-family-nexa-light-it !important }
-.font-family-nexa-book { font-family: $font-family-nexa-book !important }
-.font-family-nexa-book-it { font-family: $font-family-nexa-book-it !important }
-.font-family-nexa-regular { font-family: $font-family-nexa-regular !important }
-.font-family-nexa-regular-it { font-family: $font-family-nexa-regular-it !important }
-.font-family-nexa-bold { font-family: $font-family-nexa-bold !important }
-.font-family-nexa-bold-it { font-family: $font-family-nexa-bold-it !important }
-.font-family-nexa-extra-bold { font-family: $font-family-nexa-extra-bold !important }
-.font-family-nexa-extra-bold-it { font-family: $font-family-nexa-extra-bold-it !important }
-.font-family-nexa-heavy { font-family: $font-family-nexa-heavy !important }
-.font-family-nexa-heavy-it { font-family: $font-family-nexa-heavy-it !important }
-.font-family-nexa-black { font-family: $font-family-nexa-black !important }
-.font-family-nexa-black-it { font-family: $font-family-nexa-black-it !important }
+.font-family-nexa-thin { font-family: $font-family-nexa-thin !important; }
+.font-family-nexa-thin-it { font-family: $font-family-nexa-thin-it !important; }
+.font-family-nexa-light { font-family: $font-family-nexa-light !important; }
+.font-family-nexa-light-it { font-family: $font-family-nexa-light-it !important; }
+.font-family-nexa-book { font-family: $font-family-nexa-book !important; }
+.font-family-nexa-book-it { font-family: $font-family-nexa-book-it !important; }
+.font-family-nexa-regular { font-family: $font-family-nexa-regular !important; }
+.font-family-nexa-regular-it { font-family: $font-family-nexa-regular-it !important; }
+.font-family-nexa-bold { font-family: $font-family-nexa-bold !important; }
+.font-family-nexa-bold-it { font-family: $font-family-nexa-bold-it !important; }
+.font-family-nexa-extra-bold { font-family: $font-family-nexa-extra-bold !important; }
+.font-family-nexa-extra-bold-it { font-family: $font-family-nexa-extra-bold-it !important; }
+.font-family-nexa-heavy { font-family: $font-family-nexa-heavy !important; }
+.font-family-nexa-heavy-it { font-family: $font-family-nexa-heavy-it !important; }
+.font-family-nexa-black { font-family: $font-family-nexa-black !important; }
+.font-family-nexa-black-it { font-family: $font-family-nexa-black-it !important; }
 
 // Font Sizes
 .font-size-sm { font-size: $font-size-sm !important; }
 .font-size-lg { font-size: $font-size-lg !important; }
+
+// Line Height
+.line-height-1 { line-height: 1 !important; }
+
+// Text decoration
+.text-underline { text-decoration: underline !important; }
 
 // @each $breakpoint in map-keys($grid-breakpoints) {
 //   $infix: breakpoint-infix($breakpoint, $grid-breakpoints);

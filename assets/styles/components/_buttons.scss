@@ -4,12 +4,11 @@
 
 .btn {
   display: inline-block;
+  font-family: $font-weight-bold;
   font-weight: $btn-font-weight;
-  font-family: inherit;
   text-align: center;
   vertical-align: middle;
   user-select: none;
-  min-width: $btn-min-width;
   border: $btn-border-width solid transparent;
   @include button-size($btn-height, $btn-padding-x, $btn-font-size, $btn-line-height);
   @include border-radius($btn-border-radius);
@@ -26,14 +25,15 @@
     // Button Sizes
     //
     &--sm {
-      min-width: $btn-min-width-sm;
-      @include button-size($btn-height-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm);
+      font-family: $font-family-nexa-regular;
+      @include border-radius($btn-border-radius-sm)
+      @include button-size($btn-height-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height);
     }
 
-    &--md {
-      min-width: $btn-min-width-md;
-      @include button-size($btn-height-md, $btn-padding-x-md, $btn-font-size-md, $btn-line-height-md);
-    }
+    // &--md {
+    //   min-width: $btn-min-width-md;
+    //   @include button-size($btn-height-md, $btn-padding-x-md, $btn-font-size-md, $btn-line-height-md);
+    // }
 
     // &__state {
 
@@ -54,6 +54,18 @@
     //     }
     // }
 
+
+    &__social {
+      @include size(30px);
+      line-height: 30px;
+      background-color: $orange;
+      font-size: 0;
+
+        &:hover {
+          background-color: #EC8F8C;
+        }
+    }
+
 }
 
 //
@@ -64,6 +76,8 @@
   $background: map-get($value, background);
   $hover-color :map-get($value, hover-color);
   $hover-background: map-get($value, hover-background);
+  $focus-background: map-get($value, focus-background);
+  $focus-box-shadow: map-get($value, focus-box-shadow);
 
     .btn--#{$color} {
       @include button-variant(
@@ -71,6 +85,8 @@
         $background,
         $hover-color,
         $hover-background,
+        $focus-background,
+        $focus-box-shadow
       );
     }
 }
