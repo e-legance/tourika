@@ -1,0 +1,45 @@
+.footer {
+	font-size: 11px;
+
+		&__content {
+			border-top: 1px solid #F1F2F6;
+			border-bottom: 1px solid #F1F2F6;
+		}
+
+		&__menu {
+
+				&__title {
+
+						@include media-breakpoint-up(sm) {
+							color: $gray-900;
+						}
+				}
+
+				&__list {
+
+						li {
+
+								&:not(:last-child) {
+									margin-bottom: 15px;
+								}
+						}
+				}
+		}
+
+		&__main {
+			border-bottom: 1px solid #F1F2F6;
+
+				&__menu {
+					
+						li {
+
+								@include media-breakpoint-up(sm) {
+
+										&:not(:last-child) {
+											margin-right: 40px;
+										}
+								}
+						}
+				}
+		}
+}

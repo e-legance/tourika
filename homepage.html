@@ -8,12 +8,12 @@
 
   <link rel="stylesheet" href="dist/styles/main.css">
 
-  <title>List of pages</title>
+  <title>Homepage</title>
 </head>
   
   <body>
-  	<header class="header header--transparent text-white">
-	<div class="header__top-line py-10 line-height-1 d-sm-block d-none">
+  	<header class="header header--transparent text-white line-height-1">
+	<div class="header__top-line py-10 d-sm-block d-none">
 		<div class="container">
 			<div class="row justify-content-sm-between">
 				<div class="col-sm-auto">
@@ -50,7 +50,7 @@
 		</div>
 	</div>
 
-	<div class="container py-20 bg-orange">
+	<div class="container py-20">
 		<div class="row align-items-center justify-content-between">
 			<div class="col-auto">
 				<a href="">
@@ -60,16 +60,228 @@
 
 			<div class="col-auto">
 				<p>
-					<svg width="11" height="17" viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<svg class="mr-5" width="11" height="17" viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M2.125 0C0.946591 0 0 0.946591 0 2.125V14.875C0 16.0534 0.946591 17 2.125 17H8.30682C9.48523 17 10.4318 16.0534 10.4318 14.875V2.125C10.4318 0.946591 9.48523 0 8.30682 0H2.125ZM2.125 0.772727H8.30682C9.00227 0.772727 9.5625 1.275 9.63978 1.93182H0.792046C0.869318 1.25568 1.42955 0.772727 2.125 0.772727ZM0.772727 2.70455H9.65909V13.5227H0.772727V2.70455ZM0.772727 14.2955H9.65909V14.875C9.65909 15.6284 9.06023 16.2273 8.30682 16.2273H2.125C1.37159 16.2273 0.772727 15.6284 0.772727 14.875V14.2955ZM5.21591 14.6818C4.8875 14.6818 4.63636 14.933 4.63636 15.2614C4.63636 15.5898 4.8875 15.8409 5.21591 15.8409C5.54432 15.8409 5.79546 15.5898 5.79546 15.2614C5.79546 14.933 5.54432 14.6818 5.21591 14.6818Z" fill="white"/>
-					</svg> Have any questions?</p>
+					</svg>
+					Have any questions?
+					<a href="" class="btn btn--sm btn--orange ml-5">Live Chat</a>
+				</p>
 			</div>
 		</div>
 	</div>
 </header>
-  	<footer class="py-15">
+  	<section class="homeTop">
 	<div class="container">
-		Site footer
+		<header class="homeTop__header d-sm-flex align-items-center text-white">
+			<div class="col-sm-12 px-sm-0">
+				<h1 class="text-white font-family-nexa-bold">Create your own adventure</h1>
+				<p>We help you find the best bus tickets, hotels, organised tours and activities for your next trip within North America.</p>
+			</div>
+		</header>
+	</div>
+</section>
+  	<section class="search__section pb-35 line-height-1">
+	<div class="container">
+		<div class="search__nav nav d-sm-inline-flex d-flex" role="tablist">
+	<button type="button" class="search__nav__btn active" data-toggle="tab" data-target="#bus" role="tab" aria-selected="true">
+		<span class="mr-5">
+			<svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M13 3.5217V5.1072C13 5.635 12.6288 6.0753 12.0712 6.0753V14H11.2356C10.6788 14 10.2144 13.5597 10.2144 13.0312V12.2388H2.78561V13.0312C2.78561 13.5597 2.32122 14 1.76439 14H0.928778V6.076C0.371222 5.9864 0 5.635 0 5.1065V3.521C0 2.9932 0.371222 2.6411 0.928778 2.6411V1.7612C0.928778 0.7924 1.76439 0 2.78561 0H10.2144C11.2356 0 12.0712 0.7924 12.0712 1.7612V2.6418C12.6288 2.6418 13 2.9939 13 3.5217ZM2.78561 2.6418C2.22878 2.6418 1.85683 2.9939 1.85683 3.5217V7.0441C1.85683 7.5726 2.22878 7.9247 2.78561 7.9247H10.2144C10.7712 7.9247 11.1432 7.5726 11.1432 7.0441V3.521C11.1432 2.9932 10.7712 2.6411 10.2144 2.6411H2.78561V2.6418ZM10.2144 11.3582C10.6759 11.3582 11.05 11.004 11.05 10.5658C11.05 10.1283 10.6759 9.7734 10.2144 9.7734C9.75217 9.7734 9.37878 10.1283 9.37878 10.5658C9.37878 11.004 9.75289 11.3582 10.2144 11.3582ZM2.78561 11.3582C3.24783 11.3582 3.62122 11.004 3.62122 10.5658C3.62122 10.1283 3.24711 9.7734 2.78561 9.7734C2.32411 9.7734 1.95 10.129 1.95 10.5658C1.95 11.004 2.32411 11.3582 2.78561 11.3582Z" fill="#132968"/>
+			</svg>
+		</span>Bus
+	</button>
+
+	<button type="button" class="search__nav__btn" data-toggle="tab" data-target="#busHotels" role="tab" aria-selected="false">
+		<span class="mr-5">
+			<svg width="32" height="14" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M13 5.1072V3.5217C13 2.9939 12.6288 2.6418 12.0712 2.6418V1.7612C12.0712 0.7924 11.2356 0 10.2144 0H2.78561C1.76439 0 0.928772 0.7924 0.928772 1.7612V2.6411C0.371216 2.6411 0 2.9932 0 3.521V5.1065C0 5.635 0.371216 5.9864 0.928772 6.076V14H1.76439C2.32123 14 2.78561 13.5597 2.78561 13.0312V12.2388H10.2144V13.0312C10.2144 13.5597 10.6788 14 11.2356 14H12.0712V6.0753C12.6288 6.0753 13 5.635 13 5.1072ZM1.85683 3.5217C1.85683 2.9939 2.22878 2.6418 2.78561 2.6418V2.6411H10.2144C10.7712 2.6411 11.1432 2.9932 11.1432 3.521V7.0441C11.1432 7.5726 10.7712 7.9247 10.2144 7.9247H2.78561C2.22878 7.9247 1.85683 7.5726 1.85683 7.0441V3.5217ZM11.05 10.5658C11.05 11.004 10.6759 11.3582 10.2144 11.3582C9.75288 11.3582 9.37878 11.004 9.37878 10.5658C9.37878 10.1283 9.75217 9.7734 10.2144 9.7734C10.6759 9.7734 11.05 10.1283 11.05 10.5658ZM3.62122 10.5658C3.62122 11.004 3.24783 11.3582 2.78561 11.3582C2.32411 11.3582 1.95 11.004 1.95 10.5658C1.95 10.129 2.32411 9.7734 2.78561 9.7734C3.24712 9.7734 3.62122 10.1283 3.62122 10.5658ZM19 12.3934V14H32V12.3934H30.8596V3.44262H28.1228V0H20.1404V12.3934H19ZM23.5614 3.44262V1.83607H21.7368V3.44262H23.5614ZM27.4386 5.27869V6.88525H29.2632V5.27869H27.4386ZM23.5614 8.72131V10.3279H21.7368V8.72131H23.5614ZM24.4737 8.72131V12.3934H26.5263V8.72131H24.4737ZM27.4386 10.3279V8.72131H29.2632V10.3279H27.4386ZM24.4737 6.88525V5.27869H26.5263V6.88525H24.4737ZM23.5614 5.27869V6.88525H21.7368V5.27869H23.5614ZM26.5263 1.83607V3.44262H24.4737V1.83607H26.5263ZM16 0H17V2H19V3H17V5H16V3H14V2H16V0Z" fill="#A1A9C3"/>
+			</svg>
+		</span>Bus & Hotels
+	</button>
+
+	<button type="button" class="search__nav__btn" data-toggle="tab" data-target="#organizedTours" role="tab" aria-selected="false">
+		<span class="mr-5">
+			<svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M12.5357 6.825C13.4732 5.61321 14.1932 4.58465 14.1932 3.42103C14.1932 1.53105 12.6053 0 10.6446 0C8.68393 0 7.09607 1.53211 7.09607 3.42103C7.09607 4.4657 7.71322 5.46323 8.51994 6.54101L7.54924 6.8518L5.66784 6.25712C5.90031 5.86819 6.04923 5.49102 6.04923 5.08499C6.04923 4.01245 5.18138 3.14361 4.11209 3.14361C3.04173 3.14361 2.17503 4.01243 2.17503 5.08499C2.17503 5.53287 2.37103 5.96676 2.65502 6.41571L2.64644 6.41678L0 12.3374L3.99855 10.8289L7.63712 12.3374L11.0528 10.8289L15 12.3374L12.5357 6.82498V6.825ZM10.6457 1.75926C11.5971 1.75926 12.3686 2.50281 12.3686 3.42103C12.3686 4.33925 11.596 5.08393 10.6457 5.08393C9.69321 5.08393 8.92287 4.33925 8.92287 3.42103C8.92287 2.50283 9.69321 1.75926 10.6457 1.75926V1.75926ZM4.11325 4.14213C4.63174 4.14213 5.05395 4.5643 5.05395 5.08501C5.05395 5.60465 4.63174 6.02785 4.11327 6.02785C3.59361 6.02785 3.17247 5.60465 3.17247 5.08501C3.17247 4.5643 3.59361 4.14213 4.11325 4.14213V4.14213ZM10.9843 9.93215L7.63498 11.3828L4.065 9.93215L1.40249 11.145L2.92822 7.20854L3.17681 7.16144C3.47999 7.56643 3.81104 7.99392 4.11325 8.46854C4.48927 7.86747 4.88467 7.36819 5.2221 6.90961L7.55147 7.65747L9.00961 7.18287C9.54323 7.86747 10.1175 8.58959 10.6446 9.38569C11.1385 8.6271 11.6497 7.96499 12.1286 7.35103L13.6671 11.1932L10.9843 9.93213V9.93215Z" fill="#A1A9C3"/>
+			</svg>
+		</span>Organized Tours
+	</button>
+
+	<button type="button" class="search__nav__btn" data-toggle="tab" data-target="#activities" role="tab" aria-selected="false">
+		<span class="mr-5">
+			<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M4.96024 1.42936C4.96024 2.21877 4.33714 2.85872 3.5685 2.85872C2.79986 2.85872 2.17676 2.21877 2.17676 1.42936C2.17676 0.639946 2.79986 0 3.5685 0C4.33714 0 4.96024 0.639946 4.96024 1.42936ZM4.51991 3.71117C5.3115 4.79391 6.25188 5.71428 7.39798 6.39565C8.20295 6.87482 7.64362 8.2676 6.82777 7.78121C6.00964 7.29435 5.27317 6.7276 4.60905 6.07418C4.60066 6.9652 4.62901 7.85506 4.70703 8.74771C4.71633 8.85393 4.78279 9.17959 4.81024 9.26275C5.28201 10.7117 5.7547 12.1601 6.22806 13.6093C6.54357 14.5756 5.084 15.0773 4.76941 14.1113C4.33666 12.7873 3.90436 11.4625 3.47229 10.1385L3.47089 10.1342C3.43596 10.1358 3.40148 10.1358 3.367 10.1344C2.6895 11.4809 2.25515 12.7525 1.8056 14.323C1.71351 14.645 1.43816 14.8605 1.13014 14.8847C1.04078 14.8917 0.948237 14.8824 0.856603 14.8546C0.451963 14.7323 0.21993 14.296 0.339235 13.8802C0.826436 12.1769 1.30638 10.7846 2.05669 9.31307C2.1515 9.12694 2.19799 8.92195 2.19164 8.7123C2.17259 8.08265 2.13471 6.68171 2.14628 5.9053C1.84461 6.27219 1.57221 6.64071 1.33201 7.00806C1.19184 7.22331 0.961392 7.33955 0.726864 7.33955C0.587372 7.33955 0.446973 7.29855 0.322451 7.21282C-0.0114225 6.98314 -0.100335 6.51888 0.123306 6.17575C0.670387 5.33807 1.36013 4.50086 2.17304 3.68858C2.70742 3.03027 4.0225 2.99277 4.51991 3.71117Z" fill="#A1A9C3"/>
+			</svg>
+		</span>Activities
+	</button>
+</div>
+
+		<div class="search__tabs tab-content px-sm-35 pt-20 pb-25 bg-white rounded-bottom position-relative">
+			<div id="bus" class="tab-pane fade show active" role="tabpanel">
+				
+			</div>
+			<div id="busHotels" class="tab-pane fade" role="tabpanel">
+				Bus & Hotels
+			</div>
+			<div id="organizedTours" class="tab-pane fade" role="tabpanel">
+				Organized Tours
+			</div>
+			<div id="activities" class="tab-pane fade" role="tabpanel">
+				Activities
+			</div>
+		</div>
+	</div>
+</section>
+  	
+  	<footer class="footer line-height-1 py-sm-45">
+	<div class="container">
+		<div class="footer__content py-sm-45">
+			<div class="row">
+				<div class="col-md-2 col-sm-4 col-12">
+					<button type="button" data-toggle="collapse" data-target="#" class="footer__menu__title mb-sm-20 font-size-sm font-family-nexa-bold">Bus Deals</button>
+					<div class="collapse d-sm-block">
+						<ul class="footer__menu__list">
+							<li><a href="">Montreal to New York</a></li>
+							<li><a href="">Vancouver to Seattle</a></li>
+							<li><a href="">Edmonton to Calgary</a></li>
+							<li><a href="">Montreal to Ottawa</a></li>
+							<li><a href="">Ottawa to Toronto</a></li>
+							<li><a href="">Montreal to Toronto</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-12">
+					<button type="button" data-toggle="collapse" data-target="#" class="footer__menu__title mb-sm-20 font-size-sm font-family-nexa-bold">Bus and Hotel Deals</button>
+					<div class="collapse d-sm-block">
+						<ul class="footer__menu__list">
+							<li><a href="">Montreal to New York</a></li>
+							<li><a href="">Quebec City to Montreal</a></li>
+							<li><a href="">Vancouver to Seattle</a></li>
+							<li><a href="">Edmonton to Calgary</a></li>
+							<li><a href="">Montreal to Ottawa</a></li>
+							<li><a href="">Ottawa to Toronto</a></li>
+							<li><a href="">Montreal to Toronto</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-12">
+					<button type="button" data-toggle="collapse" data-target="#" class="footer__menu__title mb-sm-20 font-size-sm font-family-nexa-bold">Organized Tours</button>
+					<div class="collapse d-sm-block">
+						<ul class="footer__menu__list">
+							<li><a href="">New York</a></li>
+							<li><a href="">Montreal</a></li>
+							<li><a href="">Calgary</a></li>
+							<li><a href="">Ottawa</a></li>
+							<li><a href="">Toronto</a></li>
+							<li><a href="">Edmonton</a></li>
+							<li><a href="">Vancouver</a></li>
+							<li><a href="">Seattle</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-12">
+					<button type="button" data-toggle="collapse" data-target="#" class="footer__menu__title mb-sm-20 font-size-sm font-family-nexa-bold">Activities</button>
+					<div class="collapse d-sm-block">
+						<ul class="footer__menu__list">
+							<li><a href="">Madame Tussauds</a></li>
+							<li><a href="">By Night Tours</a></li>
+							<li><a href="">City Tours</a></li>
+							<li><a href="">Jazz Concerts</a></li>
+							<li><a href="">Boat Tours</a></li>
+							<li><a href="">Off the beaten path</a></li>
+							<li><a href="">Broadway Shows</a></li>
+							<li><a href="">Music Festivals</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-12">
+					<button type="button" data-toggle="collapse" data-target="#" class="footer__menu__title mb-sm-20 font-size-sm font-family-nexa-bold">Book Your</button>
+					<div class="collapse d-sm-block">
+						<ul class="footer__menu__list">
+							<li><a href="">Bus</a></li>
+							<li><a href="">Bus with Hotel</a></li>
+							<li><a href="">Organized Tour</a></li>
+							<li><a href="">Adventure</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-12">
+					<button type="button" data-toggle="collapse" data-target="#" class="footer__menu__title mb-sm-20 font-size-sm font-family-nexa-bold">Contacts</button>
+					<div class="collapse d-sm-block">
+						<ul class="footer__menu__list">
+							<li><a href="mailto: support@tourika.com">support@tourika.com</a></li>
+							<li><a href="">Live Support</a></li>
+							<li><a href="tel: 18558687452">1-855-868-7452 (Toll-free)</a></li>
+							<li><a href="tel: 15147002091">1-514-700-2091</a></li>
+						</ul>
+
+						<div class="d-flex mt-15">
+							<a href="" class="btn__social mr-15 text-center rounded-circle">
+								<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M10.5 0H1.5C0.67275 0 0 0.67275 0 1.5V10.5C0 11.3273 0.67275 12 1.5 12H6V7.875H4.5V6H6V4.5C6 3.25725 7.00725 2.25 8.25 2.25H9.75V4.125H9C8.586 4.125 8.25 4.086 8.25 4.5V6H10.125L9.375 7.875H8.25V12H10.5C11.3273 12 12 11.3273 12 10.5V1.5C12 0.67275 11.3273 0 10.5 0Z" fill="white"/>
+								</svg>
+							</a>
+
+							<a href="" class="btn__social mr-15 text-center rounded-circle">
+								<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8.25 0H3.75C1.67925 0 0 1.67925 0 3.75V8.25C0 10.3208 1.67925 12 3.75 12H8.25C10.3208 12 12 10.3208 12 8.25V3.75C12 1.67925 10.3208 0 8.25 0ZM10.875 8.25C10.875 9.6975 9.6975 10.875 8.25 10.875H3.75C2.3025 10.875 1.125 9.6975 1.125 8.25V3.75C1.125 2.3025 2.3025 1.125 3.75 1.125H8.25C9.6975 1.125 10.875 2.3025 10.875 3.75V8.25Z" fill="white"/>
+									<path d="M6 3C4.34325 3 3 4.34325 3 6C3 7.65675 4.34325 9 6 9C7.65675 9 9 7.65675 9 6C9 4.34325 7.65675 3 6 3ZM6 7.875C4.9665 7.875 4.125 7.0335 4.125 6C4.125 4.96575 4.9665 4.125 6 4.125C7.0335 4.125 7.875 4.96575 7.875 6C7.875 7.0335 7.0335 7.875 6 7.875Z" fill="white"/>
+									<path d="M9.22397 3.17449C9.44475 3.17449 9.62372 2.99552 9.62372 2.77475C9.62372 2.55397 9.44475 2.375 9.22397 2.375C9.00319 2.375 8.82422 2.55397 8.82422 2.77475C8.82422 2.99552 9.00319 3.17449 9.22397 3.17449Z" fill="white"/>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer__main py-20">
+			<div class="row align-items-sm-center">
+				<div class="col-sm-6 col-12 order-sm-2">
+					<ul class="footer__main__menu d-flex justify-content-sm-center">
+						<li><a href="">About Us</a></li>
+						<li><a href="">Privacy Policy</a></li>
+						<li><a href="">Terms of Service</a></li>
+					</ul>
+				</div>
+
+				<div class="col-sm-3 col-12 order-sm-1">
+					<a href="">
+						<img src="dist/images/logos/tourika-logo.svg" alt="">
+					</a>
+				</div>
+
+				<div class="col-sm-3 col-12 order-sm-3 text-sm-right">
+					<a href="">
+						<svg class="mr-5" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M11.9856 5.6C11.7888 2.6048 9.3952 0.2104 6.4 0.0136V0H6H5.6V0.0136C2.6048 0.2104 0.2104 2.6048 0.0136 5.6H0V6V6.4H0.0136C0.2104 9.3952 2.6048 11.7888 5.6 11.9856V12H6H6.4V11.9856C9.3952 11.7888 11.7888 9.3952 11.9856 6.4H12V6V5.6H11.9856ZM3.756 1.308C3.3696 1.8216 3.0488 2.4656 2.8152 3.2H1.6168C2.1384 2.3864 2.8792 1.728 3.756 1.308ZM1.1984 4H2.6048C2.4976 4.5056 2.4296 5.0424 2.408 5.6H0.8152C0.8576 5.0368 0.9904 4.4984 1.1984 4ZM0.8152 6.4H2.408C2.4296 6.9576 2.4976 7.4944 2.6048 8H1.1984C0.9904 7.5016 0.8576 6.9632 0.8152 6.4ZM1.6168 8.8H2.8144C3.048 9.5344 3.3688 10.1784 3.756 10.692C2.8792 10.272 2.1384 9.6144 1.6168 8.8ZM5.6 11.1488C4.7776 10.9288 4.0696 10.0456 3.64 8.8H5.6V11.1488ZM5.6 8H3.4152C3.3024 7.5016 3.2312 6.9632 3.208 6.4H5.6V8ZM5.6 5.6H3.208C3.2312 5.0368 3.3024 4.4984 3.4152 4H5.6V5.6ZM5.6 3.2H3.64C4.0696 1.9544 4.7776 1.0712 5.6 0.852V3.2ZM10.3832 3.2H9.1864C8.952 2.4656 8.632 1.8216 8.244 1.308C9.12 1.728 9.8616 2.3864 10.3832 3.2ZM6.4 0.852C7.2216 1.0712 7.9304 1.9544 8.36 3.2H6.4V0.852ZM6.4 4H8.584C8.6976 4.4984 8.7672 5.0368 8.792 5.6H6.4V4ZM6.4 6.4H8.792C8.7688 6.9632 8.6976 7.5016 8.584 8H6.4V6.4ZM6.4 11.1488V8.8H8.36C7.9304 10.0456 7.2216 10.9288 6.4 11.1488ZM8.244 10.692C8.6304 10.1776 8.952 9.5344 9.1864 8.8H10.3832C9.8616 9.6144 9.12 10.272 8.244 10.692ZM10.8016 8H9.3952C9.5024 7.4944 9.5704 6.9576 9.592 6.4H11.184C11.1424 6.9632 11.0096 7.5016 10.8016 8ZM9.592 5.6C9.5704 5.0424 9.5024 4.5056 9.3952 4H10.8016C11.0096 4.4984 11.1424 5.0368 11.1848 5.6H9.592Z" fill="#425486"/>
+						</svg>English
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer__bottom pt-20">
+			<div class="row justify-content-sm-between">
+				<div class="col-sm-auto">
+					<a href="">
+						<svg class="mr-5" width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1 8L8 1" stroke="#425486" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M3 1H8V6" stroke="#425486" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>Tourika is a Quebec permit holder.
+					</a>
+				</div>
+
+				<div class="col-sm-auto">
+					<p>© 2019 Tourika. All Rights Reserved.</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </footer>
 		<script src="dist/scripts/jquery.js"></script>

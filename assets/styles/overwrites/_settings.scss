@@ -1,7 +1,7 @@
 // Remove Colors
 $colors: map-remove(
   $colors,
-  "blue",
+  // "blue",
   "indigo",
   "purple",
   "pink",
@@ -18,8 +18,7 @@ $colors: map-remove(
 
 // Add Colors
 $colors: map-merge((
-  "black": $black,
-  "gray-900": $gray-900
+  "black": $black
 ), $colors);
 
 // Remove Theme Colors
@@ -75,6 +74,14 @@ $theme-colors: map-merge((
 
 // Add Buttons
 $btn-colors: (
+  'orange': (
+    color: $white,
+    background: $orange,
+    hover-color: $white,
+    hover-background: #EC8F8C,
+    focus-background: $orange,
+    focus-box-shadow: 0 0 10px $orange
+  ),
 );
 
 $btn-outline-colors: (
@@ -87,6 +94,7 @@ $spacers: map-remove(
 
 // Add Spacers ex. 5: 5px, padding, margin
 $spacers: map-merge((
+  0: 0px,
   5: 5px,
   10: 10px,
   15: 15px,

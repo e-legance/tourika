@@ -3,7 +3,13 @@
 // Easily pump out default styles, as well as :hover, :focus, :active,
 // and disabled options for all buttons
 
-@mixin button-variant( $color, $background, $hover-color: darken($color, 15%), $hover-background: darken($background, 7.5%) ) {
+@mixin button-variant( 
+  $color,
+  $background, $hover-color: darken($color, 15%),
+  $hover-background: darken($background, 7.5%),
+  $focus-background: $hover-background,
+  $focus-box-shadow: none
+) {
   color: $color;
   background-color: $background;
 
@@ -11,6 +17,12 @@
     &[data-toggle="button"].active {
       color: $hover-color;
       background-color: $hover-background;
+      text-decoration: none;
+    }
+
+    &:focus {
+      background-color: $focus-background;
+      box-shadow: $focus-box-shadow;
     }
 }
 
@@ -25,6 +37,7 @@
     color: $color-hover;
     background-color: $active-background;
     border-color: $active-border;
+    text-decoration: none;
   }
 }
 
