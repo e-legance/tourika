@@ -73,6 +73,7 @@ $display2-weight: $font-weight-normal;
 $display3-weight: $font-weight-normal;
 
 $border-radius: 5px;
+$border-radius-lg: 15px;
 
 // Buttons
 $btn-font-weight: $font-weight-normal;
@@ -87,6 +88,11 @@ $btn-height-sm: 28px;
 $btn-padding-x-sm: 24px;
 $btn-font-size-sm: 12px;
 $btn-border-radius-sm: 3px;
+
+$btn-height-lg: 48px;
+$btn-padding-x-lg: 30px;
+$btn-font-size-lg: 16px;
+$btn-border-radius-lg: $border-radius;
 
 // Utilities
 $overflows: hidden;

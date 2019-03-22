@@ -71,6 +71,11 @@ em, i {
 	font-style: normal;
 }
 
+strong > em {
+	font-family: $font-family-nexa-bold-it;
+	font-style: normal;
+}
+
 a,
 button,
 input[type="submit"],

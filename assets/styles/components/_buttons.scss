@@ -4,7 +4,7 @@
 
 .btn {
   display: inline-block;
-  font-family: $font-weight-bold;
+  font-family: $font-family-nexa-bold;
   font-weight: $btn-font-weight;
   text-align: center;
   vertical-align: middle;
@@ -34,6 +34,12 @@
     //   min-width: $btn-min-width-md;
     //   @include button-size($btn-height-md, $btn-padding-x-md, $btn-font-size-md, $btn-line-height-md);
     // }
+
+    &--lg {
+      font-family: $font-family-nexa-regular;
+      @include border-radius($btn-border-radius-lg)
+      @include button-size($btn-height-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height);
+    }
 
     // &__state {
 

@@ -15,7 +15,11 @@
 	}
 
 	&__boxes {
-		margin-top: 150px;
+		margin-top: 50px;
+
+		@include media-breakpoint-up(lg) {
+			margin-top: 150px;
+		}
 
 		.col-12 {
 			padding-left: 25px;
@@ -53,6 +57,7 @@
 
 .about-nav {
 	font-size: 0;
+	overflow: auto;
 
 	li {
 		display: inline-block;
@@ -83,6 +88,13 @@
 	    transform: scaleX(0);
 	    transition: .25s ease-in-out;
 	  }
+
+	  &.active {
+
+	  	&:before {
+				transform: scaleX(1);
+			}
+	  }
 	}
 }
 
@@ -90,11 +102,87 @@
 	padding: 70px 0;
 
 	@include media-breakpoint-up(sm) {
-		padding: 95px 0 115px;
+		padding: 95px 0 100px;
+	}
+
+	.owl-carousel {
+
+		h4 {
+			line-height: (30/20);
+		}
+	}
+
+	.owl-prev,
+	.owl-next {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		width: 50px;
+    height: 100%;
+	}
+
+	.owl-prev {
+		left: -120px;
+	}
+
+	.owl-next {
+		right: -120px;
 	}
 }
 
 .mission-sub-title {
-	font-size: rem(30);
+	font-size: 30px;
 	line-height: (37/30);
+}
+
+@include media-breakpoint-only(md) {
+
+	.mission-sub-title {
+		font-size: 26px;
+	}
+
+	.owl-carousel {
+
+		figure {
+			width: 275px;
+		}
+	}
+}
+
+@include media-breakpoint-between(sm,md) {
+	
+	.about-nav-item {
+
+		.owl-prev {
+			left: -60px;
+		}
+
+		.owl-next {
+			right: -60px;
+		}
+	}
+}
+
+@include media-breakpoint-down(xs) {
+
+	.about-nav-item {
+
+		.owl-prev,
+		.owl-next {
+				top: 0;
+				bottom: auto;
+				width: 36px;
+			height: 304px;
+			margin: auto;
+		}
+
+		.owl-prev {
+			left: 0;
+		}
+
+		.owl-next {
+			right: 0;
+		}
+	}
 }

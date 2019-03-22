@@ -18,8 +18,9 @@
     "node": ">= 4.5"
   },
   "dependencies": {
+    "bootstrap": "4.3.1",
     "jquery": "^3.3.1",
-    "bootstrap": "4.3.1"
+    "owl.carousel": "^2.3.4"
   },
   "devDependencies": {
     "asset-builder-nobower": "^1.1.2",
