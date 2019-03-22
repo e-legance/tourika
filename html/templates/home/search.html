@@ -1,20 +1,22 @@
 <section class="search__section pb-35 line-height-1">
 	<div class="container">
-		@@include('search/nav.html')
+			@@include('search/nav.html')
 
-		<div class="search__tabs tab-content px-sm-35 pt-20 pb-25 bg-white rounded-bottom position-relative">
-			<div id="bus" class="tab-pane fade show active" role="tabpanel">
-				
+			<div class="search__tabs tab-content px-sm-35 pt-10 pb-25 bg-white rounded-bottom shadow-lg position-relative">
+				<div id="bus" class="tab-pane fade show active" role="tabpanel">
+					<form action="">
+						@@include("search/type-trip.html")
+					</form>
+				</div>
+				<div id="busHotels" class="tab-pane fade" role="tabpanel">
+					Bus & Hotels
+				</div>
+				<div id="organizedTours" class="tab-pane fade" role="tabpanel">
+					Organized Tours
+				</div>
+				<div id="activities" class="tab-pane fade" role="tabpanel">
+					Activities
+				</div>
 			</div>
-			<div id="busHotels" class="tab-pane fade" role="tabpanel">
-				Bus & Hotels
-			</div>
-			<div id="organizedTours" class="tab-pane fade" role="tabpanel">
-				Organized Tours
-			</div>
-			<div id="activities" class="tab-pane fade" role="tabpanel">
-				Activities
-			</div>
-		</div>
 	</div>
 </section>
