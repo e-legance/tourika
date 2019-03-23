@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  @@include("head.html", {"title": "404"})
+  
+  <body>
+  	@@include("header.html")
+
+  	<article class="page">
+      <header class="page__header py-30 mb-40 mb-sm-50 d-flex align-items-center" style="background-image: url(dist/images/backgrounds/404-bg.jpg);">
+        <div class="container">
+          <h1 class="display-1 text-white">This page doesn’t exist</h1>
+        </div>
+      </header>
+
+      <div class="container pt-sm-30">
+        <div class="row justify-content-sm-center text-center">
+          <div class="col-sm-10">
+            <h2 class="mb-30">Return to our home page to search and we’ll get you on the right path</h2>
+            <a href="" class="btn btn--lg btn--orange mb-40 mb-md-30 d-block btn-home">Return to our homepage</a>
+            <p class="mb-md-40">Or repeat this issue to <br>
+            <a href="mailto: help@tourika.com" class="text-orange font-family-nexa-bold">help@tourika.com</a></p>
+          </div>
+        </div>
+      </div>
+    </article>
+		
+  	@@include("footer.html")
+		@@include("foot.html")
+  </body>
+</html>

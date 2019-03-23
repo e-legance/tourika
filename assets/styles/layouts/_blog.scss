@@ -1,0 +1,31 @@
+.post {
+	// border-bottom: 1px solid #F1F2F6;
+
+	&__title {
+		font-size: 32px;
+		line-height: (43/32);
+	}
+
+	p {
+		@extend .font-family-nexa-light;
+		line-height: (22/16);
+	}
+}
+
+.post-row {
+	border-top: 1px solid #F1F2F6;
+
+	.row {
+		margin-left: -30px;
+		margin-right: -30px;
+
+		.col-12 {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+}
+
+.border-right-gray {
+	border-right: 1px solid #F1F2F6;
+}
