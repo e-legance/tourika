@@ -1,22 +1,43 @@
-<section class="search__section pb-35 line-height-1">
+<section class="search__section pb-35 position-relative line-height-1">
 	<div class="container">
-			@@include('search/nav.html')
+		@@include('search/nav.html')
 
-			<div class="search__tabs tab-content px-sm-35 pt-10 pb-25 bg-white rounded-bottom shadow-lg position-relative">
-				<div id="bus" class="tab-pane fade show active" role="tabpanel">
-					<form action="">
-						@@include("search/type-trip.html")
-					</form>
-				</div>
-				<div id="busHotels" class="tab-pane fade" role="tabpanel">
-					Bus & Hotels
-				</div>
-				<div id="organizedTours" class="tab-pane fade" role="tabpanel">
-					Organized Tours
-				</div>
-				<div id="activities" class="tab-pane fade" role="tabpanel">
-					Activities
-				</div>
+		<div class="search__tabs tab-content px-sm-35 pt-10 pb-25 bg-white rounded-bottom shadow-lg position-relative">
+			<div id="bus" class="tab-pane fade show active" role="tabpanel">
+				<form action="">
+					<div class="d-flex align-items-center justify-content-sm-start justify-content-between">
+						<div class="mr-sm-30">
+							@@include("search/type-trip.html")
+						</div>
+						<div>
+							@@include("search/passangers.html")
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col">
+							@@include('search/destination.html')
+						</div>
+
+						<div class="col">
+							
+						</div>
+
+						<div class="col-auto">
+							<button type="submit" class="btn btn--lg btn--orange px-sm-0" disabled="">Search Tickets</button>
+						</div>
+					</div>
+				</form>
 			</div>
+			<div id="busHotels" class="tab-pane fade" role="tabpanel">
+				Bus & Hotels
+			</div>
+			<div id="organizedTours" class="tab-pane fade" role="tabpanel">
+				Organized Tours
+			</div>
+			<div id="activities" class="tab-pane fade" role="tabpanel">
+				Activities
+			</div>
+		</div>
 	</div>
 </section>

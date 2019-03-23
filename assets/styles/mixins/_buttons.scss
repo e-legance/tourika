@@ -5,10 +5,12 @@
 
 @mixin button-variant( 
   $color,
-  $background, $hover-color: darken($color, 15%),
+  $background, 
+  $hover-color: darken($color, 15%),
   $hover-background: darken($background, 7.5%),
   $focus-background: $hover-background,
-  $focus-box-shadow: none
+  $focus-box-shadow: none,
+  $disabled-backround: rgba($background, .5)
 ) {
   color: $color;
   background-color: $background;
@@ -23,6 +25,10 @@
     &:focus {
       background-color: $focus-background;
       box-shadow: $focus-box-shadow;
+    }
+
+    &:disabled {
+      background-color: $disabled-backround;
     }
 }
 

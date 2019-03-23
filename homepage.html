@@ -80,9 +80,9 @@
 		</header>
 	</div>
 </section>
-  	<section class="search__section pb-35 line-height-1">
+  	<section class="search__section pb-35 position-relative line-height-1">
 	<div class="container">
-			<div class="search__nav nav d-sm-inline-flex d-flex shadow-lg" role="tablist">
+		<div class="search__nav nav d-sm-inline-flex d-flex shadow-lg" role="tablist">
 	<button type="button" class="search__nav__btn position-relative active" data-toggle="tab" data-target="#bus" role="tab" aria-selected="true">
 		<span class="mr-5">
 			<svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -116,30 +116,172 @@
 	</button>
 </div>
 
-			<div class="search__tabs tab-content px-sm-35 pt-10 pb-25 bg-white rounded-bottom shadow-lg position-relative">
-				<div id="bus" class="tab-pane fade show active" role="tabpanel">
-					<form action="">
-						<div class="dropdown js-select-menu">
+		<div class="search__tabs tab-content px-sm-35 pt-10 pb-25 bg-white rounded-bottom shadow-lg position-relative">
+			<div id="bus" class="tab-pane fade show active" role="tabpanel">
+				<form action="">
+					<div class="d-flex align-items-center justify-content-sm-start justify-content-between">
+						<div class="mr-sm-30">
+							<div class="dropdown js-select-menu">
   <button type="button" class="dropdown-toggle py-10 font-family-nexa-bold js-select-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">One Way</button>
+  <input type="hidden" value="One Way" class="js-dropdown-input">
+  
   <div class="dropdown-menu">
-    <div class="dropdown__select">
+    <div class="dropdown__select text-nowrap">
       <button type="button" class="dropdown__select__item d-block w-100 p-15 text-left active js-select-item">One Way</button>
       <button type="button" class="dropdown__select__item d-block w-100 p-15 text-left js-select-item">Round-trip</button>
     </div>
   </div>
 </div>
-					</form>
-				</div>
-				<div id="busHotels" class="tab-pane fade" role="tabpanel">
-					Bus & Hotels
-				</div>
-				<div id="organizedTours" class="tab-pane fade" role="tabpanel">
-					Organized Tours
-				</div>
-				<div id="activities" class="tab-pane fade" role="tabpanel">
-					Activities
-				</div>
+						</div>
+						<div>
+							<div class="dropdown js-dropdown-keepopen">
+  <button type="button" class="dropdown-toggle py-10 font-family-nexa-bold js-select-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="js-counter-value">1</span> Passenger</button>
+  <input type="hidden" value="1" class="js-counter-total">
+  
+  <div class="dropdown-menu dropdown-menu--lg">
+    <div class="passengers mt-n10 px-20 font-size-sm">
+  		<div class="row no-gutters py-15 align-items-center">
+  			<div class="col pr-10">
+  				<div class="dropdown__icon d-inline-block mr-10 text-center">
+  					<svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M0.833333 4.61575H12.5C12.9602 4.61575 13.3333 4.98225 13.3333 5.43435C13.3333 5.88645 12.9602 6.25295 12.5 6.25295H9.41667C9.2786 6.25295 9.16667 6.36291 9.16667 6.49854V16.0762C9.16667 16.5283 8.79357 16.8948 8.33333 16.8948C7.8731 16.8948 7.5 16.5283 7.5 16.0762V12.2288C7.5 12.0931 7.38807 11.9832 7.25 11.9832H6.08333C5.94526 11.9832 5.83333 12.0931 5.83333 12.2288V16.0762C5.83333 16.5283 5.46024 16.8948 5 16.8948C4.53976 16.8948 4.16667 16.5283 4.16667 16.0762V6.49854C4.16667 6.36291 4.05474 6.25295 3.91667 6.25295H0.833333C0.373096 6.25295 0 5.88645 0 5.43435C0 4.98225 0.373096 4.61575 0.833333 4.61575ZM6.66667 3.79715C5.74619 3.79715 5 3.06414 5 2.15994C5 1.25574 5.74619 0.522736 6.66667 0.522736C7.58714 0.522736 8.33333 1.25574 8.33333 2.15994C8.33333 3.06414 7.58714 3.79715 6.66667 3.79715Z" fill="#425486"/>
+						</svg>
+  				</div>
+  				<strong>Adult(s)</strong>
+  			</div>
+
+  			<div class="col-auto">
+  				<div class="counter row no-gutters align-items-center js-counter">
+  					<div class="col-auto">
+  						<button type="button" class="counter__btn counter__btn--down position-relative rounded-circle js-counter-down"></button>
+  					</div>
+  					<div class="col px-10">
+  						<input type="number" class="counter__value font-family-nexa-bold text-blue font-size-sm text-center js-counter-value" disabled readonly value="1">
+  					</div>
+  					<div class="col-auto">
+  						<button type="button" class="counter__btn counter__btn--up position-relative rounded-circle js-counter-up"></button>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<div class="dropdown-divider"></div>
+
+  		<div class="row no-gutters py-15 align-items-center">
+  			<div class="col pr-10">
+  				<div class="dropdown__icon d-inline-block mr-10 text-center">
+  					<svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M7.58026 2.37373C7.58026 3.4783 6.7266 4.37373 5.67355 4.37373C4.62051 4.37373 3.76685 3.4783 3.76685 2.37373C3.76685 1.26916 4.62051 0.373734 5.67355 0.373734C6.7266 0.373734 7.58026 1.26916 7.58026 2.37373ZM0.810714 5.28535H10.5393C10.9868 5.28535 11.35 5.6519 11.35 6.10354C11.35 6.55517 10.9868 6.92172 10.5393 6.92172H8.10714V13.4672C8.10714 13.9188 7.74394 14.2854 7.29643 14.2854C6.84891 14.2854 6.48571 13.9188 6.48571 13.4672V11.0126H4.86429V13.4672C4.86429 13.9188 4.50109 14.2854 4.05357 14.2854C3.60606 14.2854 3.24286 13.9188 3.24286 13.4672V6.92172H0.810714C0.3632 6.92172 0 6.55517 0 6.10354C0 5.6519 0.3632 5.28535 0.810714 5.28535Z" fill="#425486"/>
+						</svg>
+  				</div>
+  				<strong>Children(s)</strong>
+  			</div>
+
+  			<div class="col-auto">
+  				<div class="counter row no-gutters align-items-center js-counter">
+  					<div class="col-auto">
+  						<button type="button" class="counter__btn counter__btn--down position-relative rounded-circle js-counter-down" disabled></button>
+  					</div>
+  					<div class="col px-10">
+  						<input type="number" class="counter__value font-family-nexa-bold text-blue font-size-sm text-center js-counter-value" disabled readonly value="0">
+  					</div>
+  					<div class="col-auto">
+  						<button type="button" class="counter__btn counter__btn--up position-relative rounded-circle js-counter-up"></button>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<div class="dropdown-divider"></div>
+
+  		<div class="row no-gutters py-15 align-items-center">
+  			<div class="col pr-10">
+  				<div class="dropdown__icon d-inline-block mr-10 text-center">
+  					<svg width="7" height="19" viewBox="0 0 7 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1.59707 2.59253C1.56546 2.73168 1.54724 2.87581 1.54724 3.02425C1.54724 4.11613 2.44721 4.99951 3.55805 4.99951C4.66727 4.99951 5.56632 4.11636 5.56632 3.02425C5.56632 2.87581 5.54833 2.73168 5.51649 2.59253C5.79379 2.43299 5.95829 2.23854 5.95829 2.02846C5.95829 1.84376 5.83002 1.67153 5.61108 1.52377C5.51418 0.825085 4.63197 0.277786 3.5569 0.277786C2.48159 0.277786 1.59938 0.825085 1.50248 1.52377C1.28354 1.67107 1.15527 1.84354 1.15527 2.02846C1.15527 2.23877 1.31976 2.43299 1.59707 2.59253ZM5.72306 5.3992H5.53296H2.98253H1.46658H1.27671C0.572144 5.3992 0 5.961 0 6.65425V11.7091C0 12.0552 0.286303 12.338 0.639048 12.338C0.990179 12.338 1.27671 12.0552 1.27671 11.7091V7.07668L1.27648 7.07373C1.27648 6.96586 1.36092 6.8802 1.46681 6.86909V11.6631L1.46658 17.1468C1.46658 17.6316 1.86431 18.0202 2.35571 18.0202C2.84896 18.0202 3.24461 17.6316 3.24461 17.1468V13.4031C3.24461 13.2651 3.35973 13.1534 3.49977 13.1534C3.63981 13.1534 3.75447 13.2654 3.75447 13.4031H3.75585V17.1468C3.75585 17.6316 4.15105 18.0202 4.64498 18.0202C5.13569 18.0202 5.53342 17.6316 5.53342 17.1468V11.6631L5.53296 6.86909C5.63931 6.88042 5.72352 6.96631 5.72352 7.07373L5.72306 7.07668V11.7091C5.72306 12.0547 6.00959 12.3376 6.36072 12.3376C6.71347 12.3376 7 12.0547 7 11.7091V6.65425C6.99931 5.961 6.42717 5.3992 5.72306 5.3992ZM0.670093 12.4214C0.828125 12.4214 0.956395 12.5472 0.956395 12.7026L0.965162 12.7029V17.7272H0.960779C0.960779 17.8825 0.832507 18.0085 0.674475 18.0085C0.516443 18.0085 0.388173 17.8827 0.388173 17.7272H0.383789V12.7026C0.383789 12.5474 0.512061 12.4214 0.670093 12.4214Z" fill="#425486"/>
+						</svg>
+  				</div>
+  				<strong>Senior(s)</strong>
+  			</div>
+
+  			<div class="col-auto">
+  				<div class="counter row no-gutters align-items-center js-counter">
+  					<div class="col-auto">
+  						<button type="button" class="counter__btn counter__btn--down position-relative rounded-circle js-counter-down" disabled></button>
+  					</div>
+  					<div class="col px-10">
+  						<input type="number" class="counter__value font-family-nexa-bold text-blue font-size-sm text-center js-counter-value" disabled readonly value="0">
+  					</div>
+  					<div class="col-auto">
+  						<button type="button" class="counter__btn counter__btn--up position-relative rounded-circle js-counter-up"></button>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+
+    	<div class="passengers__info mt-15">
+				<h4 class="mb-5 font-size-sm">Adults</h4>
+				<p>Adults are 11 years or older.</p>
+
+				<h4 class="mb-5 font-size-sm">Childrens</h4>
+				<p>A child's age must be over 2 years and under 11 years before the date of travel.</p>
+
+				<h4 class="mb-5 font-size-sm">Seniors</h4>
+				<p>Seniors are 62 years or older.</p>
+    	</div>
+    </div>
+  </div>
+</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col">
+							<div class="dropdown">
+	<div class="form__group position-relative">
+	  <button type="button" class="form__control form__control--lg form__control--icon mb-15 text-left form__control--invalid" type="button" data-toggle="dropdown" aria-haspopup="true" data-reference="parent" aria-expanded="false">Where from?</button>
+	  <div class="form__icon form__icon--lg">
+	  	<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 15C11.6421 15 15 11.6421 15 7.5C15 3.35786 11.6421 0 7.5 0C3.35786 0 0 3.35786 0 7.5C0 11.6421 3.35786 15 7.5 15ZM7.50003 10.9091C9.38282 10.9091 10.9091 9.38282 10.9091 7.50003C10.9091 5.61724 9.38282 4.09094 7.50003 4.09094C5.61724 4.09094 4.09094 5.61724 4.09094 7.50003C4.09094 9.38282 5.61724 10.9091 7.50003 10.9091Z" fill="#A1A9C3"/>
+			</svg>
+	  </div>
+	</div>
+	
+	<div class="form__group position-relative">
+	  <input type="text" class="form__control form__control--icon form__control--invalid" placeholder="Where from?" value="sadasd">
+	  <div class="form__icon">
+	  	<svg width="11" height="15" viewBox="0 0 11 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M9.08116 1.53871C8.07644 0.546506 6.74051 0 5.3197 0C3.89861 0 2.56296 0.546506 1.55824 1.53871C-0.301125 3.37464 -0.532194 6.82899 1.05783 8.92187L5.3197 15L9.5752 8.93036C11.1716 6.82899 10.9405 3.37464 9.08116 1.53871ZM5.3688 7.12238C4.29834 7.12238 3.42705 6.26194 3.42705 5.20481C3.42705 4.14769 4.29834 3.28725 5.3688 3.28725C6.43926 3.28725 7.31056 4.14769 7.31056 5.20481C7.31056 6.26194 6.43926 7.12238 5.3688 7.12238Z" fill="#A1A9C3"/>
+			</svg>
+	  </div>
+	</div>
+  <div class="dropdown-menu">
+    <div class="dropdown__select text-nowrap">
+      <button type="button" class="dropdown__select__item d-block w-100 p-15 text-left active js-select-item">One Way</button>
+      <button type="button" class="dropdown__select__item d-block w-100 p-15 text-left js-select-item">Round-trip</button>
+    </div>
+  </div>
+</div>
+						</div>
+
+						<div class="col">
+							
+						</div>
+
+						<div class="col-auto">
+							<button type="submit" class="btn btn--lg btn--orange px-sm-0" disabled="">Search Tickets</button>
+						</div>
+					</div>
+				</form>
 			</div>
+			<div id="busHotels" class="tab-pane fade" role="tabpanel">
+				Bus & Hotels
+			</div>
+			<div id="organizedTours" class="tab-pane fade" role="tabpanel">
+				Organized Tours
+			</div>
+			<div id="activities" class="tab-pane fade" role="tabpanel">
+				Activities
+			</div>
+		</div>
 	</div>
 </section>
   	

@@ -2,7 +2,8 @@
 
 		&__section {
 			background-color: #F1F2F6;
-			
+			z-index: 2;
+
 				@include media-breakpoint-up(sm) {
 					margin-bottom: -64px;
 
@@ -73,6 +74,10 @@
 
 				@include media-breakpoint-up(sm) {
 					border-top-right-radius: $border-radius;
+
+						.btn--orange {
+							width: 150px;
+						}
 				}
 		}
 }

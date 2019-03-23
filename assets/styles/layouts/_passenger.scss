@@ -1,0 +1,9 @@
+.passengers {
+
+		&__info {
+
+				p {
+					@extend .mb-15;
+				}
+		}
+}

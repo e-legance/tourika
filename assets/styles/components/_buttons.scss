@@ -84,6 +84,7 @@
   $hover-background: map-get($value, hover-background);
   $focus-background: map-get($value, focus-background);
   $focus-box-shadow: map-get($value, focus-box-shadow);
+  $disabled-background: map-get($value, disabled-background);
 
     .btn--#{$color} {
       @include button-variant(
@@ -92,7 +93,8 @@
         $hover-color,
         $hover-background,
         $focus-background,
-        $focus-box-shadow
+        $focus-box-shadow,
+        $disabled-background
       );
     }
 }

@@ -1,5 +1,12 @@
 .dropdown {
 
+		&-menu {
+			
+				&--lg {
+					min-width: 328px;
+				}
+		}
+
 		&__select {
 
 				&__item {
@@ -20,15 +27,25 @@
 						}
 				}
 		}
+
+		&__icon {
+			width: 20px;
+		}
 }
 
 .dropdown-toggle {
-
+		
 		&:after {
 			content: '';
 			@extend .d-inline-block;
 			@include size(10px, 6px);
 			@extend .ml-5;
 			background: $dropdown-caret-icon;
+		}
+
+		@at-root input#{&} {
+			width: auto;
+
+				
 		}
 }
