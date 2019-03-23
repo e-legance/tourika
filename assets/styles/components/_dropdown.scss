@@ -1,0 +1,34 @@
+.dropdown {
+
+		&__select {
+
+				&__item {
+
+						&:before {
+							content: '';
+							@extend .d-inline-block;
+							@include size(16px, 11px);
+							margin-right: 8px;
+						}
+
+						&.active {
+							@extend .font-family-nexa-heavy;
+
+								&:before {
+									background: $dropdown-select-indicator-icon-selected;
+								}
+						}
+				}
+		}
+}
+
+.dropdown-toggle {
+
+		&:after {
+			content: '';
+			@extend .d-inline-block;
+			@include size(10px, 6px);
+			@extend .ml-5;
+			background: $dropdown-caret-icon;
+		}
+}
