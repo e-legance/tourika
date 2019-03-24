@@ -18,7 +18,8 @@ $colors: map-remove(
 
 // Add Colors
 $colors: map-merge((
-  "black": $black
+  "black": $black,
+  "gray-400": $gray-400
 ), $colors);
 
 // Remove Theme Colors

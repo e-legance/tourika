@@ -1,9 +1,11 @@
 .dropdown {
 
 		&-menu {
-			
+
 				&--lg {
-					min-width: 328px;
+					overflow: hidden;
+					width: 328px;
+					max-height: 396px;
 				}
 		}
 
@@ -28,6 +30,15 @@
 				}
 		}
 
+		&__item {
+			height: 57px;
+
+				&:hover,
+				&.active {
+					background-color: #F7FAFD;
+				}
+		}
+
 		&__icon {
 			width: 20px;
 		}
@@ -41,11 +52,5 @@
 			@include size(10px, 6px);
 			@extend .ml-5;
 			background: $dropdown-caret-icon;
-		}
-
-		@at-root input#{&} {
-			width: auto;
-
-				
 		}
 }

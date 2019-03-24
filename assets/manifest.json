@@ -10,7 +10,10 @@
       "files": [
         "../node_modules/popper.js/dist/umd/popper.js",
         "../node_modules/bootstrap/dist/js/bootstrap.js",
-        "../node_modules/owl.carousel/dist/owl.carousel.js"
+        "../node_modules/owl.carousel/dist/owl.carousel.js",
+        "../node_modules/simplebar/dist/simplebar.js",
+        "scripts/jquery.plugin.js",
+        "scripts/jquery.datepick.js"
       ]
     },
     "jquery.js": {
