@@ -77,6 +77,8 @@ $(selector).datepick({minDate: 0, maxDate: '+1m +1w'}) */
 			multiClass: 'datepick-multi',
 			defaultClass: '',
 			selectedClass: 'datepick-selected',
+			fromRangeSelectClass: 'datapick-from-range-selected',
+			toRangeSelectClass: 'datapick-to-range-selected',
 			highlightedClass: 'datepick-highlight',
 			todayClass: 'datepick-today',
 			otherMonthClass: 'datepick-other-month',
@@ -2203,9 +2205,13 @@ $(selector).datepick('setDate', [date1, date2, date3]) */
 				var days = '';
 				for (var day = 0; day < 7; day++) {
 					var selected = false;
+					var fromRangeSelected = false;
+					var toRangeSelected = false;
 					if (inst.options.rangeSelect && inst.selectedDates.length > 0) {
 						selected = (drawDate.getTime() >= inst.selectedDates[0] &&
 							drawDate.getTime() <= inst.selectedDates[1]);
+						fromRangeSelected = drawDate.getTime() === inst.selectedDates[0].getTime();
+						toRangeSelected = drawDate.getTime() === inst.selectedDates[1].getTime();
 					}
 					else {
 						for (var i = 0; i < inst.selectedDates.length; i++) {
@@ -2219,24 +2225,23 @@ $(selector).datepick('setDate', [date1, date2, date3]) */
 						inst.options.onDate.apply(elem, [drawDate, drawDate.getMonth() + 1 === month]));
 					var selectable = (selectOtherMonths || drawDate.getMonth() + 1 === month) &&
 						this._isSelectable(elem, drawDate, dateInfo.selectable, minDate, maxDate);
-					days += this._prepare(renderer.day, inst).replace(/\{day\}/g,
-						(selectable ? '<a href="javascript:void(0)"' : '<span') +
-						' class="dp' + ts + ' ' + (dateInfo.dateClass || '') +
+					days += '<td class="' + (dateInfo.dateClass || '') +
 						(selected && (selectOtherMonths || drawDate.getMonth() + 1 === month) ?
 						' ' + renderer.selectedClass : '') +
-						(selectable ? ' ' + renderer.defaultClass : '') +
+						(selectable ? renderer.defaultClass : '') +
 						((drawDate.getDay() || 7) < 6 ? '' : ' ' + renderer.weekendClass) +
 						(drawDate.getMonth() + 1 === month ? '' : ' ' + renderer.otherMonthClass) +
 						(drawDate.getTime() === today.getTime() && (drawDate.getMonth() + 1) === month ?
 						' ' + renderer.todayClass : '') +
 						(drawDate.getTime() === inst.drawDate.getTime() && (drawDate.getMonth() + 1) === month ?
-						' ' + renderer.highlightedClass : '') + '"' +
+						' ' + renderer.highlightedClass : '') + ( fromRangeSelected && selected && (selectOtherMonths || drawDate.getMonth() + 1 === month) ? ' ' + renderer.fromRangeSelectClass : '' ) + ( toRangeSelected && selected && (selectOtherMonths || drawDate.getMonth() + 1 === month) ? ' ' + renderer.toRangeSelectClass : '' ) +'">' + this._prepare(renderer.day, inst).replace(/\{day\}/g,
+						(selectable ? '<a href="javascript:void(0)"' : '<span') + ' class="dp' + ts + '" ' +
 						(dateInfo.title || (inst.options.dayStatus && selectable) ? ' title="' +
 						(dateInfo.title || plugin.formatDate(
 						inst.options.dayStatus, drawDate, inst.getConfig())) + '"' : '') + '>' +
 						(inst.options.showOtherMonths || (drawDate.getMonth() + 1) === month ?
 						dateInfo.content || drawDate.getDate() : '&#160;') +
-						(selectable ? '</a>' : '</span>'));
+						(selectable ? '</a>' : '</span>')) + '</td>';
 					plugin.add(drawDate, 1, 'd');
 					ts = drawDate.getTime();
 				}

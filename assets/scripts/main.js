@@ -89,7 +89,7 @@ jQuery(document).ready(function($) {
 
 	counter();
 
-	$('#defaultPopup,#defaultInline').datepick({
+	$('#defaultPopup').datepick({
 		rangeSeparator: '-',
 		rangeSelect: true,
 		monthsToShow: 2,
@@ -103,19 +103,10 @@ jQuery(document).ready(function($) {
 		useMouseWheel: false,
 		changeMonth: false,
     commandsAsDateFormat: true,
-   //  renderer: {
-   //  	picker: '<div class="datepick">' +
-			// '<div class="datepick-nav">{link:prev}{link:next}</div>{months}' +
-			// '{popup:start}<div class="datepick-ctrl">{link:clear}{link:close}</div>{popup:end}' +
-			// '<div class="datepick-clear-fix"></div></div>',
-			// month: '<div class="datepick-month"><div class="datepick-month-header">{monthHeader}</div>' +
-			// '<div><div>{weekHeader}</div><div>{weeks}</div></div></div>',
-			// weekHeader: '<div>{days}</div>',
-			// dayHeader: '<div>{day}</div>',
-			// week: '<div>{days}</div>',
-			// day: '<div>{day}</div>',
-			// daySelector: 'div'
-   //  }
+    renderer: {
+			day: '{day}',
+			daySelector: 'td',
+    }
 	});
 
 });
