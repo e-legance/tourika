@@ -4,6 +4,7 @@
 
 .btn {
   display: inline-block;
+  padding-top: 3px;
   font-family: $font-family-nexa-bold;
   font-weight: $btn-font-weight;
   text-align: center;
@@ -28,6 +29,7 @@
       font-family: $font-family-nexa-regular;
       @include border-radius($btn-border-radius-sm)
       @include button-size($btn-height-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height);
+      padding-top: 3px;
     }
 
     // &--md {
@@ -39,6 +41,7 @@
       font-family: $font-family-nexa-regular;
       @include border-radius($btn-border-radius-lg)
       @include button-size($btn-height-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height);
+      padding-top: 3px;
     }
 
     // &__state {

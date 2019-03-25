@@ -85,6 +85,13 @@ $btn-colors: (
 );
 
 $btn-outline-colors: (
+  "blue": (
+    color: $blue-sub,
+    border: $blue-sub,
+    hover-color: $white,
+    hover-background: $blue-sub,
+    hover-border: $blue-sub
+  )
 );
 
 // Remove Spacers ex. 5: 5px
