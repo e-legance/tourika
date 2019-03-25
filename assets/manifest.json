@@ -13,7 +13,7 @@
         "../node_modules/owl.carousel/dist/owl.carousel.js",
         "../node_modules/simplebar/dist/simplebar.js",
         "scripts/jquery.plugin.js",
-        "scripts/jquery.datepick.js"
+        "scripts/jquery.datepick-edit.js"
       ]
     },
     "jquery.js": {
