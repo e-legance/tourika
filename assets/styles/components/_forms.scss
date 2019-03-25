@@ -1,0 +1,102 @@
+
+.form {
+	
+		&__control {
+		  display: block;
+		  width: 100%;
+		  height: $input-height;
+		  padding: $input-padding-y $input-padding-x 0;
+		  font-family: $font-family-nexa-bold;
+		  @include font-size($input-font-size);
+		  font-weight: $input-font-weight;
+		  line-height: $input-line-height;
+		  color: $input-color;
+		  background-color: $input-bg;
+		  background-clip: padding-box;
+		  border: $input-border-width solid $input-border-color;
+		  @include border-radius($input-border-radius, 0);
+
+		  // @include box-shadow($input-box-shadow);
+		  @include transition($input-transition);
+
+		  &::-ms-expand {
+		    background-color: transparent;
+		    border: 0;
+		  }
+
+		  ~ .form__icon path {
+				fill: $input-color;
+			}
+
+		  &.placeholder {
+
+		    	~ .form__icon path {
+  					fill: $input-placeholder-color;
+  				}
+		  }
+
+		  &:hover,
+		  &:focus {
+
+		  		&:not(:disabled):not(.disabled) {
+		  			color: $input-color;
+		  			border-color: $input-focus-border-color;
+
+		  				~ .form__icon path {
+		  					fill: $input-color;
+		  				}
+		  		}
+		  }
+
+		  // Placeholder
+		  &.placeholder,
+		  &::placeholder {
+		    color: $input-placeholder-color;
+		    opacity: 1;
+		  }
+
+		  // Disabled and read-only inputs
+		  &.disabled,
+		  &:disabled,
+		  &[readonly] {
+		    background-color: $input-disabled-bg;
+		    opacity: 1;
+		  }
+
+		  &--invalid {
+		  	color: $form-feedback-invalid-color;
+		  	border-color: $form-feedback-invalid-color;
+
+		    	~ .form__icon path {
+  					fill: $form-feedback-invalid-color;
+  				}
+		  }
+
+		  &--lg {
+		  	height: $input-height-lg;
+			  padding: $input-padding-y-lg $input-padding-x-lg 0;
+			  @include font-size($input-font-size-lg);
+			  line-height: $input-line-height-lg;
+			  @include border-radius($input-border-radius-lg);
+		  }
+
+		  &--icon {
+		  	padding-left: 38px;
+		  }
+		}
+
+		&__icon {
+	  	@extend .position-absolute;
+	  	@extend .d-flex;
+	  	@extend .align-items-center;
+	  	@extend .justify-content-center;
+	  	top: 0;
+	  	left: 0;
+	  	width: 38px;
+		  height: $input-height;
+
+		  	&--lg {
+				  height: $input-height-lg;
+		  	}
+		}
+}

@@ -1,0 +1,139 @@
+.datepick {
+	@extend .py-20;
+	@extend .px-30;
+	line-height: 1;
+	max-width: 515px;
+	border: $dropdown-border-width solid $dropdown-border-color;
+	background-color: $dropdown-bg;
+  @include border-radius($dropdown-border-radius);
+  @include box-shadow($dropdown-box-shadow);
+}
+.datepick-popup {
+	z-index: $zindex-dropdown;
+}
+.datepick-nav {
+	@extend .position-relative;
+}
+// .datepick a.datepick-disabled {
+// 	color: #888;
+// 	cursor: auto;
+// }
+.datepick-cmd {
+	@extend .position-absolute;
+	top: 0;
+	@include size(36px);
+	z-index: 2;
+
+		&:not(.datepick-disabled) {
+
+				&:before,
+				&:after {
+					content: '';
+					@include element-center;
+					@include size(15px, 2px);
+					border-radius: 1px;
+					background-color: $blue;
+				}
+		}
+
+		&-prev {
+			left: 0;
+
+				&:before {
+					transform: translate(0, 5px) rotate(45deg);
+				}
+
+				&:after {
+					transform: translate(0, -5px) rotate(-45deg);
+				}
+		}
+
+		&-next {
+			right: 0;
+
+				&:before {
+					transform: translate(0, -5px) rotate(45deg);
+				}
+
+				&:after {
+					transform: translate(0, 5px) rotate(-45deg);
+				}
+		}
+}
+.datepick-ctrl,
+.datepick-cmd-current, 
+.datepick-cmd-today,
+.datepick-clear-fix {
+	@extend .d-none;
+}
+.datepick-month-row {
+	@extend .row;
+	@extend .mx-0;
+}
+.datepick-month {
+	@extend .col-sm-6;
+	@extend .col-12;
+	@extend .px-0;
+}
+.datepick-month-header {
+	@extend .mb-10;
+	@extend .py-10;
+	color: $blue;
+	@extend .font-family-nexa-heavy;
+	@extend .text-center;
+}
+.datepick-month table {
+	@extend .w-100;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: none;
+}
+.datepick-month th,
+.datepick-month td {
+	@extend .p-0;
+	@extend .m-0;
+	border: none;
+	font-weight: $font-weight-normal;
+	@extend .text-center;
+}
+.datepick-month th {
+	color: $gray-400;
+	font-size: 11px;
+	@extend .text-uppercase;
+}
+.datepick-dow-0,
+.datepick-dow-6 {
+	@extend .font-family-nexa-heavy;
+}
+.datepick-month td {
+	font-size: 13px;
+}
+.datepick-month td.datepick-week {
+	@extend .font-family-nexa-heavy;
+}
+.datepick-month td a {
+	@extend .d-block;
+	@extend .py-10;
+	min-width: 33px;
+	width: 100%;
+	color: $blue;
+	text-decoration: none;
+}
+.datepick-month td span {	
+	@extend .d-block;
+	@extend .py-10;
+	width: 30px;
+	color: #ccc;
+}
+.datepick-month td .datepick-weekend {
+	@extend .font-family-nexa-heavy;
+}
+.datepick-month td .datepick-selected {
+	// color: $white;
+	background-color: #E8EFF7;
+}
+.datepick-month td .datepick-highlight {
+	color: $white;
+	background-color: $blue;
+	@extend .rounded-circle;
+}

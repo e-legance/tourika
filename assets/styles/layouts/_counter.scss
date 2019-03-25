@@ -1,0 +1,64 @@
+.counter {
+
+		&__btn {
+			@include size(32px)
+
+				&:before,
+				&:after {
+					@include element-center;
+					@include size(16px, 2px);
+				}
+
+				&:after {
+					transform: rotate(90deg);
+				}
+
+				&:hover:not(:disabled) {
+
+						&:before,
+						&:after {
+							background-color: $white;
+						}
+				}
+
+				&:disabled {
+					border-color: $gray-100;
+
+						&:before,
+						&:after {
+							background-color: $gray-100;
+						}
+				}
+
+				&--down {
+					border: 2px solid $blue;
+
+						&:hover:not(:disabled) {
+							background-color: $blue;
+						}
+
+						&:before {
+							content: '';
+							background-color: $blue;
+						}
+				}
+
+				&--up {
+					border: 2px solid $blue-sub;
+
+						&:hover:not(:disabled) {
+							background-color: $blue-sub;
+						}
+
+						&:before,
+						&:after {
+							content: '';
+							background-color: $blue-sub;
+						}
+				}
+		}
+
+		&__value {
+			width: 40px;
+		}
+}

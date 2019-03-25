@@ -18,7 +18,8 @@ $colors: map-remove(
 
 // Add Colors
 $colors: map-merge((
-  "black": $black
+  "black": $black,
+  "gray-400": $gray-400
 ), $colors);
 
 // Remove Theme Colors
@@ -80,7 +81,8 @@ $btn-colors: (
     hover-color: $white,
     hover-background: #EC8F8C,
     focus-background: $orange,
-    focus-box-shadow: 0 0 10px $orange
+    focus-box-shadow: 0 0 10px $orange,
+    disabled-background: $orange-disabled
   ),
 );
 
