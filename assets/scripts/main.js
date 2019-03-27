@@ -1,4 +1,8 @@
 jQuery(document).ready(function($) {
+	$('.js-btn-menu').click(function() {
+		$('body').toggleClass('menu--opened');
+	});
+
 	$('.js-team-carousel').owlCarousel({
 		loop: true,
 		nav: true,
@@ -100,7 +104,7 @@ jQuery(document).ready(function($) {
         return false;
       }
     });
-	};
+	}
 
 	counter();
 	anchorSmoothScroll('.js-anchor');

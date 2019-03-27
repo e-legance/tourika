@@ -74,7 +74,13 @@
           background-color: #EC8F8C;
         }
     }
+    
+    &__menu {
 
+        @include media-breakpoint-down(xs) {
+          @include button-menu(28px, 100%, 3px, 7px, $gray-900, $gray-900, 0);
+        }
+    }
 }
 
 //

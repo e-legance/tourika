@@ -2,8 +2,24 @@
 	font-size: 11px;
 
 		&__content {
-			border-top: 1px solid #F1F2F6;
-			border-bottom: 1px solid #F1F2F6;
+
+				@include media-breakpoint-up(sm) {
+					border-top: 1px solid #F1F2F6;
+					border-bottom: 1px solid #F1F2F6;
+				}
+
+				@include media-breakpoint-down(xs) {
+					background-color: #162B64;
+					color: $white;
+					font-size: 14px;
+
+						.col-12 {
+
+								&:not(:last-child) {
+									box-shadow: 0 1px 0 #42527F;
+								}
+						}
+				}
 		}
 
 		&__menu {
@@ -12,6 +28,43 @@
 
 						@include media-breakpoint-up(sm) {
 							color: $gray-900;
+							font-family: $font-family-nexa-bold;
+						}
+
+						@include media-breakpoint-down(xs) {
+							min-height: 58px;
+							font-family: $font-family-nexa-heavy;
+
+								&:before,
+								&:after {
+									content: '';
+									@include element-center(tag, true, true, true, false);
+									@include size(10px, 2px);
+									border-radius: 2px;
+									background-color: $white;
+								}
+
+								&[aria-expanded="false"] {
+
+										&:before {
+											transform: translate(-6px, 0) rotate(45deg);
+										}
+
+										&:after {
+											transform: translate(0, 0) rotate(-45deg);
+										}
+								}
+
+								&[aria-expanded="true"] {
+
+										&:before {
+											transform: translate(0, 0) rotate(45deg);
+										}
+
+										&:after {
+											transform: translate(-6px, 0) rotate(-45deg);
+										}
+								}
 						}
 				}
 
@@ -20,14 +73,23 @@
 						li {
 
 								&:not(:last-child) {
-									margin-bottom: 15px;
+
+										@include media-breakpoint-up(sm) {
+											margin-bottom: 15px;
+										}
+
+										@include media-breakpoint-down(sm) {
+											margin-bottom: 20px;
+										}
 								}
 						}
 				}
 		}
 
 		&__main {
-			border-bottom: 1px solid #F1F2F6;
+				@include media-breakpoint-up(sm) {
+					border-bottom: 1px solid #F1F2F6;
+				}
 
 				&__menu {
 					
@@ -38,6 +100,20 @@
 										&:not(:last-child) {
 											margin-right: 40px;
 										}
+								}
+
+								@include media-breakpoint-down(xs) {
+									flex-basis: 0;
+					        flex-grow: 1;
+					        max-width: 100%;
+
+					        	&:not(:first-child):not(:last-child) {
+					        		text-align: center;
+					        	}
+
+					        	&:last-child {
+					        		text-align: right;
+					        	}
 								}
 						}
 				}

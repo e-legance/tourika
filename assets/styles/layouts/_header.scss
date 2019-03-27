@@ -1,19 +1,143 @@
 .header {
 	font-size: 15px;
 
+		@include media-breakpoint-down(xs) {
+			padding: 14px 0;
+			box-shadow: $box-shadow;
+		}
+
+		svg path {
+			fill: $body-color;
+		}
+
 		&--transparent {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			z-index: 5;
+
+				@include media-breakpoint-up(sm) {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					z-index: 5;
+					color: $white;
+
+						svg path {
+							fill: $white;
+						}
+				}
+		}
+
+		&:not(.header--transparent) {
+
+				@include media-breakpoint-up(sm) {
+					border-bottom: 1px solid rgba($gray-900, .1);
+				}
 		}
 
 		&__top-line {
-			font-size: 12px;
 
-				.header--transparent & {
-					background-color: rgba(#0B0B0B, .2);
-				} 
+				@include media-breakpoint-up(sm) {
+					font-size: 12px;
+
+						.header--transparent & {
+							background-color: rgba(#0B0B0B, .2);
+						}
+
+						.header:not(.header--transparent) & {
+							border-bottom: 1px solid rgba($gray-900, .1);
+						}
+				}
+
+				@include media-breakpoint-down(xs) {
+					position: fixed;
+					top: 56px;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background-color: $white;
+					z-index: 5;
+					display: none;
+
+						.menu--opened & {
+							display: block;
+						}
+
+						&__title {
+							color: $gray-400;
+							font-size: 12px;
+							background-color: $gray-100;
+						}
+
+						&__item {
+							line-height: 30px;
+
+								&:before,
+								&:after {
+									content: '';
+									@include element-center(tag, true, true, true, false);
+									@include size(12px, 2px);
+									border-radius: 2px;
+									background-color: $blue;
+								}
+
+								&:before {
+									transform: translate(0, -4px) rotate(45deg);
+								}
+
+								&:after {
+									transform: translate(0, 4px) rotate(-45deg);
+								}
+
+								&:not(:last-child) {
+									margin-bottom: 12px;
+								}
+						}
+
+						&__icon {
+							@include size(40px, 30px);
+							border-radius: 4px;
+							border: 1px solid $blue;
+
+								path {
+									color: $blue;
+								}
+						}
+				}
+				
+		}
+
+		&__logo {
+
+				@include media-breakpoint-down(xs) {
+					max-width: 100px;
+				}
+		}
+
+		&__live-chat {
+				
+				@include media-breakpoint-down(xs) {
+
+						&:not(:hover) {
+							color: $orange;
+							border: 1px solid $orange;
+							background-color: transparent;
+						}
+
+						.menu--opened & {
+							opacity: 0;
+						}
+				}
+		}
+}
+
+
+.menu--opened {
+
+		@include media-breakpoint-down(xs) {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			overflow: hidden;
 		}
 }
