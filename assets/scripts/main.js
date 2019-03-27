@@ -32,62 +32,78 @@ jQuery(document).ready(function($) {
 	});
 
 	function counter () {
-		if( !$('.js-counter').length ) {
-			throw ".js-counter selector is not found!";
-		}
+		if( $('.js-counter').length ) {
 
-		if( !$('.js-counter-total').length ) {
-			throw ".js-counter-total selector is not found!";
-		}
-
-		var inputTotal = $('.js-counter-total');
-		var total = parseInt(inputTotal.val());
-		
-		$('.js-counter').each(function(i, coutner) {
-			if ( !$(coutner).find('.js-counter-down').length  ) {
-				throw ".js-counter-down selector is not found!";
+			if( !$('.js-counter-total').length ) {
+				throw ".js-counter-total selector is not found!";
 			}
 
-			if ( !$(coutner).find('.js-counter-up').length  ) {
-				throw ".js-counter-up selector is not found!";
-			}
-
-			if ( !$(coutner).find('.js-counter-value').length  ) {
-				throw ".js-counter-value selector is not found!";
-			}
-
-			var btnDown = $(coutner).find('.js-counter-down');
-			var btnUp = $(coutner).find('.js-counter-up');
-			var value = $(coutner).find('.js-counter-value');
-
-			btnDown.click(function() {
-				total--;
-				value.val(parseInt(value.val()) - 1);
-				$('.js-counter-value').html(total);
-				inputTotal.val(total);
-				console.log(inputTotal.val());
-				if ( parseInt( value.val() ) < 1 ) {
-					value.val( 0 );
-					$(this).prop('disabled', true);
+			var inputTotal = $('.js-counter-total');
+			var total = parseInt(inputTotal.val());
+			
+			$('.js-counter').each(function(i, coutner) {
+				if ( !$(coutner).find('.js-counter-down').length  ) {
+					throw ".js-counter-down selector is not found!";
 				}
-			});
 
-			btnUp.click(function() {
-				total++;
-				value.val(parseInt(value.val()) + 1);
-				$('.js-counter-value').html(total);
-				inputTotal.val(total);
-				console.log(inputTotal.val());
-
-				if ( parseInt(value.val()) > 0 ) {
-					btnDown.prop('disabled', false);
+				if ( !$(coutner).find('.js-counter-up').length  ) {
+					throw ".js-counter-up selector is not found!";
 				}
-			});
-		});
 
+				if ( !$(coutner).find('.js-counter-value').length  ) {
+					throw ".js-counter-value selector is not found!";
+				}
+
+				var btnDown = $(coutner).find('.js-counter-down');
+				var btnUp = $(coutner).find('.js-counter-up');
+				var value = $(coutner).find('.js-counter-value');
+
+				btnDown.click(function() {
+					total--;
+					value.val(parseInt(value.val()) - 1);
+					$('.js-counter-value').html(total);
+					inputTotal.val(total);
+					console.log(inputTotal.val());
+					if ( parseInt( value.val() ) < 1 ) {
+						value.val( 0 );
+						$(this).prop('disabled', true);
+					}
+				});
+
+				btnUp.click(function() {
+					total++;
+					value.val(parseInt(value.val()) + 1);
+					$('.js-counter-value').html(total);
+					inputTotal.val(total);
+					console.log(inputTotal.val());
+
+					if ( parseInt(value.val()) > 0 ) {
+						btnDown.prop('disabled', false);
+					}
+				});
+			});
+		}
 	}
 
+	function anchorSmoothScroll ( selector, offset_top ) {
+
+		$(selector + '[href^="#"]:not([href="#"])').click(function () {
+
+      var offset_top = ( offset_top ) ? offset_top : 0;
+      var target = $(this.hash);
+      
+      if ( target.length ) {
+        $('html, body').animate({
+          scrollTop: target.offset().top - offset_top
+        }, 600);
+
+        return false;
+      }
+    });
+	};
+
 	counter();
+	anchorSmoothScroll('.js-anchor');
 
 	$('#defaultPopup').datepick({
 		rangeSeparator: '-',
