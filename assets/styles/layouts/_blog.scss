@@ -28,6 +28,19 @@
 	}
 }
 
+.alm-btn-wrap {
+	position: relative;
+	z-index: 2;
+	text-align: center;
+	margin-top: 1px;
+	font-size: 0;
+	box-shadow: 0 -1px 0 $body-bg;
+	
+	.alm-load-more-btn.done {
+		display: none;
+	}
+}
+
 //Single Blog
 
 .post_single {
