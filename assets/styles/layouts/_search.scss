@@ -79,5 +79,16 @@
 							width: 150px;
 						}
 				}
+
+				&__info {
+					font-size: 12px;
+				}
+		}
+
+		&__switching {
+
+				&.form__icon path {
+					fill: $blue !important;
+				}
 		}
 }

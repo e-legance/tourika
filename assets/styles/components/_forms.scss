@@ -11,6 +11,7 @@
 		  font-weight: $input-font-weight;
 		  line-height: $input-line-height;
 		  color: $input-color;
+		  text-align: left;
 		  background-color: $input-bg;
 		  background-clip: padding-box;
 		  border: $input-border-width solid $input-border-color;
@@ -28,13 +29,6 @@
 				fill: $input-color;
 			}
 
-		  &.placeholder {
-
-		    	~ .form__icon path {
-  					fill: $input-placeholder-color;
-  				}
-		  }
-
 		  &:hover,
 		  &:focus {
 
@@ -46,6 +40,15 @@
 		  					fill: $input-color;
 		  				}
 		  		}
+		  }
+			
+			&:invalid,
+			&.empty,
+		  &.placeholder {
+
+		    	~ .form__icon path {
+  					fill: $input-placeholder-color;
+  				}
 		  }
 
 		  // Placeholder
@@ -83,17 +86,36 @@
 		  &--icon {
 		  	padding-left: 38px;
 		  }
+
+		  &--days {
+		  	width: 150px;
+		  }
+
+		  &--date {
+		  	width: 160px;
+		  }
+
+		  &--period {
+		  	width: 315px;
+		  }
 		}
 
 		&__icon {
 	  	@extend .position-absolute;
-	  	@extend .d-flex;
 	  	@extend .align-items-center;
 	  	@extend .justify-content-center;
+	  	@at-root #{&}:not(button) {
+		  	@extend .d-flex;
+	    }
 	  	top: 0;
 	  	left: 0;
 	  	width: 38px;
 		  height: $input-height;
+
+		  	&--right {
+		  		right: 0;
+		  		left: auto;
+		  	}
 
 		  	&--lg {
 				  height: $input-height-lg;

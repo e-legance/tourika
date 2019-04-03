@@ -1,0 +1,20 @@
+.features {
+	z-index: 2;
+	line-height: 1.2;
+	background-color: $gray-100;
+
+		@include media-breakpoint-up(sm) {
+			font-size: $font-size-sm;
+		}
+
+		@include media-breakpoint-down(xs) {
+			font-size: 12px;
+		}
+
+		&__item {
+
+				@include media-breakpoint-up(sm) {
+					max-width: 294px;
+				}
+		}
+}

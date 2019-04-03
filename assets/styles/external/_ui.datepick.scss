@@ -6,6 +6,10 @@
 	background-color: $dropdown-bg;
   @include border-radius($dropdown-border-radius);
   @include box-shadow($dropdown-box-shadow);
+  
+	@include media-breakpoint-up(sm) {
+		margin-top: 10px;
+	}
 }
 .datepick-popup {
 	z-index: $zindex-dropdown;
@@ -174,4 +178,27 @@
 
 .datepick-month td.datapick-to-range-selected:not(.datapick-from-range-selected) {
 	@include gradient-x(#E8EFF7, $white, 50%, 50%);
+}
+
+		  	
+.datepick-from,
+.datepick-to {
+	width: 45%
+}
+
+.datepick-separator {
+	position: relative;
+	width: 10%;
+	height: 32px;
+
+		&:before {
+			content: '';
+			@include element-center;
+			width: 1px;
+			background-color: #C4C4C4;
+		}
+}
+
+.datepick-trigger + button {
+	@extend .d-none;
 }

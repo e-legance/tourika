@@ -14,7 +14,6 @@ jQuery(document).ready(function($) {
 		],
 	});
 
-
 	$('.js-select-item').click(function(event) {
 		if ( !$(this).hasClass('active') ) {
 			var menu = $(this).parents('.js-select-menu');
@@ -22,13 +21,14 @@ jQuery(document).ready(function($) {
 			var input = menu.find('.js-dropdown-input');
 			var option = $(this).find('.js-select-option').text();
 
-			menu.find('.js-select-item.active').removeClass('active');
-			$(this).addClass('active');
 			toggle.html(option).removeClass('placeholder');
 			input.val(option);
-		}
 
-		event.preventDefault();
+			if ( $(this).data('toggle') !== 'tab' ) {
+				menu.find('.js-select-item.active').removeClass('active');
+				$(this).addClass('active');
+			}
+		}
 	});
 
 	$(document).on('click', '.js-dropdown-keepopen .dropdown-menu', function (e) {
@@ -36,16 +36,23 @@ jQuery(document).ready(function($) {
 	});
 
 	function counter () {
-		if( $('.js-counter').length ) {
+		if( $('.js-counter-wrap').length ) {
 
-			if( !$('.js-counter-total').length ) {
-				throw ".js-counter-total selector is not found!";
+			var counter = $('.js-counter-wrap').find('.js-counter');
+			var counterWrap = null;
+			var inputTotal = null;
+			var total = null;
+
+			if( !$('.js-counter').length ) {
+				throw ".js-counter selector is not found!";
 			}
-
-			var inputTotal = $('.js-counter-total');
-			var total = parseInt(inputTotal.val());
 			
 			$('.js-counter').each(function(i, coutner) {
+
+				if( !$('.js-counter-total').length ) {
+					throw ".js-counter-total selector is not found!";
+				}
+
 				if ( !$(coutner).find('.js-counter-down').length  ) {
 					throw ".js-counter-down selector is not found!";
 				}
@@ -63,11 +70,14 @@ jQuery(document).ready(function($) {
 				var value = $(coutner).find('.js-counter-value');
 
 				btnDown.click(function() {
+					counterWrap = $(this).closest('.js-counter-wrap');
+					inputTotal = counterWrap.find('.js-counter-total');
+					total = parseInt(inputTotal.val());
+
 					total--;
 					value.val(parseInt(value.val()) - 1);
-					$('.js-counter-value').html(total);
+					counterWrap.find('.js-counter-text-total').html(total);
 					inputTotal.val(total);
-					console.log(inputTotal.val());
 					if ( parseInt( value.val() ) < 1 ) {
 						value.val( 0 );
 						$(this).prop('disabled', true);
@@ -75,11 +85,14 @@ jQuery(document).ready(function($) {
 				});
 
 				btnUp.click(function() {
+					counterWrap = $(this).closest('.js-counter-wrap');
+					inputTotal = counterWrap.find('.js-counter-total');
+					total = parseInt(inputTotal.val());
+
 					total++;
 					value.val(parseInt(value.val()) + 1);
-					$('.js-counter-value').html(total);
+					counterWrap.find('.js-counter-text-total').html(total);
 					inputTotal.val(total);
-					console.log(inputTotal.val());
 
 					if ( parseInt(value.val()) > 0 ) {
 						btnDown.prop('disabled', false);
@@ -109,24 +122,75 @@ jQuery(document).ready(function($) {
 	counter();
 	anchorSmoothScroll('.js-anchor');
 
-	$('#defaultPopup').datepick({
-		rangeSeparator: '-',
-		rangeSelect: true,
-		monthsToShow: 2,
-		minDate: 0,
-		showAnim: '',
-		dateFormat: 'D, M d',
-		todayText: '',
-		prevText: ' ', 
-		nextText: ' ',
-		dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-		useMouseWheel: false,
-		changeMonth: false,
-    commandsAsDateFormat: true,
-    renderer: {
-			day: '{day}',
-			daySelector: 'td',
-    }
-	});
+	if ( $('.js-calendar-period').length ) {
+		$('.js-calendar-period').each(function(i, e) {
+			var wrap = $(e).parents('.js-calendar-wrap');
+			var button = wrap.find('.js-calendar-btn');
+			$(e).datepick({
+				showOnFocus: false,
+				showTrigger: button,
+				rangeSeparator: ',',
+				rangeSelect: true,
+				monthsToShow: 2,
+				minDate: 0,
+				showAnim: '',
+				todayText: '',
+				prevText: ' ', 
+				nextText: ' ',
+				dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+				useMouseWheel: false,
+				changeMonth: false,
+		    commandsAsDateFormat: true,
+		    renderer: {
+					day: '{day}',
+					daySelector: 'td',
+		    },
+		    onSelect: function() {
+					button = wrap.find('.js-calendar-btn');
+					var from = button.find('.js-calendar-from');
+					var to = button.find('.js-calendar-to');
+					button.removeClass('placeholder');
+		    	$(from).html($.datepick.formatDate('D d, M', $(e).datepick('getDate')[0])).removeClass('placeholder');
+		    	$(to).html($.datepick.formatDate('D d, M', $(e).datepick('getDate')[1])).removeClass('placeholder');
+		    }
+			});
+		});
+	}
 
+	if ( $('.js-calendar').length ) {
+		$('.js-calendar').each(function(i, e) {
+			var wrap = $(e).parents('.js-calendar-wrap');
+			var button = wrap.find('.js-calendar-btn');
+			$(e).datepick({
+				showOnFocus: false,
+				showTrigger: button,
+				monthsToShow: 2,
+				minDate: 0,
+				showAnim: '',
+				todayText: '',
+				prevText: ' ', 
+				nextText: ' ',
+				dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+				useMouseWheel: false,
+				changeMonth: false,
+		    commandsAsDateFormat: true,
+		    renderer: {
+					day: '{day}',
+					daySelector: 'td',
+		    },
+		    onSelect: function() {
+					button = wrap.find('.js-calendar-btn');
+		    	$(button).html($.datepick.formatDate('D d, M', $(e).datepick('getDate')[0])).removeClass('placeholder');
+		    }
+			});
+		});
+	}
+
+	$('.form__control').change(function() {
+		if($(this).val() !== '') {
+			$(this).removeClass('empty');
+		} else {
+			$(this).addClass('empty');
+		}
+	});
 });
