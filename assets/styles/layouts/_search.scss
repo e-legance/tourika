@@ -1,14 +1,13 @@
 .search {
 
 		&__section {
-			background-color: #F1F2F6;
 			z-index: 2;
 
 				@include media-breakpoint-up(sm) {
 					margin-bottom: -64px;
 
 						.container {
-							transform: translateY(-64px)
+							transform: translateY(-64px);
 						}
 				}
 		}

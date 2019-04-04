@@ -55,8 +55,8 @@ $font-size-base: 16px;
 $font-size-lg: 18px;
 
 $line-height-base: (29 / 16);
-$line-height-lg: 1;
-$line-height-sm: 1;
+$line-height-lg: $line-height-base;
+$line-height-sm: $line-height-base;
 
 // Headings
 

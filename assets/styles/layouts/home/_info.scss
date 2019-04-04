@@ -1,0 +1,13 @@
+@include media-breakpoint-up(sm) {
+
+	.info {
+		line-height: 1.2;
+
+			&__features {
+
+					&__icon {
+						@include size(40px);
+					}
+			}
+	}
+}
