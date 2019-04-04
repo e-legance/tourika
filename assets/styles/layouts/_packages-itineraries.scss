@@ -13,7 +13,7 @@
 		background-size: cover;
 
 		@include media-breakpoint-up(md) {
-			padding: 100px 0 476px;
+			padding-top: 100px;
 		}
 	}
 
@@ -32,6 +32,40 @@
 
 	&__features-cont {
 		line-height: (19/16);
+	}
+
+	&__slider-wrapper {
+		max-width: 1240px;
+		z-index: 2;
+
+		&:after {
+			content: "";
+	    position: absolute;
+	    bottom: 0;
+	    left: -9999px;
+	    right: -9999px;
+	    height: 130px;
+	    background-color: #fff;
+	    z-index: 1;
+		}
+	}
+
+	&__slider {
+		z-index: 99;
+	}
+
+	&__slider-thumb {
+		@include media-breakpoint-up(lg) {
+			// max-width: 1240px;
+		}
+	}
+
+	&__slide-numb {
+		bottom: 60px;
+			
+			span {
+				color: #C8C8C8;
+			}
 	}
 }
 
@@ -58,5 +92,12 @@
 			vertical-align: middle;
 			margin: 0 20px;;
 		}
+	}
+}
+
+.packages-features {
+
+	>.row:first-child {
+		border-bottom: 1px solid #fff;
 	}
 }
