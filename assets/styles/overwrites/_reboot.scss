@@ -68,12 +68,14 @@ strong {
 
 em, i {
 	font-family: $font-family-nexa-regular-it;
-	font-style: normal;
+	font-weight: normal;
+	font-style: italic;
 }
 
 strong > em {
 	font-family: $font-family-nexa-bold-it;
-	font-style: normal;
+	font-weight: $font-weight-bold;
+	font-style: italic;
 }
 
 a,

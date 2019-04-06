@@ -1,0 +1,12 @@
+<div class="dropdown">
+  <button type="button" class="dropdown-toggle py-10 font-family-nexa-bold" type="button" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">@@active</button>
+  
+  <div class="dropdown-menu">
+    <div class="dropdown__select text-nowrap nav">
+      <button type="button" data-target="#bus" data-toggle="tab-only-show" class="dropdown__select__item d-block w-100 p-15 text-left @@if( active === 'Bus Tickets' ) {selected active}">Bus Tickets</button>
+      <button type="button" data-target="#busHotels" data-toggle="tab-only-show" class="dropdown__select__item d-block w-100 p-15 text-left @@if( active === 'Bus & Hotels' ) {selected active} ">Bus & Hotels</button>
+      <button type="button" data-target="#organizedTours" data-toggle="tab-only-show" class="dropdown__select__item d-block w-100 p-15 text-left @@if( active === 'Organized Tours' ) {selected active} ">Organized Tours</button>
+      <button type="button" data-target="#activities" data-toggle="tab-only-show" class="dropdown__select__item d-block w-100 p-15 text-left @@if( active === 'Activities' ) {selected active} ">Activities</button>
+    </div>
+  </div>
+</div>

@@ -12,7 +12,7 @@
 </head>
   
   <body>
-  	<header class="header  header--transparent  line-height-1">
+  	<header class="header  header--transparent   line-height-1">
 	<div class="header__top-line py-sm-10">
 		<div class="container px-sm-15 px-0">
 			<div class="row no-gutters justify-content-sm-between">
@@ -124,7 +124,7 @@
 	<div class="container">
 		<header class="homeTop__header d-sm-flex align-items-sm-center text-white">
 			<div class="col-sm-12 px-0">
-				<h1 class="text-white">Create your own adventure</h1>
+				<h1 class="text-white font-family-nexa-bold">Create your own adventure</h1>
 				<p>We help you find the best bus tickets, hotels, organised tours and activities for your next trip within North America.</p>
 			</div>
 		</header>
@@ -180,8 +180,8 @@
   
   <div class="dropdown-menu">
     <div class="dropdown__select text-nowrap nav" role="tablist">
-      <button type="button" data-target="#oneWay" data-toggle="tab" role="tab" aria-selected="true" class="dropdown__select__item d-block w-100 p-15 text-left active js-select-item"><span class="js-select-option">One Way</span></button>
-      <button type="button" data-target="#roundTrip" data-toggle="tab" role="tab" aria-selected="false" class="dropdown__select__item d-block w-100 p-15 text-left js-select-item"><span class="js-select-option">Round-trip</span></button>
+      <button type="button" data-target="#oneWay" data-toggle="tab" role="tab" aria-selected="true" class="dropdown__select__item d-block w-100 p-15 text-left selected active js-select-item"><span class="js-select-option">One Way</span></button>
+      <button type="button" data-target="#roundTrip" data-toggle="tab" role="tab" aria-selected="false" class="dropdown__select__item d-block w-100 p-15 text-left   js-select-item"><span class="js-select-option">Round-trip</span></button>
     </div>
   </div>
 </div>
@@ -309,7 +309,7 @@
 
   
 	
-  <div class="dropdown-menu dropdown-menu--fixed py-0 font-size-sm">
+  <div class="dropdown-menu dropdown-menu--lg dropdown-menu--fixed py-0 font-size-sm">
   	<div class="d-sm-block d-flex h-100 flex-column">
       <div class="bg-white dropdown-menu--lg">
       	<button type="button" class="dropdown__close position-relative text-blue-passive text-left pl-50 font-family-nexa-bold d-sm-none w-100 js-dropdown-close">Country, City, Station</button>
@@ -531,7 +531,7 @@
 
   
 	
-  <div class="dropdown-menu dropdown-menu--fixed py-0 font-size-sm">
+  <div class="dropdown-menu dropdown-menu--lg dropdown-menu--fixed py-0 font-size-sm">
   	<div class="d-sm-block d-flex h-100 flex-column">
       <div class="bg-white dropdown-menu--lg">
       	<button type="button" class="dropdown__close position-relative text-blue-passive text-left pl-50 font-family-nexa-bold d-sm-none w-100 js-dropdown-close">Country, City, Station</button>
@@ -745,14 +745,17 @@
 
 								<div class="col-md-auto col-sm col-12 px-10">
 									<div class="tab-content">
-										<div id="oneWay" class="tab-pane show active"><div class="form__group position-relative">
+										<div id="oneWay" class="tab-pane active"><div class="form__group position-relative">
 	<div class="js-calendar-wrap">
-		<input type="hidden" class="js-required  js-calendar" data-title="Depature Date" data-confirm="Confirm">
+		<input type="hidden" class="js-required  js-calendar" data-title="Depature Date" data-confirm="Confirm" value="">
 
 		
 
 		
-			<button type="button" class="form__control form__control--lg form__control--icon form__control--date placeholder js-calendar-btn">From Date</button>
+			<button type="button" class="form__control form__control--lg form__control--icon form__control--date  placeholder  js-calendar-btn">
+				
+				 From Date 
+			</button>
 		
 
 		<div class="form__icon form__icon--lg">
@@ -765,14 +768,20 @@
 </div></div>
 										<div id="roundTrip" class="tab-pane"><div class="form__group position-relative">
 	<div class="js-calendar-wrap">
-		<input type="hidden" class="js-required js-calendar-period " data-title="Depature Date" data-confirm="Confirm">
+		<input type="hidden" class="js-required js-calendar-period " data-title="Depature Date" data-confirm="Confirm" value="">
 
 		
-			<button type="button" class="form__control form__control--lg px-0 form__control--icon form__control--period placeholder js-calendar-btn">
+			<button type="button" class="form__control form__control--lg px-0 form__control--icon form__control--period  placeholder  js-calendar-btn">
 				<span class="d-flex align-items-center">
-					<span class="d-inline-block align-middle datepick-from js-calendar-from pl-40">From Date</span>
+					<span class="d-inline-block align-middle datepick-from js-calendar-from pl-40">
+						
+						 From Date 
+					</span>
 					<span class="d-inline-block align-middle datepick-separator"></span>
-					<span class="d-inline-block align-middle datepick-to js-calendar-to">To Date</span>
+					<span class="d-inline-block align-middle datepick-to js-calendar-to">
+						
+						 To Date 
+					</span>
 				</span>
 			</button>
 		
@@ -931,7 +940,7 @@
 
   
 	
-  <div class="dropdown-menu dropdown-menu--fixed py-0 font-size-sm">
+  <div class="dropdown-menu dropdown-menu--lg dropdown-menu--fixed py-0 font-size-sm">
   	<div class="d-sm-block d-flex h-100 flex-column">
       <div class="bg-white dropdown-menu--lg">
       	<button type="button" class="dropdown__close position-relative text-blue-passive text-left pl-50 font-family-nexa-bold d-sm-none w-100 js-dropdown-close">Country, City, Station</button>
@@ -1153,7 +1162,7 @@
 
   
 	
-  <div class="dropdown-menu dropdown-menu--fixed py-0 font-size-sm">
+  <div class="dropdown-menu dropdown-menu--lg dropdown-menu--fixed py-0 font-size-sm">
   	<div class="d-sm-block d-flex h-100 flex-column">
       <div class="bg-white dropdown-menu--lg">
       	<button type="button" class="dropdown__close position-relative text-blue-passive text-left pl-50 font-family-nexa-bold d-sm-none w-100 js-dropdown-close">Country, City, Station</button>
@@ -1368,12 +1377,15 @@
 								<div class="col-md-auto col-sm col-6 px-10">
 									<div class="form__group position-relative">
 	<div class="js-calendar-wrap">
-		<input type="hidden" class="js-required  js-calendar" data-title="Depature Date" data-confirm="Confirm">
+		<input type="hidden" class="js-required  js-calendar" data-title="Depature Date" data-confirm="Confirm" value="">
 
 		
 
 		
-			<button type="button" class="form__control form__control--lg form__control--icon form__control--date placeholder js-calendar-btn">From Date</button>
+			<button type="button" class="form__control form__control--lg form__control--icon form__control--date  placeholder  js-calendar-btn">
+				
+				 From Date 
+			</button>
 		
 
 		<div class="form__icon form__icon--lg">
@@ -1555,7 +1567,7 @@
 		</button type="button">
 	
 	
-  <div class="dropdown-menu dropdown-menu--fixed py-0 font-size-sm">
+  <div class="dropdown-menu dropdown-menu--lg dropdown-menu--fixed py-0 font-size-sm">
   	<div class="d-sm-block d-flex h-100 flex-column">
       <div class="bg-white dropdown-menu--lg">
       	<button type="button" class="dropdown__close position-relative text-blue-passive text-left pl-50 font-family-nexa-bold d-sm-none w-100 js-dropdown-close">Country, City, Station</button>
@@ -1777,7 +1789,7 @@
 
   
 	
-  <div class="dropdown-menu dropdown-menu--fixed py-0 font-size-sm">
+  <div class="dropdown-menu dropdown-menu--lg dropdown-menu--fixed py-0 font-size-sm">
   	<div class="d-sm-block d-flex h-100 flex-column">
       <div class="bg-white dropdown-menu--lg">
       	<button type="button" class="dropdown__close position-relative text-blue-passive text-left pl-50 font-family-nexa-bold d-sm-none w-100 js-dropdown-close">Country, City, Station</button>
@@ -1992,12 +2004,15 @@
 								<div class="col-md-auto col-sm col-6 px-10">
 									<div class="form__group position-relative">
 	<div class="js-calendar-wrap">
-		<input type="hidden" class="js-required  js-calendar" data-title="Depature Date" data-confirm="Confirm">
+		<input type="hidden" class="js-required  js-calendar" data-title="Depature Date" data-confirm="Confirm" value="">
 
 		
 
 		
-			<button type="button" class="form__control form__control--lg form__control--icon form__control--date placeholder js-calendar-btn">From Date</button>
+			<button type="button" class="form__control form__control--lg form__control--icon form__control--date  placeholder  js-calendar-btn">
+				
+				 From Date 
+			</button>
 		
 
 		<div class="form__icon form__icon--lg">
@@ -2173,7 +2188,7 @@
 
   
 	
-  <div class="dropdown-menu dropdown-menu--fixed py-0 font-size-sm">
+  <div class="dropdown-menu dropdown-menu--lg dropdown-menu--fixed py-0 font-size-sm">
   	<div class="d-sm-block d-flex h-100 flex-column">
       <div class="bg-white dropdown-menu--lg">
       	<button type="button" class="dropdown__close position-relative text-blue-passive text-left pl-50 font-family-nexa-bold d-sm-none w-100 js-dropdown-close">Country, City, Station</button>
@@ -2388,14 +2403,20 @@
 								<div class="col-md-auto col-sm col-12 px-10">
 									<div class="form__group position-relative">
 	<div class="js-calendar-wrap">
-		<input type="hidden" class="js-required js-calendar-period " data-title="Depature Date" data-confirm="Confirm">
+		<input type="hidden" class="js-required js-calendar-period " data-title="Depature Date" data-confirm="Confirm" value="">
 
 		
-			<button type="button" class="form__control form__control--lg px-0 form__control--icon form__control--period placeholder js-calendar-btn">
+			<button type="button" class="form__control form__control--lg px-0 form__control--icon form__control--period  placeholder  js-calendar-btn">
 				<span class="d-flex align-items-center">
-					<span class="d-inline-block align-middle datepick-from js-calendar-from pl-40">From Date</span>
+					<span class="d-inline-block align-middle datepick-from js-calendar-from pl-40">
+						
+						 From Date 
+					</span>
 					<span class="d-inline-block align-middle datepick-separator"></span>
-					<span class="d-inline-block align-middle datepick-to js-calendar-to">To Date</span>
+					<span class="d-inline-block align-middle datepick-to js-calendar-to">
+						
+						 To Date 
+					</span>
 				</span>
 			</button>
 		

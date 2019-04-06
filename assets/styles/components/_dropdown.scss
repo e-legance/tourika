@@ -46,12 +46,16 @@
 	
 		&-menu {
 
+
 			@include media-breakpoint-up(sm) {
 
 					&--lg {
 						overflow: hidden;
 						width: 328px;
-						max-height: 396px;
+
+							[data-simplebar="init"] {
+								max-height: 396px;
+							}
 					}
 			}
 
@@ -84,7 +88,7 @@
 							margin-right: 8px;
 						}
 
-						&.active {
+						&.selected {
 							@extend .font-family-nexa-heavy;
 
 								&:before {
@@ -98,7 +102,7 @@
 			height: 57px;
 
 				&:hover,
-				&.active {
+				&.selected {
 					background-color: #F7FAFD;
 				}
 		}

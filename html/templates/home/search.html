@@ -9,7 +9,7 @@
 						<div class="col-sm-auto col-12 order-sm-1">
 							<div class="d-flex mb-5 align-items-center justify-content-sm-start justify-content-between">
 								<div class="mr-sm-30">
-									@@include("search/type-trip.html")
+									@@include("search/type-trip.html", {"active": "One Way"})
 								</div>
 								<div>
 									@@include("search/passangers.html")
@@ -29,8 +29,8 @@
 
 								<div class="col-md-auto col-sm col-12 px-10">
 									<div class="tab-content">
-										<div id="oneWay" class="tab-pane show active">@@include('search/calendar.html', { "period": false })</div>
-										<div id="roundTrip" class="tab-pane">@@include('search/calendar.html', { "period": true })</div>
+										<div id="oneWay" class="tab-pane active">@@include('search/calendar.html', { "period": false, "setDate": false })</div>
+										<div id="roundTrip" class="tab-pane">@@include('search/calendar.html', { "period": true, "setDate": false })</div>
 									</div>
 								</div>
 
@@ -69,7 +69,7 @@
 								</div>
 
 								<div class="col-md-auto col-sm col-6 px-10">
-									@@include('search/calendar.html', { "period": false })
+									@@include('search/calendar.html', { "period": false, "setDate": false })
 								</div>
 
 								<div class="col-md-auto col-sm col-6 px-10">
@@ -111,7 +111,7 @@
 								</div>
 
 								<div class="col-md-auto col-sm col-6 px-10">
-									@@include('search/calendar.html', { "period": false })
+									@@include('search/calendar.html', { "period": false, "setDate": false })
 								</div>
 
 								<div class="col-md-auto col-sm col-6 px-10">
@@ -149,7 +149,7 @@
 								</div>
 
 								<div class="col-md-auto col-sm col-12 px-10">
-									@@include('search/calendar.html', { "period": true })
+									@@include('search/calendar.html', { "period": true, "setDate": false })
 								</div>
 
 								<div class="col-sm-auto col-12 my-sm-0 my-15 px-10">

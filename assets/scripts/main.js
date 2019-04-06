@@ -156,7 +156,7 @@ jQuery(document).ready(function($) {
 	});
 
 	$('.js-select-item').click(function(event) {
-		if ( !$(this).hasClass('active') ) {
+		if ( !$(this).hasClass('selected') ) {
 			var menu = $(this).parents('.js-select-menu');
 			var toggle = menu.find('.js-select-toggle');
 			var input = menu.find('.js-dropdown-input');
@@ -165,9 +165,10 @@ jQuery(document).ready(function($) {
 			toggle.html(option).removeClass('placeholder');
 			input.val(option);
 
+			menu.find('.js-select-item.selected').removeClass('selected');
+			$(this).addClass('selected');
+
 			if ( $(this).data('toggle') !== 'tab' ) {
-				menu.find('.js-select-item.active').removeClass('active');
-				$(this).addClass('active');
 				fieldValidation(input, true);
 				formValidation( $(this).closest('.js-form-validation') );
 			} else {
@@ -176,7 +177,6 @@ jQuery(document).ready(function($) {
 					formValidation( $(this).closest('.js-form-validation') );
 				});
 			}
-
 		}
 	});
 
@@ -302,5 +302,15 @@ jQuery(document).ready(function($) {
 	  $('body')
 	  	.removeClass('dropdown--opened')
 	  	.removeAttr('style');
+	});
+
+	$('[data-toggle="tab-only-show"]:not(.active)').click(function() {
+		var nav = $(this).closest('.nav');
+		var active = $(nav).find('.active');
+		var target = $(this).data('target');
+		var activeTarget = $(active).data('target');
+
+		$(activeTarget).removeClass('show active');
+		$(target).tab('show');
 	});
 });

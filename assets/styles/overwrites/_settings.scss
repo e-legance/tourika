@@ -21,7 +21,8 @@ $colors: map-merge((
   "black": $black,
   "gray-100": $gray-100,
   "gray-400": $gray-400,
-  "blue-passive": $blue-passive
+  "blue-passive": $blue-passive,
+  "blue-sub": $blue-sub
 ), $colors);
 
 // Remove Theme Colors
@@ -95,7 +96,15 @@ $btn-outline-colors: (
     hover-color: $white,
     hover-background: $blue-sub,
     hover-border: $blue-sub
-  )
+  ),
+
+  "orange": (
+    color: $orange,
+    border: $orange,
+    hover-color: $orange,
+    hover-background: $white,
+    hover-border: $orange
+  ),
 );
 
 // Remove Spacers ex. 5: 5px
@@ -106,6 +115,7 @@ $spacers: map-remove(
 // Add Spacers ex. 5: 5px, padding, margin
 $spacers: map-merge((
   0: 0px,
+  4: 4px,
   5: 5px,
   10: 10px,
   12-half: 12.5px,
@@ -117,6 +127,7 @@ $spacers: map-merge((
   40: 40px,
   45: 45px,
   50: 50px,
+  55: 55px,
   60: 60px,
   70: 70px,
   80: 80px
