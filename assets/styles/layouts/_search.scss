@@ -10,6 +10,15 @@
 							transform: translateY(-64px);
 						}
 				}
+
+				@include media-breakpoint-down(xs) {
+					margin-bottom: -48px;
+
+						.container {
+							position: relative;
+							bottom: 48px;
+						}
+				}
 		}
 
 		&__nav {
@@ -56,15 +65,15 @@
 						@include media-breakpoint-up(sm) {
 							font-size: 14px;
 							min-width: 160px;
-
-								&:not(.active) {
-									color: #A1A9C3;
-
-										path {
-											fill: #A1A9C3;
-										}
-								}
 						}
+
+						@include media-breakpoint-down(xs) {
+							font-size: 8px;
+							flex-basis: 0;
+			        flex-grow: 1;
+			        max-width: 100%;
+						}
+
 				}
 		}
 
@@ -76,6 +85,19 @@
 
 						.btn--orange {
 							width: 150px;
+						}
+				}
+
+				@include media-breakpoint-down(xs) {
+
+						.btn--orange {
+							width: 100%;
+						}
+
+
+
+						.dropdown-toggle {
+							font-size: 14px;
 						}
 				}
 

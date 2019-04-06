@@ -53,4 +53,11 @@
 					width: 200px;
 				}
 		}
+
+		@include media-breakpoint-down(xs) {
+
+				.btn {
+					width: 100%;
+				}
+		}
 }

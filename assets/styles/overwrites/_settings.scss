@@ -20,7 +20,8 @@ $colors: map-remove(
 $colors: map-merge((
   "black": $black,
   "gray-100": $gray-100,
-  "gray-400": $gray-400
+  "gray-400": $gray-400,
+  "blue-passive": $blue-passive
 ), $colors);
 
 // Remove Theme Colors

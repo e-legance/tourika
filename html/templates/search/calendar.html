@@ -1,6 +1,6 @@
 <div class="form__group position-relative">
 	<div class="js-calendar-wrap">
-		<input type="hidden" class="@@if ( period === true ) {js-calendar-period} @@if ( period == false ) {js-calendar}" readonly>
+		<input type="hidden" class="js-required @@if ( period === true ) {js-calendar-period} @@if ( period == false ) {js-calendar}" data-title="Depature Date" data-confirm="Confirm">
 
 		@@if ( period === true ) {
 			<button type="button" class="form__control form__control--lg px-0 form__control--icon form__control--period placeholder js-calendar-btn">

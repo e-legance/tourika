@@ -1,5 +1,9 @@
 
 .form {
+
+		&--invalid {
+	  	color: $form-feedback-invalid-color;
+	  }
 	
 		&__control {
 		  display: block;
@@ -71,7 +75,7 @@
 		    opacity: 1;
 		  }
 
-		  &--invalid {
+		  .form--invalid & {
 		  	color: $form-feedback-invalid-color;
 		  	border-color: $form-feedback-invalid-color;
 
