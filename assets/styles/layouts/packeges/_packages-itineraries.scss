@@ -89,7 +89,6 @@
 		}
 
 		&[aria-expanded="true"] {
-			box-shadow: 0 1px 0 red;
 
 			&:before {
 				transform: translate(4px, 0) rotate(45deg);
@@ -99,14 +98,6 @@
 				transform: translate(-5px, 0) rotate(-45deg);
 			}
 		}
-	}
-}
-
-.accordion {
-
-	.collapse.show {
-			border-bottom: 1px solid red;
-		
 	}
 }
 
