@@ -21,6 +21,7 @@ $colors: map-merge((
   "black": $black,
   "gray-100": $gray-100,
   "gray-400": $gray-400,
+  "blue-passive": $blue-passive,
   "blue-sub": $blue-sub
 ), $colors);
 
@@ -114,8 +115,10 @@ $spacers: map-remove(
 // Add Spacers ex. 5: 5px, padding, margin
 $spacers: map-merge((
   0: 0px,
+  4: 4px,
   5: 5px,
   10: 10px,
+  12-half: 12.5px,
   15: 15px,
   20: 20px,
   25: 25px,

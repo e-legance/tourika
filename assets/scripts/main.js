@@ -1,39 +1,68 @@
 jQuery(document).ready(function($) {
-	$('.js-btn-menu').click(function() {
-		$('body').toggleClass('menu--opened');
-	});
 
-	$('.js-team-carousel').owlCarousel({
-		loop: true,
-		nav: true,
-		dots: false,
-		items: 1,
-		navText: [
-			'<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 1L1 13.5L13.5 26" stroke="#132968" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-			'<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1L14 13.5L1.5 26" stroke="#132968" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-		],
-	});
+	function anchorSmoothScroll ( selector, offset_top ) {
 
-	$('.js-select-item').click(function(event) {
-		if ( !$(this).hasClass('active') ) {
-			var menu = $(this).parents('.js-select-menu');
-			var toggle = menu.find('.js-select-toggle');
-			var input = menu.find('.js-dropdown-input');
-			var option = $(this).find('.js-select-option').text();
+		$(selector + '[href^="#"]:not([href="#"])').click(function () {
 
-			toggle.html(option).removeClass('placeholder');
-			input.val(option);
+      var offset_top = ( offset_top ) ? offset_top : 0;
+      var target = $(this.hash);
+      
+      if ( target.length ) {
+        $('html, body').animate({
+          scrollTop: target.offset().top - offset_top
+        }, 600);
 
-			if ( $(this).data('toggle') !== 'tab' ) {
-				menu.find('.js-select-item.active').removeClass('active');
-				$(this).addClass('active');
+        return false;
+      }
+    });
+	}
+
+	function appendCalendar (selector, title, confirm ) {
+		$('<button type="button" class="dropdown__close position-relative font-family-nexa-bold d-sm-none w-100 js-calandar-close">'+ title +'</button>').insertBefore($(selector).find('.datepick-nav'));
+
+		$(selector).append('<div class="dropdown__confirm d-sm-none mt-auto px-20 py-15 bg-white"><button type="button" class="btn btn--lg btn--orange w-100 js-calandar-close">'+ confirm +'</button></div>');
+	}
+
+	function fieldValidation ( selector, echo ) {
+		var success = true;
+
+		if ( $(selector).length ) {
+
+			if ( $(selector).val() === '' || $(selector).val() === '0' ) {
+				if ( echo ) {
+					$(selector).closest('.form__group').addClass('form--invalid');
+				} else {
+					success = false;
+				}
+			} else if ( !echo ) {
+				$(selector).closest('.form__group').removeClass('form--invalid');
 			}
 		}
-	});
 
-	$(document).on('click', '.js-dropdown-keepopen .dropdown-menu', function (e) {
-	  e.stopPropagation();
-	});
+		return success;
+	}
+
+	function formValidation ( selector ) {
+		if ( $(selector).length ) {
+			var required = $(selector).find('.js-required');
+			var success = true;
+
+			$(required).each(function(i, req) {
+
+				if ( $(req).closest('.tab-pane').length ) {
+					if ( $(req).closest('.tab-pane').hasClass('active') && !fieldValidation(req, false) ) {
+						success = false;
+					}
+				} else if( !fieldValidation(req, false) ) {
+					success = false;
+				}
+			});
+
+			$(selector).find('[type="submit"]').prop('disabled', !success);
+
+			return success;
+		}
+	}
 
 	function counter () {
 		if( $('.js-counter-wrap').length ) {
@@ -82,6 +111,9 @@ jQuery(document).ready(function($) {
 						value.val( 0 );
 						$(this).prop('disabled', true);
 					}
+
+					fieldValidation(inputTotal, true);
+					formValidation( $(this).closest('.js-form-validation') );
 				});
 
 				btnUp.click(function() {
@@ -97,30 +129,60 @@ jQuery(document).ready(function($) {
 					if ( parseInt(value.val()) > 0 ) {
 						btnDown.prop('disabled', false);
 					}
+
+					fieldValidation(inputTotal, true);
+					formValidation( $(this).closest('.js-form-validation') );
 				});
 			});
 		}
 	}
 
-	function anchorSmoothScroll ( selector, offset_top ) {
-
-		$(selector + '[href^="#"]:not([href="#"])').click(function () {
-
-      var offset_top = ( offset_top ) ? offset_top : 0;
-      var target = $(this.hash);
-      
-      if ( target.length ) {
-        $('html, body').animate({
-          scrollTop: target.offset().top - offset_top
-        }, 600);
-
-        return false;
-      }
-    });
-	}
-
 	counter();
 	anchorSmoothScroll('.js-anchor');
+
+	$('.js-btn-menu').click(function() {
+		$('body').toggleClass('menu--opened');
+	});
+
+	$('.js-team-carousel').owlCarousel({
+		loop: true,
+		nav: true,
+		dots: false,
+		items: 1,
+		navText: [
+			'<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 1L1 13.5L13.5 26" stroke="#132968" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+			'<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1L14 13.5L1.5 26" stroke="#132968" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+		],
+	});
+
+	$('.js-select-item').click(function(event) {
+		if ( !$(this).hasClass('selected') ) {
+			var menu = $(this).parents('.js-select-menu');
+			var toggle = menu.find('.js-select-toggle');
+			var input = menu.find('.js-dropdown-input');
+			var option = $(this).find('.js-select-option').text();
+
+			toggle.html(option).removeClass('placeholder');
+			input.val(option);
+
+			menu.find('.js-select-item.selected').removeClass('selected');
+			$(this).addClass('selected');
+
+			if ( $(this).data('toggle') !== 'tab' ) {
+				fieldValidation(input, true);
+				formValidation( $(this).closest('.js-form-validation') );
+			} else {
+				$(this).on('shown.bs.tab', function (e) {
+					fieldValidation(input, true);
+					formValidation( $(this).closest('.js-form-validation') );
+				});
+			}
+		}
+	});
+
+	$(document).on('click', '.js-dropdown-keepopen .dropdown-menu', function (e) {
+	  e.stopPropagation();
+	});
 
 	if ( $('.js-calendar-period').length ) {
 		$('.js-calendar-period').each(function(i, e) {
@@ -142,8 +204,18 @@ jQuery(document).ready(function($) {
 				changeMonth: false,
 		    commandsAsDateFormat: true,
 		    renderer: {
-					day: '{day}',
-					daySelector: 'td',
+					day: '{day}'
+		    },
+		    onShow: function(data) {
+		    	appendCalendar(data, $(e).data('title'), $(e).data('confirm'));
+		    	$('body')
+				  	.css('top', -$(window).scrollTop())
+				  	.addClass('dropdown--opened calendar-period');
+				},
+		    onClose: function() {
+		    	$('body')
+				  	.removeClass('dropdown--opened calendar-period')
+				  	.removeAttr('style');
 		    },
 		    onSelect: function() {
 					button = wrap.find('.js-calendar-btn');
@@ -152,6 +224,8 @@ jQuery(document).ready(function($) {
 					button.removeClass('placeholder');
 		    	$(from).html($.datepick.formatDate('D d, M', $(e).datepick('getDate')[0])).removeClass('placeholder');
 		    	$(to).html($.datepick.formatDate('D d, M', $(e).datepick('getDate')[1])).removeClass('placeholder');
+		    	fieldValidation($(e), true);
+					formValidation( $(e).closest('.js-form-validation') );
 		    }
 			});
 		});
@@ -175,12 +249,24 @@ jQuery(document).ready(function($) {
 				changeMonth: false,
 		    commandsAsDateFormat: true,
 		    renderer: {
-					day: '{day}',
-					daySelector: 'td',
+					day: '{day}'
+		    },
+		    onShow: function(data) {
+		    	appendCalendar(data, $(e).data('title'), $(e).data('confirm'));
+		    	$('body')
+				  	.css('top', -$(window).scrollTop())
+				  	.addClass('dropdown--opened');
+				},
+		    onClose: function() {
+		    	$('body')
+				  	.removeClass('dropdown--opened')
+				  	.removeAttr('style');
 		    },
 		    onSelect: function() {
 					button = wrap.find('.js-calendar-btn');
 		    	$(button).html($.datepick.formatDate('D d, M', $(e).datepick('getDate')[0])).removeClass('placeholder');
+		    	fieldValidation($(e), true);
+					formValidation( $(e).closest('.js-form-validation') );
 		    }
 			});
 		});
@@ -192,5 +278,39 @@ jQuery(document).ready(function($) {
 		} else {
 			$(this).addClass('empty');
 		}
+
+		if ( $(this).hasClass('js-required') ) {
+			formValidation( $(this).closest('.js-form-validation') );
+		}
+	});
+
+	$(document).on('click', '.js-dropdown-close', function() {
+	  $(this).closest('.dropdown').find('[data-toggle="dropdown"]').dropdown("hide");
+	});
+
+	$(document).on('click', '.js-calandar-close', function() {
+		$('.js-calendar, .js-calendar-period').datepick('hide');
+	});
+
+	$('.dropdown').on('show.bs.dropdown', function () {
+		if ( $(this).find('.dropdown-menu--fixed').length	) {
+		  $('body')
+		  	.css('top', -$(window).scrollTop())
+		  	.addClass('dropdown--opened');
+		}
+	}).on('hidden.bs.dropdown', function () {
+	  $('body')
+	  	.removeClass('dropdown--opened')
+	  	.removeAttr('style');
+	});
+
+	$('[data-toggle="tab-only-show"]:not(.active)').click(function() {
+		var nav = $(this).closest('.nav');
+		var active = $(nav).find('.active');
+		var target = $(this).data('target');
+		var activeTarget = $(active).data('target');
+
+		$(activeTarget).removeClass('show active');
+		$(target).tab('show');
 	});
 });

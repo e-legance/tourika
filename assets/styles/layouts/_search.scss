@@ -1,14 +1,22 @@
 .search {
 
 		&__section {
-			background-color: #F1F2F6;
 			z-index: 2;
 
 				@include media-breakpoint-up(sm) {
 					margin-bottom: -64px;
 
 						.container {
-							transform: translateY(-64px)
+							transform: translateY(-64px);
+						}
+				}
+
+				@include media-breakpoint-down(xs) {
+					margin-bottom: -48px;
+
+						.container {
+							position: relative;
+							bottom: 48px;
 						}
 				}
 		}
@@ -57,15 +65,15 @@
 						@include media-breakpoint-up(sm) {
 							font-size: 14px;
 							min-width: 160px;
-
-								&:not(.active) {
-									color: #A1A9C3;
-
-										path {
-											fill: #A1A9C3;
-										}
-								}
 						}
+
+						@include media-breakpoint-down(xs) {
+							font-size: 8px;
+							flex-basis: 0;
+			        flex-grow: 1;
+			        max-width: 100%;
+						}
+
 				}
 		}
 
@@ -77,6 +85,19 @@
 
 						.btn--orange {
 							width: 150px;
+						}
+				}
+
+				@include media-breakpoint-down(xs) {
+
+						.btn--orange {
+							width: 100%;
+						}
+
+
+
+						.dropdown-toggle {
+							font-size: 14px;
 						}
 				}
 

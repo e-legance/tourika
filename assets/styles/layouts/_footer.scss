@@ -34,6 +34,7 @@
 						@include media-breakpoint-down(xs) {
 							min-height: 58px;
 							font-family: $font-family-nexa-heavy;
+							overflow: hidden;
 
 								&:before,
 								&:after {

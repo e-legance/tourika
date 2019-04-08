@@ -1,19 +1,28 @@
 <div class="form__group position-relative">
 	<div class="js-calendar-wrap">
-		<input type="hidden" class="@@if ( period === true ) {js-calendar-period} @@if ( period == false ) {js-calendar}" readonly>
+		<input type="hidden" class="js-required @@if ( period === true ) {js-calendar-period} @@if ( period == false ) {js-calendar}" data-title="Depature Date" data-confirm="Confirm" value="@@if( period === true && setDate === true ) {05/14/2019,05/21/2019}@@if( period === false && setDate === true ) {05/21/2019}">
 
 		@@if ( period === true ) {
-			<button type="button" class="form__control form__control--lg px-0 form__control--icon form__control--period placeholder js-calendar-btn">
+			<button type="button" class="form__control form__control--lg px-0 form__control--icon form__control--period @@if( setDate === false ) { placeholder } js-calendar-btn">
 				<span class="d-flex align-items-center">
-					<span class="d-inline-block align-middle datepick-from js-calendar-from pl-40">From Date</span>
+					<span class="d-inline-block align-middle datepick-from js-calendar-from pl-40">
+						@@if( setDate === true ) { Wed 20, Feb }
+						@@if( setDate === false ) { From Date }
+					</span>
 					<span class="d-inline-block align-middle datepick-separator"></span>
-					<span class="d-inline-block align-middle datepick-to js-calendar-to">To Date</span>
+					<span class="d-inline-block align-middle datepick-to js-calendar-to">
+						@@if( setDate === true ) { Wed 27, Feb }
+						@@if( setDate === false ) { To Date }
+					</span>
 				</span>
 			</button>
 		}
 
 		@@if ( period === false ) {
-			<button type="button" class="form__control form__control--lg form__control--icon form__control--date placeholder js-calendar-btn">From Date</button>
+			<button type="button" class="form__control form__control--lg form__control--icon form__control--date @@if( setDate === false ) { placeholder } js-calendar-btn">
+				@@if( setDate === true ) { Wed 20, Feb }
+				@@if( setDate === false ) { From Date }
+			</button>
 		}
 
 		<div class="form__icon form__icon--lg">

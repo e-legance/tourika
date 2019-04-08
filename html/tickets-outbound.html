@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  @@include("head.html", {"title": "Tickets Outbound"})
+  
+  <body class="bg-gray-100">
+  	@@include("header.html", { "ishome" : false })
+    <main class="results">
+      @@include("results/header.html")
+			
+			<div class="py-50 bg-gray-100">
+				@@loop('results/ticket.html', [
+			    { "title": "My post title", "text": "<p>lorem ipsum...</p>" },
+			    { "title": "Another post", "text": "<p>lorem ipsum...</p>" },
+			    { "title": "One more post", "text": "<p>lorem ipsum...</p>" }
+			  ])
+			</div>
+    </main>
+  	@@include("foot.html")
+  </body>
+</html>

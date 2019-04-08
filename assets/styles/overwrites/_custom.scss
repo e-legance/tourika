@@ -32,7 +32,8 @@ $grid-gutter-width: 30px;
 $border-radius: 5px;
 $border-radius-lg: 15px;
 
-$box-shadow: 0 2px 5px rgba($blue, .1);
+$box-shadow: 0 4px 8px rgba($blue, .1);
+$box-shadow-sm: 0 2px 5px rgba($blue, .1);
 $box-shadow-lg: 0 4px 10px rgba($black, .1), 0 8px 16px rgba($black, .2);
 
 // Options
@@ -47,7 +48,7 @@ $font-family-sans-serif: $font-family-nexa-regular;
 $font-weight-normal: normal;
 $font-weight-light: $font-weight-normal;
 $font-weight-lighter: $font-weight-normal;
-$font-weight-bold: $font-weight-normal;
+$font-weight-bold: bold;
 $font-weight-bolder: $font-weight-normal;
 
 $font-size-sm: 14px;
@@ -55,13 +56,13 @@ $font-size-base: 16px;
 $font-size-lg: 18px;
 
 $line-height-base: (29 / 16);
-$line-height-lg: 1;
-$line-height-sm: 1;
+$line-height-lg: $line-height-base;
+$line-height-sm: $line-height-base;
 
 // Headings
 
-$headings-font-weight: $font-weight-normal;
 $headings-font-family: $font-family-nexa-heavy;
+$headings-font-weight: 900;
 $headings-color: $blue;
 $headings-line-height: 1;
 
@@ -75,12 +76,12 @@ $h6-font-size: 16px;
 $display1-size: 53px;
 $display2-size: 40px;
 
-$display1-weight: $font-weight-normal;
-$display2-weight: $font-weight-normal;
-$display3-weight: $font-weight-normal;
+$display1-weight: $headings-font-family;
+$display2-weight: $headings-font-family;
+$display3-weight: $headings-font-family;
 
 // Buttons
-$btn-font-weight: $font-weight-normal;
+$btn-font-weight: bold;
 $btn-border-radius: $border-radius;
 
 $btn-height: 43px;
@@ -107,6 +108,7 @@ $input-padding-y: 4px;
 $input-padding-x: rem(15px);
 $input-font-family: $font-family-nexa-bold;
 $input-font-size: 15px;
+$input-font-weight: bold;
 $input-color: $blue;
 $input-placeholder-color: $blue-passive;
 $input-bg: $gray-100;

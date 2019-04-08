@@ -1,0 +1,63 @@
+.subscription {
+	line-height: 1.4;
+	border-top: 1px solid $gray-100;
+
+		@include media-breakpoint-up(sm) {
+			font-size: $font-size-lg;
+		}
+
+		@include media-breakpoint-down(xs) {
+			font-size: $font-size-sm;
+		}
+
+		&__title {
+			line-height: inherit;
+
+				@include media-breakpoint-up(sm) {
+					font-size: $h1-font-size;
+				}
+
+				@include media-breakpoint-down(xs) {
+					font-size: $h3-font-size;
+				}
+		}
+
+		&__terms {
+
+				@include media-breakpoint-up(sm) {
+					font-size: 10px;
+				}
+
+				@include media-breakpoint-down(xs) {
+					font-size: 9px;
+				}
+		}
+
+		.form__control {
+			font-size: 12px;
+			@extend .font-family-nexa-regular;
+
+				&::placeholder {
+					color: $blue;
+				}
+		}
+
+		@include media-breakpoint-up(sm) {
+
+				.form__control,
+				.btn {
+					height: 60px;
+				}
+
+				.btn {
+					width: 200px;
+				}
+		}
+
+		@include media-breakpoint-down(xs) {
+
+				.btn {
+					width: 100%;
+				}
+		}
+}

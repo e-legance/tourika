@@ -5,8 +5,9 @@
 .btn {
   display: inline-block;
   padding-top: 3px;
-  font-family: $font-family-nexa-bold;
-  font-weight: $btn-font-weight;
+  font-family: $font-family-nexa-black;
+  font-weight: 900;
+  font-style: normal;
   text-align: center;
   vertical-align: middle;
   user-select: none;
@@ -27,9 +28,10 @@
     //
     &--sm {
       font-family: $font-family-nexa-regular;
+      font-weight: normal;
+      font-style: normal;
       @include border-radius($btn-border-radius-sm)
       @include button-size($btn-height-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height);
-      padding-top: 3px;
     }
 
     // &--md {
@@ -38,7 +40,9 @@
     // }
 
     &--lg {
-      font-family: $font-family-nexa-regular;
+      font-family: $font-family-nexa-bold;
+      font-weight: bold;
+      font-style: normal;
       @include border-radius($btn-border-radius-lg)
       @include button-size($btn-height-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height);
       padding-top: 3px;
