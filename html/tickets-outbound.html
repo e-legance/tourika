@@ -4,16 +4,26 @@
   
   <body class="bg-gray-100">
   	@@include("header.html", { "ishome" : false })
-    <main class="results">
-      @@include("results/header.html")
+    <main class="results pb-sm-50 pb-30 overflow-hidden line-height-1">
+      <header class="results__header d-sm-flex flex-sm-column mb-sm-50 mb-30 shadow bg-white position-relative">
+				@@include("results/search-info.html", { "text" : "New York, NY to Ottawa, ON, Round Trip, 2 person(s)", "hideDesktop": true, "hideMobile": false })
+				@@include("results/titles.html", { "type": "1", "title": "Choose outbound bus ticket", "subTitle": "From New York, NY to Ottawa, ON", "back": "", "textBack": "" })
+				@@include("results/search.html", { "type": "bus", "hideDesktop": false })
+			</header>
 			
-			<div class="py-50 bg-gray-100">
-				@@loop('results/ticket.html', [
-			    { "title": "My post title", "text": "<p>lorem ipsum...</p>" },
-			    { "title": "Another post", "text": "<p>lorem ipsum...</p>" },
-			    { "title": "One more post", "text": "<p>lorem ipsum...</p>" }
-			  ])
+			<div class="container mb-sm-50 mb-30">
+				<div class="results__item mx-auto">
+					@@loop('results/ticket.html', [
+				    { "id": "1", "button": "Select Ticket", "url": "tickets-return.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" },
+				    { "id": "2", "button": "Select Ticket", "url": "tickets-return.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" },
+				    { "id": "3", "button": "Select Ticket", "url": "tickets-return.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" }
+				  ])
+			  </div>
 			</div>
+
+			<footer class="text-center mb-sm-50 mb-30 px-15">
+				<button class="results__more btn btn--xl btn--outline-blue mx-sm-auto font-family-nexa-heavy">Show 20 more results</button>
+			</footer>
     </main>
   	@@include("foot.html")
   </body>

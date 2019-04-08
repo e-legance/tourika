@@ -23,6 +23,16 @@ jQuery(document).ready(function($) {
 		$(selector).append('<div class="dropdown__confirm d-sm-none mt-auto px-20 py-15 bg-white"><button type="button" class="btn btn--lg btn--orange w-100 js-calandar-close">'+ confirm +'</button></div>');
 	}
 
+	function reEmailValid ( email ) {
+	  var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+	  return re.test(email);
+	}
+
+	window.rePhoneNumbers = function ( number ) {
+		var re = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g;
+		return re.test(number);
+	};
+
 	function fieldValidation ( selector, echo ) {
 		var success = true;
 
@@ -31,10 +41,25 @@ jQuery(document).ready(function($) {
 			if ( $(selector).val() === '' || $(selector).val() === '0' ) {
 				if ( echo ) {
 					$(selector).closest('.form__group').addClass('form--invalid');
+					success = false;
 				} else {
 					success = false;
 				}
-			} else if ( !echo ) {
+			} else if ( $(selector).attr('type') === 'email' && !reEmailValid($(selector).val()) ) {
+				if ( echo ) {
+					$(selector).closest('.form__group').addClass('form--invalid');
+					success = false;
+				} else {
+					success = false;
+				}
+			} else if ( $(selector).attr('type') === 'radio' && !$('input[name="'+ $(selector).attr('name') +'"]:checked').length ) {
+				if ( echo ) {
+					$(selector).closest('.form__group').addClass('form--invalid');
+					success = false;
+				} else {
+					success = false;
+				}
+			} else {
 				$(selector).closest('.form__group').removeClass('form--invalid');
 			}
 		}
@@ -42,7 +67,7 @@ jQuery(document).ready(function($) {
 		return success;
 	}
 
-	function formValidation ( selector ) {
+	function formValidation ( selector, echo ) {
 		if ( $(selector).length ) {
 			var required = $(selector).find('.js-required');
 			var success = true;
@@ -53,12 +78,14 @@ jQuery(document).ready(function($) {
 					if ( $(req).closest('.tab-pane').hasClass('active') && !fieldValidation(req, false) ) {
 						success = false;
 					}
-				} else if( !fieldValidation(req, false) ) {
+				} else if( !fieldValidation(req, echo) ) {
 					success = false;
 				}
 			});
 
-			$(selector).find('[type="submit"]').prop('disabled', !success);
+			if( !echo ) {
+				$(selector).find('[type="submit"]').prop('disabled', !success);
+			}
 
 			return success;
 		}
@@ -113,7 +140,7 @@ jQuery(document).ready(function($) {
 					}
 
 					fieldValidation(inputTotal, true);
-					formValidation( $(this).closest('.js-form-validation') );
+					formValidation( $(this).closest('.js-form-validation'), false );
 				});
 
 				btnUp.click(function() {
@@ -131,7 +158,7 @@ jQuery(document).ready(function($) {
 					}
 
 					fieldValidation(inputTotal, true);
-					formValidation( $(this).closest('.js-form-validation') );
+					formValidation( $(this).closest('.js-form-validation'), false );
 				});
 			});
 		}
@@ -170,11 +197,11 @@ jQuery(document).ready(function($) {
 
 			if ( $(this).data('toggle') !== 'tab' ) {
 				fieldValidation(input, true);
-				formValidation( $(this).closest('.js-form-validation') );
+				formValidation( $(this).closest('.js-form-validation'), false );
 			} else {
 				$(this).on('shown.bs.tab', function (e) {
 					fieldValidation(input, true);
-					formValidation( $(this).closest('.js-form-validation') );
+					formValidation( $(this).closest('.js-form-validation'), false );
 				});
 			}
 		}
@@ -272,7 +299,7 @@ jQuery(document).ready(function($) {
 		});
 	}
 
-	$('.form__control').change(function() {
+	$('button.form__control').change(function() {
 		if($(this).val() !== '') {
 			$(this).removeClass('empty');
 		} else {
@@ -280,8 +307,12 @@ jQuery(document).ready(function($) {
 		}
 
 		if ( $(this).hasClass('js-required') ) {
-			formValidation( $(this).closest('.js-form-validation') );
+			formValidation( $(this).closest('.js-form-validation'), false );
 		}
+	});
+
+	$('.js-form-validation').submit(function() {
+		return formValidation( $(this).closest('.js-form-validation'), true );
 	});
 
 	$(document).on('click', '.js-dropdown-close', function() {
@@ -312,5 +343,10 @@ jQuery(document).ready(function($) {
 
 		$(activeTarget).removeClass('show active');
 		$(target).tab('show');
+	});
+
+	$('.js-results-toggle-search').click(function() {
+		$(this).toggleClass('active');
+		$('.js-results-search').stop(true).slideToggle(400);
 	});
 });

@@ -1,4 +1,12 @@
 
+label {
+	color: $blue;
+
+		.form--invalid & {
+			color: $orange;
+		}
+}
+
 .form {
 
 		&--invalid {
@@ -89,6 +97,14 @@
 			  @include border-radius($input-border-radius-lg);
 		  }
 
+		  &--xl {
+		  	height: $input-height-xl;
+			  padding: $input-padding-y-xl $input-padding-x-xl 0;
+			  @include font-size($input-font-size-xl);
+			  line-height: $input-line-height-lg;
+			  @include border-radius($input-border-radius-xl);
+		  }
+
 		  &--icon {
 		  	padding-left: 38px;
 		  }
@@ -104,6 +120,48 @@
 		  &--period {
 		  	width: 315px;
 		  }
+		}
+
+		&__radio {
+			line-height: 1.2;
+
+				@include media-breakpoint-down(xs) {
+					font-size: 14px;
+				}
+
+				&__indicator{
+					flex: 0 0 25px;
+					max-width: 25px;
+					height: 25px;
+					border: 2.5px solid $blue;
+
+						input:checked ~ & {
+
+								&:before {
+									content: '';
+									@include element-center;
+									@include size(13px);
+									background-color: $blue;
+									border-radius: 50%;
+								}
+						}
+
+						.form--invalid & {
+							border-color: $form-feedback-invalid-color;
+
+								&:before {
+									background-color: $form-feedback-invalid-color !important;
+								}
+						}
+				}
+
+				.font-size-lg {
+					color: $blue;
+
+						.form--invalid & {
+							color: $form-feedback-invalid-color;
+						}
+				}
 		}
 
 		&__icon {

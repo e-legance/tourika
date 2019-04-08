@@ -14,6 +14,7 @@
   border: $btn-border-width solid transparent;
   @include button-size($btn-height, $btn-padding-x, $btn-font-size, $btn-line-height);
   @include border-radius($btn-border-radius);
+  padding-top: 2px;
 
     @at-root a#{&} {
       @extend .d-inline-flex;
@@ -48,24 +49,30 @@
       padding-top: 3px;
     }
 
-    // &__state {
+    &--xl {
+      @include border-radius($btn-border-radius-xl)
+      @include button-size($btn-height-xl, $btn-padding-x-xl, $btn-font-size-xl, $btn-line-height);
+      padding-top: 2px;
+    }
 
-    //     &--default {
+    &__state {
 
-    //         .btn__state[aria-expanded="true"] &,
-    //         .btn__state.active:not([aria-expanded]) & {
-    //           @extend .d-none;
-    //         }
-    //     }
+        &--default {
 
-    //     &--active {
+            .btn__state[aria-expanded="true"] &,
+            .btn__state.active:not([aria-expanded]) & {
+              @extend .d-none;
+            }
+        }
+
+        &--active {
             
-    //         .btn__state[aria-expanded="false"] &,
-    //         .btn__state:not(.active):not([aria-expanded]) & {
-    //           @extend .d-none;
-    //         }
-    //     }
-    // }
+            .btn__state[aria-expanded="false"] &,
+            .btn__state:not(.active):not([aria-expanded]) & {
+              @extend .d-none;
+            }
+        }
+    }
 
 
     &__social {
@@ -76,6 +83,17 @@
 
         &:hover {
           background-color: #EC8F8C;
+        }
+    }
+
+    &__details {
+
+        @include media-breakpoint-up(sm) {
+          font-size: 14px;
+        }
+
+        @include media-breakpoint-down(xs) {
+          font-size: 13px;
         }
     }
     

@@ -98,6 +98,12 @@ $btn-height-lg: 48px;
 $btn-padding-x-lg: 30px;
 $btn-font-size-lg: 16px;
 $btn-border-radius-lg: $border-radius;
+
+$btn-height-xl: 50px;
+$btn-padding-x-xl: 30px;
+$btn-font-size-xl: 14px;
+$btn-border-radius-xl: $border-radius;
+
 $dropdown-border-width: 0;
 $dropdown-border-color: transparent;
 $dropdown-box-shadow: $box-shadow-lg;
@@ -122,6 +128,12 @@ $input-padding-y-lg: 4px;
 $input-padding-x-lg: rem(20px);
 $input-font-size-lg: $input-font-size;
 $input-border-radius-lg: $btn-border-radius-lg;
+
+$input-height-xl: $btn-height-xl;
+$input-padding-y-xl: 4px;
+$input-padding-x-xl: rem(20px);
+$input-font-size-xl: $input-font-size;
+$input-border-radius-xl: $btn-border-radius-xl;
 
 // Dropdown
 $dropdown-min-width: 140px;

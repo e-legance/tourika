@@ -1,0 +1,294 @@
+.results {
+	// border-top: 1px solid rgba($blue, .1);
+
+		&__header {
+			z-index: 3;
+		}
+
+		&__search-info {
+
+				@include media-breakpoint-up(sm) {
+					font-size: 20px;
+				}
+
+				@include media-breakpoint-down(xs) {
+					font-size: 12px;
+					border-top: 1px solid #ddd;
+				}
+		}
+
+		&__selected {
+
+				@include media-breakpoint-up(sm) {
+					font-size: 20px;
+				}
+
+				@include media-breakpoint-down(xs) {
+					font-size: 12px;
+				}
+		}
+
+		&__titles {
+			border-top: 1px solid rgba($blue, .1);
+
+				@include media-breakpoint-up(sm) {
+					font-size: $font-size-lg;
+				}
+
+				@include media-breakpoint-up(xs) {
+					font-size: 12px;
+				}
+
+				&__col-btn {
+
+						@include media-breakpoint-down(xs) {
+							flex: 0 0 50px;
+						}
+				}
+
+				&__btn {
+
+						@include media-breakpoint-down(xs) {
+							@include size(50px);
+						}
+				}
+
+				&__price {
+
+						@include media-breakpoint-up(sm) {
+							font-size: 14px;
+						}
+
+						@include media-breakpoint-down(xs) {
+							font-size: 12px;
+						}
+				}
+		}
+
+		&__title {
+
+				@include media-breakpoint-up(sm) {
+					font-size: 26px;
+				}
+
+				@include media-breakpoint-up(xs) {
+					font-size: 15px;
+				}
+		}
+
+		&__search {
+
+				@include media-breakpoint-down(xs) {
+					display: none;
+					border-top: 1px solid #ddd;
+				}
+		}
+
+		&__item {
+			max-width: 750px;
+		}
+
+		&__box {
+			border: 1px solid $gray-100;
+
+				&__title {
+
+						@include media-breakpoint-up(sm) {
+							font-size: 24px;
+						}
+
+						@include media-breakpoint-down(xs) {
+							font-size: 18px;
+						}
+				}
+
+				&__content {
+					line-height: 1.4;
+				}
+		}
+
+		&__price {
+
+				&__info {
+					@include size(12px);
+					font-size: 0;
+					line-height: 12px;
+				}
+		}
+
+		&__add {
+			color: #3366A2;
+			border: 1px solid #5E90CC;
+			background-color: #F5F9FD;
+
+				@include media-breakpoint-up(sm) {
+					font-size: 13px;
+				}
+
+				@include media-breakpoint-down(xs) {
+					font-size: 13px;
+				}
+
+				.h6 {
+					color: inherit;
+				}
+
+				.btn {
+
+						@include media-breakpoint-up(sm) {
+							width: 140px;
+						}
+
+						@include media-breakpoint-down(xs) {
+							width: 100%;
+						}
+				}
+		}
+
+		&__more {
+
+				@include media-breakpoint-up(sm) {
+					width: 360px;
+				}
+
+				@include media-breakpoint-down(xs) {
+					width: 100%;
+				}
+		}
+
+		&__summary {
+			font-size: 13px;
+		}
+
+		&__list {
+
+				&--two-col {
+					column-count: 2;
+					column-gap: 15px;
+					column-width: 130px;
+				}
+
+				li {
+					position: relative;
+					line-height: 18px;
+					padding-top: 2px;
+					padding-left: 25px;
+
+						&:not(:last-child) {
+							margin-bottom: 20px;
+						}
+				}
+
+				&__icon {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 20px;
+					font-size: 0;
+				}
+		}
+
+		&__btn-proceed {
+
+				@include media-breakpoint-up(sm) {
+					width: 360px;
+				}
+
+				@include media-breakpoint-down(xs) {
+					width: 100%;
+				}
+		}
+
+		&__passangers {
+
+				@include media-breakpoint-up(sm) {
+
+						.col-third {
+							flex: 0 0 290px;
+							max-width: 0 0 290px;
+						}
+				}
+
+				.col-year {
+					flex: 0 0 percentage(109 / 260);
+					max-width: percentage(109 / 260);
+				}
+
+				&__divider {
+					border-bottom: 2px solid #ddd;
+				}
+		}
+
+		&__terms {
+
+				&__title {
+
+						@include media-breakpoint-down(xs) {
+							font-size: 16px;
+						}
+				}
+
+				&__tab-btn {
+
+						&.active {
+							@extend .font-family-nexa-bold;
+						}
+
+						@include media-breakpoint-up(sm) {
+							font-size: 18px;
+
+								&.active {
+									position: relative;
+									font-size: 24px;
+
+										&:after {
+											content: '';
+											@include element-center(tag, false);
+											@include size(100%, 2px)
+											background-color: $blue;
+										}
+								}
+						}
+
+						@include media-breakpoint-down(xs) {
+							font-size: 14px;
+
+								&.active {
+									font-size: 18px;
+								}
+						}
+				}
+		}
+
+		&__payment {
+
+				&__info {
+					line-height: 1.4;
+
+						@include media-breakpoint-up(sm) {
+							font-size: 14px;
+						}
+
+						@include media-breakpoint-down(xs) {
+							font-size: 13px;
+						}
+				}
+		}
+
+		&__confirm {
+
+				&__number {
+
+						@include media-breakpoint-up(sm) {
+							font-size: 20px;
+						}
+				}
+
+				&__total {
+
+						@include media-breakpoint-up(sm) {
+							font-size: 20px;
+						}
+				}
+		}
+}
