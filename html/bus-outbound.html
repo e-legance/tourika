@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  @@include("head.html", {"title": "Tickets Outbound"})
+  @@include("head.html", {"title": "Bus Outbound"})
   
   <body class="bg-gray-100">
   	@@include("header.html", { "ishome" : false })
@@ -14,9 +14,9 @@
 			<div class="container mb-sm-50 mb-30">
 				<div class="results__item mx-auto">
 					@@loop('results/ticket.html', [
-				    { "id": "1", "button": "Select Ticket", "url": "tickets-return.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" },
-				    { "id": "2", "button": "Select Ticket", "url": "tickets-return.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" },
-				    { "id": "3", "button": "Select Ticket", "url": "tickets-return.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" }
+				    { "id": "1", "button": "Select Ticket", "url": "bus-return.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" },
+				    { "id": "2", "button": "Select Ticket", "url": "bus-return.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" },
+				    { "id": "3", "button": "Select Ticket", "url": "bus-return.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" }
 				  ])
 			  </div>
 			</div>
