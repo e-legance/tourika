@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  @@include("head.html", {"title": "Tickets Outbound"})
+  @@include("head.html", {"title": "Bus Confirmation"})
   
   <body>
   	@@include("header.html", { "ishome" : false })
@@ -27,11 +27,11 @@
 					</div>
 
 					<div class="results__box__content line-height-1 p-sm-35 p-20">
-						<p class="results__confirm__number mb-sm-30 mb-25">Your booking number is: <strong>PW5614752</strong> <br>A confirmation email has been sent to your provided email address.</p>
+						<p class="results__confirm__number mb-sm-30 mb-25">Your booking number is: <strong class="text-blue">PW5614752</strong> <br>A confirmation email has been sent to your provided email address.</p>
 
 						@@loop('results/ticket.html', [
-					    { "id": "1", "button": "Select Return Ticket", "url": "tickets-summary.html", "summary": true, "from-to": "Ottawa > New York", "edit": "", "confirm": true, "trip": "Outbound" },
-					    { "id": "2", "button": "Select Return Ticket", "url": "tickets-summary.html", "summary": true, "from-to": "New York > Ottawa", "edit": "", "confirm": true, "trip": "Return" }
+					    { "id": "1", "button": "Select Return Ticket", "url": "", "summary": true, "from-to": "Ottawa > New York", "edit": "", "confirm": true, "trip": "Outbound" },
+					    { "id": "2", "button": "Select Return Ticket", "url": "", "summary": true, "from-to": "New York > Ottawa", "edit": "", "confirm": true, "trip": "Return" }
 					  ])
 
 					  <p class="results__confirm__total mt-sm-30 mt-25 font-family-nexa-bold text-sm-right">

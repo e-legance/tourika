@@ -16,7 +16,7 @@
   @include border-radius($btn-border-radius);
   padding-top: 2px;
 
-    @at-root a#{&} {
+    @at-root :not(button)#{&} {
       @extend .d-inline-flex;
       @extend .align-items-center;
       @extend .justify-content-center;
@@ -60,7 +60,8 @@
         &--default {
 
             .btn__state[aria-expanded="true"] &,
-            .btn__state.active:not([aria-expanded]) & {
+            .btn__state.active:not([aria-expanded]) &,
+            input:checked ~ .btn__state & {
               @extend .d-none;
             }
         }
@@ -71,9 +72,29 @@
             .btn__state:not(.active):not([aria-expanded]) & {
               @extend .d-none;
             }
+
+            input:checked ~ .btn__state:not(.active):not([aria-expanded]) & {
+              @extend .d-block;
+            }
         }
     }
 
+    &__edit-search {
+      padding: 7px 17px 3px;
+      font-size: 12px;
+      color: $blue;
+      border: 1px solid $blue;
+      border-radius: 3px;
+
+        &[aria-expanded="true"] {
+          display: none;
+        }
+
+        &:hover {
+          color: $white;
+          background-color: $blue;
+        }
+    }
 
     &__social {
       @include size(30px);

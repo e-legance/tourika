@@ -1,0 +1,153 @@
+@@if( rooms === true ) {
+	<form action="@@proceed" class="js-form-options">
+}
+<article class="hotel mb-25 bg-white line-height-1 shadow-sm rounded">
+	@@if( summary === true ) {
+		<div class="hotel__summary__top py-15 px-sm-30 px-20">
+			<div class="row align-items-center justify-content-between">
+				<div class="col-auto"><p><strong>@@text-top</strong></p></div>
+				@@if ( change !== '') {
+					<div class="col-auto"><a href="@@change" class="font-family-nexa-black text-orange">Change Hotel</a></div>
+				}
+			</div>
+		</div>
+	}
+
+	<div class="px-sm-30 py-sm-25 p-20">
+		<header class="row mx-sm-n10 mx-n5 mb-sm-20 mb-15">
+			<div class="col-auto px-sm-10 px-5">
+				<h2 class="hotel__title">Mela Hotel</h2>
+			</div>
+			<div class="col px-sm-10 px-5">
+				<div class="hotel__rating js-rating" data-rating="3.5"></div>
+			</div>
+			<div class="col-auto px-sm-10 px-5 text-right">
+				<div class="hotel__price text-blue font-family-nexa-heavy"><sup>from</sup>$120.00</div>
+				<p class="hotel__price__info">rate per night/tax incl.</p>
+			</div>
+		</header>
+
+		<div class="row mx-n7-half">
+			<div class="col-sm-auto col-12 mb-sm-0 mb-25 px-7-half">
+				<figure class="hotel__image position-relative overflow-hidden">
+					<a href=""><img src="dist/images/img/hotel.png" alt=""></a>
+				</figure>
+			</div>
+
+			<div class="col-sm col-12 px-7-half">
+				<div class="d-sm-flex flex-sm-column h-100 pt-sm-10">
+					<div class="hotel__content mb-sm-0 mb-25 font-family-nexa-book order-sm-2">
+						<p class="hotel__address">625 8th Ave, New York, NY 10018, USA</p>
+						<p>Facility Fee: 39.42 CAD Paid at the hotel</p>
+					</div>
+
+					<ul class="hotel__links mb-sm-15 d-sm-flex order-sm-1 font-weight-bold">
+						<li><a href="">Tripadvisor Comments</a></li>
+						<li><a href="">Hotel Website</a></li>
+						<li><a href="">On Google Maps</a></li>
+					</ul>
+
+					@@if ( summary === false ) {
+						<a href="@@url" class="btn btn--orange order-sm-3 mt-sm-auto mt-20 align-self-sm-end">@@button</a>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	@@if( rooms === true ) {
+		<div class="results__options pb-sm-30 pb-25">
+			<h3 class="results__options__title results__options__divider mb-sm-20 mb-25 px-sm-30 p-20">Choose a room type</h3>
+
+			<div class="px-sm-30 px-20">
+				<div class="results__option row align-items-center mb-sm-25 mb-30 mx-sm-n20">
+					<div class="col-sm col-12 mb-sm-0 mb-10">
+						<div class="row align-items-center mx-n5">
+							<div class="col-sm col-7 px-5">
+								<h4 class="results__option__title font-family-nexa-bold text-body">Standard</h4>
+							</div>
+
+							<div class="col-sm-auto col-5 px-5 text-right">
+								<div class="results__option__price text-blue font-family-nexa-heavy">$120.00</div>
+								<p class="results__option__price__info">rate per night/tax incl.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-auto col-12">
+						<label class="d-block">
+							<input name="option" type="radio" class="js-option">
+							<span class="btn btn--outline-orange btn__state">
+								<span class="btn__state--default">Choose Room</span>
+								<span class="btn__state--active">Room Selected</span>
+							</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="results__option row align-items-center mb-sm-25 mb-30 mx-sm-n20">
+					<div class="col-sm col-12 mb-sm-0 mb-10">
+						<div class="row align-items-center mx-n5">
+							<div class="col-sm col-7 px-5">
+								<h4 class="results__option__title font-family-nexa-bold text-body">Two Beds</h4>
+							</div>
+
+							<div class="col-sm-auto col-5 px-5 text-right">
+								<div class="results__option__price text-blue font-family-nexa-heavy">$160.00</div>
+								<p class="results__option__price__info">rate per night/tax incl.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-auto col-12">
+						<label class="d-block">
+							<input name="option" type="radio" class="js-option">
+							<span class="btn btn--outline-orange btn__state">
+								<span class="btn__state--default">Choose Room</span>
+								<span class="btn__state--active">Room Selected</span>
+							</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="results__option row align-items-center mx-sm-n20">
+					<div class="col-sm col-12 mb-sm-0 mb-10">
+						<div class="row align-items-center mx-n5">
+							<div class="col-sm col-7 px-5">
+								<h4 class="results__option__title font-family-nexa-bold text-body">Superior Room</h4>
+							</div>
+
+							<div class="col-sm-auto col-5 px-5 text-right">
+								<div class="results__option__price text-blue font-family-nexa-heavy">$210.00</div>
+								<p class="results__option__price__info">rate per night/tax incl.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-auto col-12">
+						<label class="d-block">
+							<input name="option" type="radio" class="js-option">
+							<span class="btn btn--outline-orange btn__state">
+								<span class="btn__state--default">Choose Room</span>
+								<span class="btn__state--active">Room Selected</span>
+							</span>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+</article>
+
+<div class="d-none pt-15 js-options-proceed">
+	<div class="row align-items-center">
+		<div class="col-sm col-12 mb-sm-0 mb-20 text-sm-right text-center">
+			<a href="" class="mr-sm-20 text-orange font-family-nexa-black">Add Activities to my Journey</a>
+		</div>
+
+		<div class="col-sm-auto col-12">
+			<button type="submit" class="results__btn-proceed btn btn--xl btn--orange">Proceed to Booking Summary</button>
+		</div>
+	</div>
+</div>
+
+@@if( rooms === true ) {
+	</form>
+}

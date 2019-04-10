@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  @@include("head.html", {"title": "Organized Tours Confirmation"})
+  
+  <body>
+  	@@include("header.html", { "ishome" : false })
+    <main class="results pb-sm-50 pb-30 overflow-hidden line-height-1">
+      <header class="results__header d-sm-flex flex-sm-column mb-sm-50 mb-30 shadow bg-white position-relative">
+				@@include("results/titles.html", { "type": "4", "title": "Booking Confirmation", "subTitle": false, "back": "", "textBack": "" })
+			</header>
+
+			<div class="container">
+				<div class="results__box mb-sm-30 mb-35 font-family-nexa-book rounded">
+					<div class="results__box__head py-sm-15 py-10 px-sm-35 px-20 bg-gray-100 rounded-top">
+						<div class="row align-items-center">
+							<div class="col">
+								<h3 class="results__box__title">Thank You! Your booking order is confirmed.</h3>
+							</div>
+
+							<div class="col-auto">
+								<a href="" class="btn btn--outline-orange">
+									<span class="d-sm-inline d-none">Download Confirmation</span>
+									<span class="d-sm-none"><img src="dist/images/svg/pdf.svg" alt=""></span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="results__box__content line-height-1 p-sm-35 p-20">
+						<p class="results__confirm__number mb-sm-30 mb-25">Your booking number is: <strong class="text-blue">PW5614752</strong> <br>A confirmation email has been sent to your provided email address.</p>
+
+						@@loop('results/tour.html', [
+							{"button": "", "url": "", "options": false, "summary": false, "confirm": true }
+						])
+
+					  <p class="results__confirm__total mt-sm-30 mt-25 font-family-nexa-bold text-sm-right">
+							Total to Pay: $47.00
+							<a href="" class="results__price__info mt-n5 d-inline-block text-center font-size-0 align-top font-family-nexa-bold rounded-circle bg-gray-100">
+								<svg width="4" height="6" viewBox="0 0 4 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1.9115 1.26656C2.18053 1.26656 2.40944 1.23729 2.59823 1.17874C2.79174 1.12018 2.93805 1.0416 3.03717 0.942989C3.13628 0.844376 3.18584 0.736518 3.18584 0.619415C3.18584 0.505393 3.13392 0.402157 3.03009 0.309707C2.92625 0.214176 2.77758 0.138675 2.58407 0.0832049C2.39056 0.027735 2.16637 0 1.9115 0C1.66136 0 1.44189 0.027735 1.2531 0.0832049C1.06903 0.135593 0.925074 0.208012 0.821239 0.300462C0.722124 0.392912 0.672566 0.496148 0.672566 0.610169C0.672566 0.798151 0.776401 0.955316 0.984071 1.08166C1.19646 1.20493 1.5056 1.26656 1.9115 1.26656ZM3.92212 6L4 5.41294L2.86018 5.20031V1.99692L2.57699 1.81202L0.254867 1.92296L0.099115 2.50077L1.15398 2.87982V5.20031L0.0707965 5.40832L0 6H3.92212Z" fill="#132968"></path>
+								</svg>
+							</a>
+						</p>
+					</div>
+				</div>
+
+				<div class="results__box mb-sm-30 mb-35 font-family-nexa-book rounded">
+					<div class="results__box__head py-sm-15 py-sm-25 py-20 px-sm-35 px-20 bg-gray-100 rounded-top">
+						<h3 class="results__box__title">Present Your E-Ticket to Board</h3>
+					</div>
+
+					<div class="results__box__content p-sm-35 p-20">
+						<p>You will receive your ticket(s) electronically. You can present your ticket(s) to the bus driver on your mobile device. You may also print your ticket(s) but printing is not required.</p>
+					</div>
+				</div>
+
+				<div class="results__box mb-sm-30 mb-35 font-family-nexa-book rounded">
+					<div class="results__box__head py-sm-15 py-sm-25 py-20 px-sm-35 px-20 bg-gray-100 rounded-top">
+						<h3 class="results__box__title">Terms and conditions</h3>
+					</div>
+
+					<div class="results__box__content p-sm-35 p-20">
+						<div class="row mx-n20">
+							<div class="col-sm-4 col-12 mb-sm-0 mb-30 px-20">
+								<h4 class="results__terms__tab-btn mb-25 font-family-nexa-bold">Refund and Exchange</h4>
+
+								<ul class="results__list">
+									<li>
+										<span class="results__list__icon d-flex align-items-center justify-content-center"><img src="dist/images/svg/no-refunds.svg" alt=""></span>
+										No refunds
+									</li>
+									<li>
+										<span class="results__list__icon"><img src="dist/images/svg/exchange.svg" alt=""></span>
+										Exchange up to <strong>24h</strong> before departure - <strong>20%</strong> fee
+									</li>
+								</ul>
+							</div>
+
+							<div class="col-sm-4 col-12 px-20 mb-sm-0 mb-30">
+								<h4 class="results__terms__title mb-25 font-family-nexa-bold">Boarding Requirements</h4>
+
+								<ul class="results__list">
+									<li>
+										<span class="results__list__icon d-flex align-items-center justify-content-center"><img src="dist/images/svg/ticket.svg" alt=""></span>
+										Tickets are issued at the bus station
+									</li>
+									<li>
+										<span class="results__list__icon"><img src="dist/images/svg/mail.svg" alt=""></span>
+										Booking number delivery by email
+									</li>
+									<li>
+										<span class="results__list__icon"><img src="dist/images/svg/id-cart.svg" alt=""></span>
+										Printed ticket and photo ID required
+									</li>
+									<li>
+										<span class="results__list__icon"><img src="dist/images/svg/mail.svg" alt=""></span>
+										Booking number delivery by email
+									</li>
+								</ul>
+							</div>
+
+							<div class="col-sm-4 col-12 px-20">
+								<h4 class="results__terms__title mb-25 font-family-nexa-bold">Luggage</h4>
+
+								<ul class="results__list">
+									<li>
+										<span class="results__list__icon"><img src="dist/images/svg/bag.svg" alt=""></span>
+										<strong>1</strong> carry-on bag
+									</li>
+									<li>
+										<span class="results__list__icon"><img src="dist/images/svg/bag.svg" alt=""></span>
+										Max <strong>11.2kg</strong> (24.7lbs) per carry-on bag
+									</li>
+									<li>
+										<span class="results__list__icon"><img src="dist/images/svg/suitcase.svg" alt=""></span>
+										<strong>1</strong> checked bag - free
+									</li>
+									<li>
+										<span class="results__list__icon"><img src="dist/images/svg/suitcase.svg" alt=""></span>
+										Max <strong>22.5kg</strong> (49.6lbs) per checked bag
+									</li>
+									<li>
+										<span class="results__list__icon"><img src="dist/images/svg/suitcase.svg" alt=""></span>
+										<strong>$15.00</strong> per additional checked bag
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="results__box font-family-nexa-book rounded">
+					<div class="results__box__head py-sm-15 py-sm-25 py-20 px-sm-35 px-20 bg-gray-100 rounded-top">
+						<h3 class="results__box__title">Need help?</h3>
+					</div>
+
+					<div class="results__box__content p-sm-35 p-20">
+						<p>We would be more than happy to help you! You can always call us at <a href="tel: 5147002091"><strong>514-700-2091</strong></a> or reach through the <a href=""><strong>live chat</strong></a>. Our support available Monday-Friday from 9am to 4pm (EST)</p>
+					</div>
+				</div>
+			</div>
+			
+    </main>
+  	@@include("footer.html")
+  	@@include("foot.html")
+  </body>
+</html>

@@ -27,7 +27,8 @@
       box-shadow: $focus-box-shadow;
     }
 
-    &:disabled {
+    &:disabled,
+    &.disabled {
       background-color: $disabled-backround;
     }
 }
@@ -39,7 +40,8 @@
   border-color: $border;
 
   &:hover,
-  &[data-toggle="button"].active {
+  &[data-toggle="button"].active,
+  input:checked ~ & {
     color: $color-hover;
     background-color: $active-background;
     border-color: $active-border;

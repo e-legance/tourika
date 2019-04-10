@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  @@include("head.html", {"title": "Bus&Hotel Summary"})
+  
+  <body class="bg-gray-100">
+  	@@include("header.html", { "ishome" : false })
+    <main class="results overflow-hidden line-height-1">
+    	<header class="results__header d-sm-flex flex-sm-column mb-sm-50 mb-30 shadow bg-white position-relative">
+				@@include("results/search-info.html", { "text" : "New York, NY to Ottawa, ON, Round Trip, 2 person(s)", "hideDesktop": false, "hideMobile": true, "edit": false })
+				@@include("results/titles.html", { "type": "3", "title": "Your booking summary", "subTitle": "Total to Pay: $47.00", "back": "hotel-rooms.html", "textBack": "Edit selected journey" })
+				@@include("results/search.html", { "type": "bus", "hideDesktop": true, "edit": false })
+			</header>
+			
+			<div class="container mb-sm-50 mb-30">
+				<div class="results__item mx-auto">
+					@@loop('results/ticket.html', [
+				    { "id": "1", "button": "Select Return Ticket", "url": "", "summary": true, "from-to": "Ottawa > New York", "edit": "hotel-outbound.html", "confirm": false, "trip": "" },
+				    { "id": "2", "button": "Select Return Ticket", "url": "", "summary": true, "from-to": "New York > Ottawa", "edit": "hotel-return.html", "confirm": false, "trip": "" }
+				  ])
+				  @@loop('results/hotel.html', [
+				    { "button": "Select Hotel", "url": "hotel-rooms.html", "rooms": false, "proceed": "", "summary": true, "text-top": "Tue 5 Feb - Fri 8 Feb, 2 nights, 1 room", "change": "", "confirm": false }
+				  ])
+				</div>
+				  @@include("results/add.html", { "text": "Add activities to your booking in a second.", "hotel": false, "activitiesUrl": "", "activities": true, "activitiesUrl": "" })
+			</div>
+
+			@@include('results/summaries.html', {"url": "hotel-passangers.html"})
+    </main>
+  	@@include("foot.html")
+  </body>
+</html>

@@ -125,6 +125,11 @@ label {
 		&__radio {
 			line-height: 1.2;
 
+				input {
+					position: absolute;
+					visibility: hidden;
+				}
+
 				@include media-breakpoint-down(xs) {
 					font-size: 14px;
 				}

@@ -9,18 +9,22 @@
 				</div>
 				<div class="col px-5">
 					<h4 class="h6 mb-7-half font-family-nexa-bold">Make your journey memorable. </h4>
-					<p>Add hotel and activities to your booking in a second.</p>
+					<p>@@text</p>
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-auto col-12">
 			<div class="row mx-n7-half">
-				<div class="col px-7-half">
-					<a href="" class="btn btn--outline-orange">Add Activities</a>
-				</div>
-				<div class="col px-7-half">
-					<a href="" class="btn btn--outline-orange">Add Hotel</a>
-				</div>
+				@@if( activities === true ) {
+					<div class="col px-7-half">
+						<a href="@@activitiesUrl" class="btn btn--outline-orange">Add Activities</a>
+					</div>
+				}
+				@@if( hotel === true ) {
+					<div class="col px-7-half">
+						<a href="@@hotelUrl" class="btn btn--outline-orange">Add Hotel</a>
+					</div>
+				}
 			</div>
 		</div>
 	</div>

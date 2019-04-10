@@ -349,4 +349,26 @@ jQuery(document).ready(function($) {
 		$(this).toggleClass('active');
 		$('.js-results-search').stop(true).slideToggle(400);
 	});
+
+	$('.js-rating').each(function(i, e) {
+		$(e).raty({
+			readOnly: true,
+			half: true,
+			score: $(e).data('rating'),
+			starType: 'span',
+			starHalf: 'star-half',
+			starOff: 'star-off',
+			starOn: 'star-on',
+			targetType: '',
+			hints: ['', '', '', '', '', ''],
+			noRatedMsg: ''
+		});
+	});
+
+	$('.js-option').change(function() {
+		var form = $(this).closest('.js-form-options');
+		var proceed = form.find('.js-options-proceed');
+
+		proceed.removeClass('d-none');
+	});
 });

@@ -1,0 +1,123 @@
+<article class="tour mb-25 bg-white line-height-1 shadow-sm rounded">
+	<div class="px-sm-30 py-sm-25 p-20">
+		<header class="row mx-sm-n10 mx-n5 mb-sm-20 mb-15">
+			<div class="col px-sm-10 px-5">
+				<h2 class="tour__title">Empire State Bulding</h2>
+			</div>
+
+			@@if( confirm === false ) {
+				<div class="col-auto px-sm-10 px-5 text-right">
+					<div class="tour__price text-blue font-family-nexa-heavy"><sup>from</sup>$240.00</div>
+					<p class="tour__price__info">per person/tax incl.</p>
+
+					@@if( summary === true  ) {
+						<div class="d-sm-block d-none mb-sm-n40">
+							<div class="tour__price__child mt-15 text-blue font-family-nexa-bold"><sup>from</sup>$200.00</div>
+							<p class="tour__price__child__info">per child/tax incl.</p>
+						</div>
+					}
+				</div>
+			}
+		</header>
+
+		<div class="row mx-n7-half">
+			<div class="col-sm-auto col-12 mb-sm-0 mb-25 px-7-half">
+				<figure class="tour__image position-relative overflow-hidden">
+					<a href=""><img src="dist/images/img/tour.png" alt=""></a>
+				</figure>
+			</div>
+
+			<div class="col-sm col-12 px-7-half">
+				<div class="tour__content pt-sm-10 font-family-nexa-book">
+					<p><strong>Tour Starts:</strong> <br>Feb 15, 2019 at 4:00 AM - February 17, 2019</p>
+					<p><strong>Duration:</strong> <br>3 days / 2 nights</p>
+					<p><strong>Meeting Point:</strong> <br>Tim Horton's, 8115 Rue Papineau, Montréal, QC H2E 2H7</p>
+					<p><strong>Number of peoples:</strong> <br>2 adults</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	@@if( summary === false && confirm === false ) {
+		<div class="results__options">
+			
+			<h3 class="results__options__title results__options__divider px-sm-30 p-20">Tour highlights / general details</h3>
+
+			<div class="results__option results__options__divider px-sm-30 p-20 font-family-nexa-book">
+				<p>Lower Manhattan Walking Tour: Take a guided tour complete with a panoramic view of the key sites of in Lower Manhattan. This area includes the part of the city built after the Dutch purchased the island all the way to Ground Zero, a vital place of pilgrimage for any tourist. We will get a complete account of the September 11 attacks. You will be able to take photos of the two fountains that occupy the former space of the Twin Towers and are today part of the 9/11 Memorial. We’ll also get to know the historic heart of Manhattan’s Financial District: Wall Street, home to the New York Stock Exchange. Wall Street’s architecture is rooted in the Gilded Age, although there are also some Art Deco influences in the neighborhood. The most important buildings in the area are the New York Stock Exchange and Federal Hall, built at the beginning of the 19th century in the Greek Revival style.</p>
+			</div>
+
+			@@if( options === true ) {
+				<div class="pb-sm-30 pb-25">
+					<h3 class="results__options__title results__options__divider mb-sm-20 mb-25 px-sm-30 p-20">Choose activity option</h3>
+
+					<div class="px-sm-30 px-20">
+						<div class="results__option row align-items-center mb-sm-25 mb-30 mx-sm-n20">
+							<div class="col-sm col-12 mb-sm-0 mb-10 px-20 order-sm-1">
+								<div class="row align-items-center mx-n5">
+									<div class="col-sm col-7 px-5">
+										<h4 class="results__option__title font-family-nexa-bold text-body">Round-Trip Bus Transportation</h4>
+									</div>
+
+									<div class="col-sm-auto col-5 px-5 text-right">
+										<div class="results__option__price text-blue font-family-nexa-heavy">$240.00</div>
+										<p class="results__option__price__info">per person/tax incl.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 px-20 mt-sm-30 mb-15 order-sm-3 font-family-nexa-book">
+								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur</p>
+							</div>
+							<div class="col-sm-auto col-12 px-20 order-sm-2">
+								<a href="@@url" class="btn btn--orange">@@button</a>
+							</div>
+						</div>
+
+						<div class="results__option row align-items-center mb-sm-25 mb-30 mx-sm-n20">
+							<div class="col-sm col-12 mb-sm-0 mb-10 px-20 order-sm-1">
+								<div class="row align-items-center mx-n5">
+									<div class="col-sm col-7 px-5">
+										<h4 class="results__option__title font-family-nexa-bold text-body">New York Your Way (Bus with Hotel)</h4>
+									</div>
+
+									<div class="col-sm-auto col-5 px-5 text-right">
+										<div class="results__option__price text-blue font-family-nexa-heavy">$260.00</div>
+										<p class="results__option__price__info">per person/tax incl.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 px-20 mt-sm-30 mb-15 order-sm-3 font-family-nexa-book">
+								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur</p>
+							</div>
+							<div class="col-sm-auto col-12 px-20 order-sm-2">
+								<p class="btn btn--orange disabled">Sold Out</p>
+							</div>
+						</div>
+
+						<div class="results__option row align-items-center mx-sm-n20">
+							<div class="col-sm col-12 mb-sm-0 mb-10 px-20 order-sm-1">
+								<div class="row align-items-center mx-n5">
+									<div class="col-sm col-7 px-5">
+										<h4 class="results__option__title font-family-nexa-bold text-body">New York Prestige</h4>
+									</div>
+
+									<div class="col-sm-auto col-5 px-5 text-right">
+										<div class="results__option__price text-blue font-family-nexa-heavy">$280.00</div>
+										<p class="results__option__price__info">per person/tax incl.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 px-20 mt-sm-30 mb-15 order-sm-3 font-family-nexa-book">
+								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur</p>
+							</div>
+							<div class="col-sm-auto col-12 px-20 order-sm-2">
+								<p class="btn btn--orange disabled">Sold Out</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	}
+</article>

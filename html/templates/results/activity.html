@@ -1,0 +1,339 @@
+<article class="activity mb-25 bg-white line-height-1 shadow-sm rounded">
+	@@if( summary === true ) {
+		<div class="activity__summary__top py-15 px-sm-30 px-20">
+			<div class="row align-items-center justify-content-between">
+				<div class="col-auto"><p><strong>@@text-top</strong></p></div>
+				@@if( confirm === false ) {
+					<div class="col-auto"><a href="" class="font-family-nexa-black text-orange">Remove</a></div>
+				}
+			</div>
+		</div>
+	}
+
+	<div class="px-sm-30 py-sm-25 p-20">
+		<header class="row mx-sm-n10 mx-n5 mb-sm-20 mb-15">
+			<div class="col px-sm-10 px-5">
+				<h2 class="activity__title">Empire State Bulding</h2>
+			</div>
+			<div class="col-auto px-sm-10 px-5 text-right">
+				<div class="activity__price text-blue font-family-nexa-heavy"><sup>from</sup>$40.00</div>
+				<p class="activity__price__info">per person/tax incl.</p>
+			</div>
+		</header>
+
+		<div class="row mx-n7-half">
+			<div class="col-sm-auto col-12 mb-sm-0 mb-25 px-7-half">
+				<figure class="activity__image position-relative overflow-hidden">
+					<a href=""><img src="dist/images/img/activity.png" alt=""></a>
+				</figure>
+			</div>
+
+			<div class="col-sm col-12 px-7-half">
+				<div class="d-sm-flex flex-sm-column h-100 pt-sm-10">
+					<div class="activity__content mb-sm-0 mb-25 font-family-nexa-book">
+						<p><a href=""><strong>On Google Maps</strong></a></p>
+						<p>625 8th Ave, New York, NY 10018, USA</p>
+						<p><strong>Description</strong></p>
+						<p>A beacon for international and domestic tourists alike, the Empire State Building offers unmatched views of New York and neighboring states from its world-famous 86th and 102nd floor observatories all year long!</p>
+					</div>
+
+
+					@@if( confirm === false ) {
+						<div class="mt-sm-auto mt-20 align-self-sm-end">
+							<div class="row mx-n5 align-items-sm-center">
+								@@if( summary === false ) {
+									<div class="col-sm-auto col-12 px-5 order-sm-2">
+										<a href="@@url" class="ticket__btn btn btn--orange">@@button</a>
+									</div>
+								}
+
+								<div class="col-sm col-12 px-5 mt-sm-0 mt-15 order-sm-1">
+									<button type="button" class="btn__details @@if( summary === false ) {px-20} btn__state w-100 text-blue font-family-nexa-black" data-toggle="collapse" data-target="#activity@@id" aria-expanded="false">
+										<span class="btn__state--default">
+											Show details
+											<svg class="ml-5" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M0.291235 1.17541C0.680841 0.783975 1.314 0.782488 1.70544 1.17209L5 4.45122L8.29456 1.17209C8.686 0.782488 9.31916 0.783975 9.70877 1.17541C10.0984 1.56685 10.0969 2.20002 9.70544 2.58962L5.70544 6.57089C5.3153 6.9592 4.6847 6.9592 4.29456 6.57089L0.294555 2.58962C-0.0968848 2.20002 -0.0983712 1.56685 0.291235 1.17541Z" fill="#132968"/>
+											</svg>
+										</span>
+										<span class="btn__state--active">
+											Hide details
+											<svg class="ml-5" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M0.291235 6.56751C0.680841 6.95895 1.314 6.96043 1.70544 6.57083L5 3.2917L8.29456 6.57083C8.686 6.96043 9.31916 6.95895 9.70877 6.56751C10.0984 6.17607 10.0969 5.5429 9.70544 5.1533L5.70544 1.17203C5.3153 0.78372 4.6847 0.78372 4.29456 1.17203L0.294555 5.1533C-0.0968848 5.5429 -0.0983712 6.17607 0.291235 6.56751Z" fill="#132968"/>
+											</svg>
+										</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	@@if( confirm === false ) {
+		<div id="activity@@id" class="collapse">
+			<button type="button" data-toggle="collapse" data-target="#activity-details-@@id-1" aria-expanded="false" class="activity__collapse__btn px-sm-30 p-20 w-100 position-relative text-left font-family-nexa-heavy text-blue">Highlights / General Details</button>
+			<div id="activity-details-@@id-1" class="collapse">
+				<div class="activity__collapse__content px-sm-30 p-20 font-family-nexa-book">
+					<p>Lower Manhattan Walking Tour: Take a guided tour complete with a panoramic view of the key sites of in Lower Manhattan. This area includes the part of the city built after the Dutch purchased the island all the way to Ground Zero, a vital place of pilgrimage for any tourist. We will get a complete account of the September 11 attacks. You will be able to take photos of the two fountains that occupy the former space of the Twin Towers and are today part of the 9/11 Memorial. We’ll also get to know the historic heart of Manhattan’s Financial District: Wall Street, home to the New York Stock Exchange. Wall Street’s architecture is rooted in the Gilded Age, although there are also some Art Deco influences in the neighborhood. The most important buildings in the area are the New York Stock Exchange and Federal Hall, built at the beginning of the 19th century in the Greek Revival style.</p>
+				</div>
+			</div>
+
+			<button type="button" data-toggle="collapse" data-target="#activity-details-@@id-2" aria-expanded="false" class="activity__collapse__btn px-sm-30 p-20 w-100 position-relative text-left font-family-nexa-heavy text-blue">Inclusion</button>
+			<div id="activity-details-@@id-2" class="collapse">
+				<div class="activity__collapse__content px-sm-30 p-20 font-family-nexa-book">
+					<p>Lower Manhattan Walking Tour: Take a guided tour complete with a panoramic view of the key sites of in Lower Manhattan. This area includes the part of the city built after the Dutch purchased the island all the way to Ground Zero, a vital place of pilgrimage for any tourist. We will get a complete account of the September 11 attacks. You will be able to take photos of the two fountains that occupy the former space of the Twin Towers and are today part of the 9/11 Memorial. We’ll also get to know the historic heart of Manhattan’s Financial District: Wall Street, home to the New York Stock Exchange. Wall Street’s architecture is rooted in the Gilded Age, although there are also some Art Deco influences in the neighborhood. The most important buildings in the area are the New York Stock Exchange and Federal Hall, built at the beginning of the 19th century in the Greek Revival style.</p>
+				</div>
+			</div>
+
+			<button type="button" data-toggle="collapse" data-target="#activity-details-@@id-3" aria-expanded="false" class="activity__collapse__btn px-sm-30 p-20 w-100 position-relative text-left font-family-nexa-heavy text-blue">Exclusion</button>
+			<div id="activity-details-@@id-3" class="collapse">
+				<div class="activity__collapse__content px-sm-30 p-20 font-family-nexa-book">
+					<p>Lower Manhattan Walking Tour: Take a guided tour complete with a panoramic view of the key sites of in Lower Manhattan. This area includes the part of the city built after the Dutch purchased the island all the way to Ground Zero, a vital place of pilgrimage for any tourist. We will get a complete account of the September 11 attacks. You will be able to take photos of the two fountains that occupy the former space of the Twin Towers and are today part of the 9/11 Memorial. We’ll also get to know the historic heart of Manhattan’s Financial District: Wall Street, home to the New York Stock Exchange. Wall Street’s architecture is rooted in the Gilded Age, although there are also some Art Deco influences in the neighborhood. The most important buildings in the area are the New York Stock Exchange and Federal Hall, built at the beginning of the 19th century in the Greek Revival style.</p>
+				</div>
+			</div>
+
+			<button type="button" data-toggle="collapse" data-target="#activity-details-@@id-4" aria-expanded="false" class="activity__collapse__btn px-sm-30 p-20 w-100 position-relative text-left font-family-nexa-heavy text-blue">Hours of operation</button>
+			<div id="activity-details-@@id-4" class="collapse">
+				<div class="activity__collapse__content px-sm-30 p-20 font-family-nexa-book">
+					<p>Lower Manhattan Walking Tour: Take a guided tour complete with a panoramic view of the key sites of in Lower Manhattan. This area includes the part of the city built after the Dutch purchased the island all the way to Ground Zero, a vital place of pilgrimage for any tourist. We will get a complete account of the September 11 attacks. You will be able to take photos of the two fountains that occupy the former space of the Twin Towers and are today part of the 9/11 Memorial. We’ll also get to know the historic heart of Manhattan’s Financial District: Wall Street, home to the New York Stock Exchange. Wall Street’s architecture is rooted in the Gilded Age, although there are also some Art Deco influences in the neighborhood. The most important buildings in the area are the New York Stock Exchange and Federal Hall, built at the beginning of the 19th century in the Greek Revival style.</p>
+				</div>
+			</div>
+
+			<button type="button" data-toggle="collapse" data-target="#activity-details-@@id-5" aria-expanded="false" class="activity__collapse__btn px-sm-30 p-20 w-100 position-relative text-left font-family-nexa-heavy text-blue">Duration</button>
+			<div id="activity-details-@@id-5" class="collapse">
+				<div class="activity__collapse__content px-sm-30 p-20 font-family-nexa-book">
+					<p>Lower Manhattan Walking Tour: Take a guided tour complete with a panoramic view of the key sites of in Lower Manhattan. This area includes the part of the city built after the Dutch purchased the island all the way to Ground Zero, a vital place of pilgrimage for any tourist. We will get a complete account of the September 11 attacks. You will be able to take photos of the two fountains that occupy the former space of the Twin Towers and are today part of the 9/11 Memorial. We’ll also get to know the historic heart of Manhattan’s Financial District: Wall Street, home to the New York Stock Exchange. Wall Street’s architecture is rooted in the Gilded Age, although there are also some Art Deco influences in the neighborhood. The most important buildings in the area are the New York Stock Exchange and Federal Hall, built at the beginning of the 19th century in the Greek Revival style.</p>
+				</div>
+			</div>
+
+			<button type="button" data-toggle="collapse" data-target="#activity-details-@@id-6" aria-expanded="false" class="activity__collapse__btn px-sm-30 p-20 w-100 position-relative text-left font-family-nexa-heavy text-blue">Location</button>
+			<div id="activity-details-@@id-6" class="collapse">
+				<div class="activity__collapse__content px-sm-30 p-20 font-family-nexa-book">
+					<p>Lower Manhattan Walking Tour: Take a guided tour complete with a panoramic view of the key sites of in Lower Manhattan. This area includes the part of the city built after the Dutch purchased the island all the way to Ground Zero, a vital place of pilgrimage for any tourist. We will get a complete account of the September 11 attacks. You will be able to take photos of the two fountains that occupy the former space of the Twin Towers and are today part of the 9/11 Memorial. We’ll also get to know the historic heart of Manhattan’s Financial District: Wall Street, home to the New York Stock Exchange. Wall Street’s architecture is rooted in the Gilded Age, although there are also some Art Deco influences in the neighborhood. The most important buildings in the area are the New York Stock Exchange and Federal Hall, built at the beginning of the 19th century in the Greek Revival style.</p>
+				</div>
+			</div>
+		</div>
+	}
+
+	@@if( options === true ) {
+		<div class="results__options pb-sm-30 pb-25">
+			<div class="results__options__divider mb-sm-20 mb-25 px-sm-30 px-20">
+				<div class="row align-items-center mx-sm-n15 mx-n20">
+					<div class="col-sm-auto col-12 order-sm-2 font-family-nexa-bold">
+						<div class="dropdown form__group position-relative js-select-menu">
+						  <input type="hidden" value="" class="js-dropdown-input">
+						  <button type="button" class="font-family-nexa-bold text-left text-truncate py-20" type="button" data-toggle="dropdown" aria-haspopup="true" data-flip="false" aria-expanded="false">
+						  	<span>Select Available Date:</span> <span class="js-select-toggle">22/02/2019</span> <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.291235 0.294555C0.680841 -0.0968848 1.314 -0.0983712 1.70544 0.291235L5 3.57036L8.29456 0.291235C8.686 -0.0983712 9.31916 -0.0968848 9.70877 0.294555C10.0984 0.685995 10.0969 1.31916 9.70544 1.70876L5.70544 5.69003C5.3153 6.07834 4.6847 6.07834 4.29456 5.69003L0.294555 1.70876C-0.0968848 1.31916 -0.0983712 0.685995 0.291235 0.294555Z" fill="#132968"/></svg>
+						  </button>
+							
+						  <div class="dropdown-menu dropdown-menu--lg dropdown-menu--fixed dropdown-menu-right py-0 font-size-sm">
+						  	<div class="d-sm-block d-flex h-100 flex-column">
+						      <div class="bg-white dropdown-menu--lg">
+						      	<button type="button" class="dropdown__close position-relative text-blue-passive text-left pl-50 pt-10 font-family-nexa-bold d-sm-none w-100 js-dropdown-close">Select Available Date</button>
+
+								  	<div data-simplebar data-simplebar-auto-hide="false">
+									    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+												<span class="row no-gutters h-100 align-items-center">
+													<span class="col">
+														<strong class="js-select-option">24-Feb-2019</strong>
+													</span>
+												</span>
+									  		<span class="dropdown-divider d-block"></span>
+									    </button>
+
+									    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+												<span class="row no-gutters h-100 align-items-center">
+													<span class="col">
+														<strong class="js-select-option">05-Mar-2019</strong>
+													</span>
+												</span>
+									  		<span class="dropdown-divider d-block"></span>
+									    </button>
+
+									    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+												<span class="row no-gutters h-100 align-items-center">
+													<span class="col">
+														<strong class="js-select-option">07-Mar-2019</strong>
+													</span>
+												</span>
+									  		<span class="dropdown-divider d-block"></span>
+									    </button>
+
+									    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+												<span class="row no-gutters h-100 align-items-center">
+													<span class="col">
+														<strong class="js-select-option">12-Mar-2019</strong>
+													</span>
+												</span>
+									  		<span class="dropdown-divider d-block"></span>
+									    </button>
+
+									    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+												<span class="row no-gutters h-100 align-items-center">
+													<span class="col">
+														<strong class="js-select-option">14-Mar-2019</strong>
+													</span>
+												</span>
+									  		<span class="dropdown-divider d-block"></span>
+									    </button>
+
+									    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+												<span class="row no-gutters h-100 align-items-center">
+													<span class="col">
+														<strong class="js-select-option">19-Mar-2019</strong>
+													</span>
+												</span>
+									  		<span class="dropdown-divider d-block"></span>
+									    </button>
+
+									    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+												<span class="row no-gutters h-100 align-items-center">
+													<span class="col">
+														<strong class="js-select-option">21-Mar-2019</strong>
+													</span>
+												</span>
+									  		<span class="dropdown-divider d-block"></span>
+									    </button>
+									    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+												<span class="row no-gutters h-100 align-items-center">
+													<span class="col">
+														<strong class="js-select-option">24-Feb-2019</strong>
+													</span>
+												</span>
+									  		<span class="dropdown-divider d-block"></span>
+									    </button>
+
+									    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+												<span class="row no-gutters h-100 align-items-center">
+													<span class="col">
+														<strong class="js-select-option">05-Mar-2019</strong>
+													</span>
+												</span>
+									  		<span class="dropdown-divider d-block"></span>
+									    </button>
+
+									    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+												<span class="row no-gutters h-100 align-items-center">
+													<span class="col">
+														<strong class="js-select-option">07-Mar-2019</strong>
+													</span>
+												</span>
+									  		<span class="dropdown-divider d-block"></span>
+									    </button>
+
+									    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+												<span class="row no-gutters h-100 align-items-center">
+													<span class="col">
+														<strong class="js-select-option">12-Mar-2019</strong>
+													</span>
+												</span>
+									  		<span class="dropdown-divider d-block"></span>
+									    </button>
+
+									    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+												<span class="row no-gutters h-100 align-items-center">
+													<span class="col">
+														<strong class="js-select-option">14-Mar-2019</strong>
+													</span>
+												</span>
+									  		<span class="dropdown-divider d-block"></span>
+									    </button>
+
+									    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+												<span class="row no-gutters h-100 align-items-center">
+													<span class="col">
+														<strong class="js-select-option">19-Mar-2019</strong>
+													</span>
+												</span>
+									  		<span class="dropdown-divider d-block"></span>
+									    </button>
+
+									    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+												<span class="row no-gutters h-100 align-items-center">
+													<span class="col">
+														<strong class="js-select-option">21-Mar-2019</strong>
+													</span>
+												</span>
+									  		<span class="dropdown-divider d-block"></span>
+									    </button>
+									  </div>
+
+									  <div class="dropdown__confirm d-sm-none mt-auto px-20 py-15 bg-white">
+							        <button type="button" class="btn btn--lg btn--orange js-dropdown-close">Confirm</button>
+							      </div>
+							    </div>
+							  </div>
+						  </div>
+						</div>
+					</div>
+
+					<div class="col-12 d-sm-none results__options__divider"></div>
+
+					<div class="col-sm col-12 order-sm-1">
+						<h3 class="results__options__title py-20">Choose activity option</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="px-sm-30 px-20">
+				<div class="results__option row align-items-center mb-sm-25 mb-30 mx-sm-n20">
+					<div class="col-sm col-12 mb-sm-0 mb-10 px-20">
+						<div class="row align-items-center mx-n5">
+							<div class="col-sm col-7 px-5">
+								<h4 class="results__option__title font-family-nexa-bold text-body">Lower Manhattan Walking Tour</h4>
+							</div>
+
+							<div class="col-sm-auto col-5 px-5 text-right">
+								<div class="results__option__price text-blue font-family-nexa-heavy">$40.00</div>
+								<p class="results__option__price__info">per person/tax incl.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-auto col-12 px-20">
+						<a href="@@change" class="btn btn--outline-orange">Choose Option</a>
+					</div>
+				</div>
+
+				<div class="results__option row align-items-center mb-sm-25 mb-30 mx-sm-n20">
+					<div class="col-sm col-12 mb-sm-0 mb-10 px-20">
+						<div class="row align-items-center mx-n5">
+							<div class="col-sm col-7 px-5">
+								<h4 class="results__option__title font-family-nexa-bold text-body">Lower Manhattan Walking Tour</h4>
+								<p class="font-family-nexa-book mt-5">with One World Observatory</p>
+							</div>
+
+							<div class="col-sm-auto col-5 px-5 text-right">
+								<div class="results__option__price text-blue font-family-nexa-heavy">$60.00</div>
+								<p class="results__option__price__info">per person/tax incl.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-auto col-12 px-20">
+						<a href="@@change" class="btn btn--outline-orange">Choose Option</a>
+					</div>
+				</div>
+
+				<div class="results__option row align-items-center mx-sm-n20">
+					<div class="col-sm col-12 mb-sm-0 mb-10 px-20">
+						<div class="row align-items-center mx-n5">
+							<div class="col-sm col-7 px-5">
+								<h4 class="results__option__title font-family-nexa-bold text-body">Lower Manhattan Walking Tour</h4>
+								<p class="font-family-nexa-book mt-5">with 9/11 Memorial & Museum</p>
+							</div>
+
+							<div class="col-sm-auto col-5 px-5 text-right">
+								<div class="results__option__price text-blue font-family-nexa-heavy">$80.00</div>
+								<p class="results__option__price__info">per person/tax incl.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-auto col-12 px-20">
+						<a href="@@change" class="btn btn--outline-orange">Choose Option</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+</article>

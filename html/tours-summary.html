@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  @@include("head.html", {"title": "Organized Tours Summary"})
+  
+  <body class="bg-gray-100">
+  	@@include("header.html", { "ishome" : false })
+    <main class="results overflow-hidden line-height-1">
+    	<header class="results__header d-sm-flex flex-sm-column mb-sm-50 mb-30 shadow bg-white position-relative">
+				@@include("results/search-info.html", { "text" : "New York, NY to Ottawa, ON, Organized Tour, 2 person(s)", "hideDesktop": false, "hideMobile": true, "edit": false })
+				@@include("results/titles.html", { "type": "3", "title": "Your booking summary", "subTitle": "Total to Pay: $47.00", "back": "tours-itinerary.html", "textBack": "Edit selected journey" })
+				@@include("results/search.html", { "type": "bus", "hideDesktop": true, "edit": false })
+			</header>
+			
+			<div class="container mb-sm-50 mb-30">
+				<div class="results__item mx-auto">
+				  @@loop('results/tour.html', [
+						{"button": "", "url": "", "options": false, "summary": true, "confirm": false }
+					])
+				</div>
+			</div>
+
+			@@include('results/summaries.html', {"url": "tours-passangers.html"})
+    </main>
+  	@@include("foot.html")
+  </body>
+</html>

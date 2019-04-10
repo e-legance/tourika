@@ -6,7 +6,7 @@
   	@@include("header.html", { "ishome" : false })
     <main class="results pb-sm-50 pb-30 overflow-hidden line-height-1">
     	<header class="results__header d-sm-flex flex-sm-column mb-sm-50 mb-30 shadow bg-white position-relative">
-				@@include("results/search-info.html", { "text" : "New York, NY to Ottawa, ON, Round Trip, 2 person(s)", "hideDesktop": true, "hideMobile": false })
+				@@include("results/search-info.html", { "text" : "New York, NY to Ottawa, ON, Round Trip, 2 person(s)", "hideDesktop": true, "hideMobile": false, "edit": false })
 				<div class="results__selected font-family-nexa-book text-blue bg-gray-100 pt-sm-20 pt-15 order-sm-2">
 					<div class="container">
 						@@loop('results/selected.html', [
@@ -15,7 +15,7 @@
 					</div>
 				</div>
 				@@include("results/titles.html", { "type": "2", "title": "Choose return bus ticket", "subTitle": "From Ottawa, ON to New York, NY", "back": "bus-outbound.html", "textBack": "" })
-				@@include("results/search.html", { "type": "bus", "hideDesktop": false })
+				@@include("results/search.html", { "type": "bus", "hideDesktop": false, "edit": false })
 			</header>
 			
 			<div class="container mb-sm-50 mb-30">

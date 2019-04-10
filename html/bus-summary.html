@@ -6,19 +6,19 @@
   	@@include("header.html", { "ishome" : false })
     <main class="results overflow-hidden line-height-1">
     	<header class="results__header d-sm-flex flex-sm-column mb-sm-50 mb-30 shadow bg-white position-relative">
-				@@include("results/search-info.html", { "text" : "New York, NY to Ottawa, ON, Round Trip, 2 person(s)", "hideDesktop": false, "hideMobile": true })
+				@@include("results/search-info.html", { "text" : "New York, NY to Ottawa, ON, Round Trip, 2 person(s)", "hideDesktop": false, "hideMobile": true, "edit": false })
 				@@include("results/titles.html", { "type": "3", "title": "Your booking summary", "subTitle": "Total to Pay: $47.00", "back": "bus-return.html", "textBack": "Edit selected journey" })
-				@@include("results/search.html", { "type": "bus", "hideDesktop": true })
+				@@include("results/search.html", { "type": "bus", "hideDesktop": true, "edit": false })
 			</header>
 			
 			<div class="container mb-sm-50 mb-30">
 				<div class="results__item mx-auto">
 					@@loop('results/ticket.html', [
-				    { "id": "1", "button": "Select Return Ticket", "url": "tickets-summary.html", "summary": true, "from-to": "Ottawa > New York", "edit": "bus-outbound.html", "confirm": false, "trip": "" },
-				    { "id": "2", "button": "Select Return Ticket", "url": "tickets-summary.html", "summary": true, "from-to": "New York > Ottawa", "edit": "bus-return.html", "confirm": false, "trip": "" }
+				    { "id": "1", "button": "Select Return Ticket", "url": "", "summary": true, "from-to": "Ottawa > New York", "edit": "bus-outbound.html", "confirm": false, "trip": "" },
+				    { "id": "2", "button": "Select Return Ticket", "url": "", "summary": true, "from-to": "New York > Ottawa", "edit": "bus-return.html", "confirm": false, "trip": "" }
 				  ])
 				</div>
-				  @@include("results/add.html", { "text": "Add hotel and activities to your booking in a second.", "hotel": true, "activities": true })
+				  @@include("results/add.html", { "text": "Add hotel and activities to your booking in a second.", "hotel": true, "hotelUrl": "hotel-accommodation.html", "activities": true, "activitiesUrl": "bus-activities.html" })
 			</div>
 
 			@@include('results/summaries.html', {"url": "bus-passangers.html"})

@@ -1,0 +1,161 @@
+.tour {
+
+		@include media-breakpoint-up(sm) {
+
+				.btn {
+					width: 210px;
+				}
+		}
+
+		@include media-breakpoint-down(xs) {
+
+				.btn {
+					width: 100%;
+				}
+		}
+
+		&__title {
+			
+				@include media-breakpoint-up(sm) {
+					font-size: 22px;
+				}
+
+				@include media-breakpoint-down(xs) {
+					font-size: 16px;
+				}
+		}
+
+		&__price {
+
+				@include media-breakpoint-up(sm) {
+					font-size: 22px;
+
+						sup {
+							font-size: 12px;
+							top: -0.8em;
+						}
+				}
+
+				&__info {
+
+						@include media-breakpoint-up(sm) {
+							font-size: 12px;
+						}
+
+						@include media-breakpoint-down(xs) {
+							font-size: 10px;
+						}
+				}
+
+				&__child {
+					font-size: 15px;
+
+						&__info {
+							font-size: 8px;
+						}
+				}
+		}
+
+		&__image {
+
+				@include media-breakpoint-up(sm) {
+					width: 225px;
+					height: 187px;
+				}
+
+				@include media-breakpoint-down(xs) {
+					height: 144px;
+				}
+
+				img {
+					@include element-center(image);
+					max-width: none;
+					height: 100%;
+					width: auto;
+				}
+		}
+
+		&__content {
+			line-height: 1.2;
+
+				@include media-breakpoint-up(sm) {
+					font-size: 12px;
+						
+						strong {
+							font-size: 13px;
+						}
+				}
+
+				@include media-breakpoint-down(xs) {
+					font-size: 13px;
+				}
+
+				strong {
+					font-size: 13px;
+					color: $blue;
+				}
+
+				
+				p:not(:last-child) {
+					margin-bottom: 20px;
+				}
+		}
+
+		&__collapse {
+
+				&__btn {
+					border-top: 2px solid $gray-100;
+
+						&:after {
+							content: '';
+							position: absolute;
+							top: 0;
+							bottom: 0;
+							margin: auto;
+							@include size(10px, 6px);
+							background: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3e%3cpath fill='#{$blue}' d='M0.291235 0.296508C0.680841 -0.0949317 1.314 -0.0964181 1.70544 0.293188L5 3.57231L8.29456 0.293188C8.686 -0.0964181 9.31916 -0.0949317 9.70877 0.296508C10.0984 0.687948 10.0969 1.32111 9.70544 1.71072L5.70544 5.69198C5.3153 6.08029 4.6847 6.08029 4.29456 5.69198L0.294555 1.71072C-0.0968848 1.32111 -0.0983712 0.687948 0.291235 0.296508Z'/%3e%3c/svg%3e"), "#", "%23");
+
+								@include media-breakpoint-up(sm) {
+									right: 30px;
+								}
+
+								@include media-breakpoint-down(xs) {
+									right: 20px;
+								}
+						}
+
+						&[aria-expanded="true"]:after {
+							transform: rotate(180deg);
+						}
+
+						@include media-breakpoint-up(sm) {
+							font-size: 18px;
+						}
+
+						@include media-breakpoint-down(xs) {
+							font-size: 16px;
+						}
+				}
+
+				&__content {
+					border-top: 2px solid $gray-100;
+					font-size: 13px;
+					line-height: 1.2;
+				}
+		}
+
+		&__summary {
+
+				&__top {
+					border-bottom: 1px solid #ddd;
+
+						@include media-breakpoint-up(sm) {
+							font-size: 14px;
+						}
+
+						@include media-breakpoint-down(xs) {
+							font-size: 10px;
+						}
+				}
+		}
+}

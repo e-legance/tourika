@@ -1,7 +1,7 @@
 <div class="dropdown form__group position-relative js-select-menu">
-  <input type="hidden" value="" class="js-dropdown-input js-required">
+  <input type="hidden" value="@@if( active === true ) {2 nights}" class="js-dropdown-input js-required">
 
-  <button type="button" class="form__control form__control--lg form__control--icon form__control--days placeholder text-left js-select-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" data-flip="false" aria-expanded="false" data-offset="0, 10">Nights</button>
+  <button type="button" class="form__control form__control--lg form__control--icon form__control--days @@if( active === false ) { placeholder} text-left js-select-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" data-flip="false" aria-expanded="false" data-offset="0, 10">@@if( active === true ) {2 nights} @@if( active === false ) {Nights}</button>
 
   <div class="form__icon form__icon--lg">
 		<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -11,7 +11,7 @@
 
 	<div class="dropdown-menu">
     <div class="dropdown__select text-nowrap nav" role="tablist">
-      <button type="button" class="dropdown__select__item d-block w-100 p-15 text-left js-select-item"><span class="js-select-option">2 nights</span></button>
+      <button type="button" class="dropdown__select__item d-block w-100 p-15 text-left @@if( active === true ) {selected} js-select-item"><span class="js-select-option">2 nights</span></button>
       <button type="button" class="dropdown__select__item d-block w-100 p-15 text-left js-select-item"><span class="js-select-option">3 nights</span></button>
       <button type="button"class="dropdown__select__item d-block w-100 p-15 text-left js-select-item"><span class="js-select-option">4 nights</span></button>
     </div>

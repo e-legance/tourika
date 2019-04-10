@@ -21,6 +21,7 @@
 
 				@include media-breakpoint-up(sm) {
 					font-size: 20px;
+					line-height: 1.4;
 				}
 
 				@include media-breakpoint-down(xs) {
@@ -288,6 +289,74 @@
 
 						@include media-breakpoint-up(sm) {
 							font-size: 20px;
+						}
+				}
+		}
+
+		&__options {
+			border-top: 2px solid $gray-100;
+
+				&__divider {
+					border-bottom: 2px solid $gray-100;
+				}
+				&__title {
+
+						@include media-breakpoint-up(sm) {
+							font-size: 18px;
+						}
+
+						@include media-breakpoint-down(xs) {
+							font-size: 16px;
+						}
+				}
+
+				&__proceed {
+					display: none;
+				}
+
+				input {
+					position: absolute;
+					visibility: hidden;
+				}
+		}
+
+		&__option {
+			line-height: 1.2;
+
+				@include media-breakpoint-up(sm) {
+					font-size: 13px;
+				}
+
+				@include media-breakpoint-down(xs) {
+					font-size: 10px;
+				}
+
+				&__title {
+
+						@include media-breakpoint-up(sm) {
+							font-size: 16px;
+						}
+
+						@include media-breakpoint-down(xs) {
+							font-size: 14px;
+						}
+				}
+
+				&__price {
+
+						@include media-breakpoint-up(sm) {
+							font-size: 22px;
+						}
+
+						@include media-breakpoint-down(xs) {
+							font-size: 16px;
+						}
+
+						&__info {
+
+								@include media-breakpoint-up(sm) {
+									font-size: 12px;
+								}
 						}
 				}
 		}
