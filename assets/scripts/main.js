@@ -182,6 +182,14 @@ jQuery(document).ready(function($) {
 		],
 	});
 
+	$('.js-reviews-carousel').owlCarousel({
+		loop: true,
+		nav: true,
+		dots: false,
+		items: 1,
+		navText: [],
+	});
+
 	$('.js-select-item').click(function(event) {
 		if ( !$(this).hasClass('selected') ) {
 			var menu = $(this).parents('.js-select-menu');

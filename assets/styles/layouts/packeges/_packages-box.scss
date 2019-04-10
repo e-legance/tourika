@@ -1,5 +1,13 @@
 .packages {
 
+	&__box {
+
+		.btn {
+			width: 210px;
+			margin-top: 130px;
+		}
+	}
+
 	&__box-data {
 		font-size: 13px;
 		line-height: (16/13);
