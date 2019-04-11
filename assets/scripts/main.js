@@ -379,4 +379,41 @@ jQuery(document).ready(function($) {
 
 		proceed.removeClass('d-none');
 	});
+
+	$('.js-tour-slider').on('initialized.owl.carousel', function(event) {
+  	var count = event.item.count < 10 ? '0' + event.item.count : event.item.count;
+  	var progress = ++event.item.index / event.item.count  * 100;
+  	$('.js-tour-slider-cur-num').html('01');
+  	$('.js-tour-slider-total-num').html(count);
+  	$('.js-tour-slider-progress').css('width', progress + "%");
+	}).owlCarousel({
+		items: 1,
+		smartSpeed: 500,
+    dots: false,
+    autoHeight: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true
+  }).on('changed.owl.carousel', function(event) {
+  	var index = event.item.index < 10 ? '0' + (++event.item.index) : ++event.item.index;
+  	var progress = event.item.index / event.item.count  * 100;
+  	$('.js-tour-slider-cur-num').html(index);
+  	$('.js-tour-slider-progress').css('width', progress + "%");
+	});
+
+	$('.js-expand').click(function(event) {
+		var collapse = $(this).closest('.js-expands').find('.collapse');
+
+		if ( $(this).hasClass('active') ) {
+			collapse.each(function(i, e) {
+				$(e).collapse('hide');
+			});
+		} else {
+			collapse.each(function(i, e) {
+				$(e).collapse('show');
+			});
+		}
+		
+		$(this).toggleClass('active');
+	});
 });

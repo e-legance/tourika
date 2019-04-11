@@ -28,12 +28,23 @@
 			</div>
 
 			<div class="col-sm col-12 px-7-half">
-				<div class="tour__content pt-sm-10 font-family-nexa-book">
-					<p><strong>Tour Starts:</strong> <br>Feb 15, 2019 at 4:00 AM - February 17, 2019</p>
-					<p><strong>Duration:</strong> <br>3 days / 2 nights</p>
-					<p><strong>Meeting Point:</strong> <br>Tim Horton's, 8115 Rue Papineau, Montréal, QC H2E 2H7</p>
-					<p><strong>Number of peoples:</strong> <br>2 adults</p>
-				</div>
+				@@if( button !== "" && summary === true ) {
+					<div class="row mx-n5 align-items-sm-end">
+						<div class="col-sm col-12 px-5">
+				}
+							<div class="tour__content pt-sm-10 font-family-nexa-book">
+								<p><strong>Tour Starts:</strong> <br>Feb 15, 2019 at 4:00 AM - February 17, 2019</p>
+								<p><strong>Duration:</strong> <br>3 days / 2 nights</p>
+								<p><strong>Meeting Point:</strong> <br>Tim Horton's, 8115 Rue Papineau, Montréal, QC H2E 2H7</p>
+								<p><strong>Number of peoples:</strong> <br>2 adults</p>
+							</div>
+				@@if( button !== "" && summary === true ) {			
+						</div>
+						<div class="col-sm-auto col-12 px-5 mt-sm-0 mt-25">
+							<a href="@@url" class="btn btn--orange">@@button</a>
+						</div>
+					</div>
+				}
 			</div>
 		</div>
 	</div>

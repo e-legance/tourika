@@ -18,10 +18,10 @@
 		}
 
 		&__selected {
+			line-height: 1.4;
 
 				@include media-breakpoint-up(sm) {
 					font-size: 20px;
-					line-height: 1.4;
 				}
 
 				@include media-breakpoint-down(xs) {
@@ -177,6 +177,10 @@
 
 						&:not(:last-child) {
 							margin-bottom: 20px;
+						}
+
+						@include media-breakpoint-down(xs) {
+							font-size: 13px;
 						}
 				}
 

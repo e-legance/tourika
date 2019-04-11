@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  @@include("head.html", {"title": "Bus&Hotel Activities Options"})
+  
+  <body class="bg-gray-100">
+  	@@include("header.html", { "ishome" : false })
+    <main class="results pb-sm-50 pb-30 overflow-hidden line-height-1">
+			<header class="results__header d-sm-flex flex-sm-column mb-sm-50 mb-30 shadow bg-white position-relative">
+				@@include("results/search-info.html", { "text" : "New York, NY to Ottawa, ON, Round Trip, 2 person(s)", "hideDesktop": true, "hideMobile": false, "edit": false })
+				<div class="results__selected font-family-nexa-book text-blue bg-gray-100 pt-sm-20 pt-15 order-sm-2">
+					<div class="container">
+						@@loop('results/selected.html', [
+							{"text": "<span class='font-family-nexa-heavy'>Outbound</span>: Tue 5 Feb, 6:15pm - 11:10pm", "price": "$24.00", "edit": "hotel-outbound.html"},
+							{"text": "<span class='font-family-nexa-heavy'>Return</span>: Tue 5 Feb, 6:15pm - 11:10pm", "price": "$24.00", "edit": "hotel-return.html"},
+							{"text": "<span class='font-family-nexa-heavy'>Accommodation</span>: Mela Hotel, 2 nights", "price": "$240.00", "edit": "hotel-accommodation.html"}
+						])
+					</div>
+				</div>
+				@@include("results/titles.html", { "type": "2", "title": "Choose your activities", "subTitle": "Tue 5 Feb - Fri 8 Feb", "back": "bus-activities.html", "textBack": "" })
+				@@include("results/search.html", { "type": "hotel", "hideDesktop": false, "edit": false })
+			</header>
+			
+			<div class="container mb-sm-50 mb-30">
+				<div class="results__item mx-auto">
+					@@loop('results/activity.html', [
+				    { "id": "1", "button": "Dismiss", "url": "hotel-activities.html", "options": true, "selected": false, "proceed": "", "summary": false, "text-top": "", "change": "hotel-activities-selected.html", "confirm": false }
+				  ])
+				</div>
+			</div>
+    </main>
+  	@@include("foot.html")
+  </body>
+</html>
