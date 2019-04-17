@@ -1,0 +1,77 @@
+.landing {
+
+		&__title {
+
+				@include media-breakpoint-up(sm) {
+					font-size: 32px;
+				}
+
+				@include media-breakpoint-down(xs) {
+					font-size: 28px;
+				}
+		}
+
+		&__embed {
+
+			&:before {
+
+				@include media-breakpoint-up(sm) {
+		    	padding-top: 340px;
+		    }
+
+		    @include media-breakpoint-up(xs) {
+		    	padding-top: 320px;
+		    }
+			}
+		}
+
+		&__buses-results {
+
+			&:not(:last-child) {
+				border-bottom: 1px solid #DDDDDD;
+			}
+
+			a {
+
+				@include media-breakpoint-up(sm) {
+					font-size: 14px;
+					line-height: (21/14);
+				}
+
+				@include media-breakpoint-down(xs) {
+					font-size: 13px;
+					line-height: (19/13);
+				}
+			}
+		}
+
+		&__buses-city {
+	    left: 0;
+	    right: 0;
+	    top: 100px;
+	    z-index: 2;
+
+	    h4 {
+
+	    	@include media-breakpoint-up(sm) {
+					font-size: 24px;
+				}
+
+				@include media-breakpoint-down(xs) {
+					font-size: 18px;
+				}
+	    }
+		}
+
+		&__list {
+
+			li {
+				line-height: (24/16);
+			}
+
+			@include media-breakpoint-up(sm) {
+				column-count: 3;
+		    column-gap: 30px;
+		  }
+		}
+}
