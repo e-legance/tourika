@@ -1,0 +1,51 @@
+.offer {
+	box-shadow: 0 2px 5px rgba($blue, .2);
+
+	&__image {
+
+		@include media-breakpoint-up(sm) {
+			max-height: 175px;
+		}
+	}
+
+	&__title {
+
+		@include media-breakpoint-up(sm) {
+			font-size: 16px;
+		}
+
+		@include media-breakpoint-down(xs) {
+			font-size: 14px;
+		}
+	}
+
+	&__sub-title {
+
+		@include media-breakpoint-down(xs) {
+			font-size: 14px;
+		}
+	}
+
+	&__price {
+		font-size: 12px;
+
+		span {
+
+			@include media-breakpoint-up(sm) {
+				font-size: 13px;
+			}
+
+			@include media-breakpoint-down(xs) {
+				font-size: 12px;
+			}
+		}
+	}
+
+	.col {
+		position: static;
+	}
+	
+	a:hover {
+		text-decoration: none;
+	}
+}
