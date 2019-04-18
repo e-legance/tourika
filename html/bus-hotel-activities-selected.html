@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  @@include("head.html", {"title": "Bus&Hotel Activities Selected"})
+  
+  <body class="bg-gray-100">
+  	@@include("header.html", { "ishome" : false })
+    <main class="results pb-sm-50 pb-30 overflow-hidden line-height-1">
+			<header class="results__header d-sm-flex flex-sm-column mb-sm-50 mb-30 shadow bg-white position-relative">
+				@@include("results/search-info.html", { "text" : "New York, NY to Ottawa, ON, Round Trip, 2 person(s)", "hideDesktop": true, "hideMobile": false, "edit": false })
+				<div class="results__selected font-family-nexa-book text-blue bg-gray-100 pt-sm-20 pt-15 order-sm-2">
+					<div class="container">
+						@@loop('results/selected.html', [
+							{"text": "<span class='font-family-nexa-heavy'>Outbound</span>: Tue 5 Feb, 6:15pm - 11:10pm", "price": "$24.00", "edit": "bus-hotel-outbound.html"},
+							{"text": "<span class='font-family-nexa-heavy'>Return</span>: Tue 5 Feb, 6:15pm - 11:10pm", "price": "$24.00", "edit": "bus-hotel-return.html"},
+							{"text": "<span class='font-family-nexa-heavy'>Accommodation</span>: Mela Hotel, 2 nights", "price": "$240.00", "edit": "bus-hotel-accommodation.html"},
+							{"text": "<span class='font-family-nexa-heavy'>Activities</span>: Empire State Building, Lower Manhattan Walking tour, Statue of Liberty National Monument", "price": "$900.00", "edit": "bus-hotel-activities.html"}
+						])
+					</div>
+				</div>
+				@@include("results/titles.html", { "type": "2", "title": "Choose your activities", "subTitle": "Tue 5 Feb - Fri 8 Feb", "back": "bus-hotel-activities.html", "textBack": "" })
+				@@include("results/search.html", { "type": "busHotels", "hideDesktop": false, "edit": false })
+			</header>
+			
+			<div class="container mb-sm-50 mb-30">
+				<div class="results__item mx-auto">
+					@@loop('results/activity.html', [
+				    { "id": "1", "button": "Selected", "url": "bus-hotel-activities.html", "options": false, "selected": true, "proceed": "", "summary": false, "text-top": "", "change": "", "confirm": false }
+				  ])
+				</div>
+
+				<div class="pt-15">
+					<div class="results__item mx-auto">
+						<div class="row align-items-center">
+							<div class="col-sm col-12 mb-sm-0 mb-20 text-sm-right text-center">
+								<a href="bus-hotel-activities.html" class="mr-sm-20 text-orange font-family-nexa-black">Add More Activities</a>
+							</div>
+
+							<div class="col-sm-auto col-12">
+								<a href="bus-hotel-activities-summary.html" class="results__btn-proceed btn btn--xl btn--orange">Proceed to Booking Summary</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+    </main>
+  	@@include("foot.html")
+  </body>
+</html>

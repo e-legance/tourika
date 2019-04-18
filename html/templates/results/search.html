@@ -44,8 +44,41 @@
 				</form>
 			</div>
 
-			<div id="busHotels" class="tab-pane fade @@if( type === 'hotel' ) { show active }" role="tabpanel">
-				<form action="hotel-outbound.html" novalidate class="js-form-validation">
+			<div id="hotels" class="tab-pane fade @@if( type === 'hotels' ) { show active }" role="tabpanel">
+				<form action="hotel-accommodation.html" novalidate class="js-form-validation">
+					<div class="row justify-content-sm-between align-items-sm-center">
+						<div class="col-sm-auto col-12 order-sm-1">
+							<div class="d-flex mb-5 align-items-center justify-content-sm-start justify-content-between font-size-sm">
+								<div class="mr-sm-30">
+									@@include("search/type-search.html", {"active": "Hotels"})
+								</div>
+								<div>
+									@@include("search/passangers.html")
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 order-sm-3">
+							<div class="row mx-n10">
+								<div class="col-md col-12 mb-md-0 mb-15 px-10">
+									@@include('search/destination.html', {"placeholdeer": "Your Destination?", "icon": "<svg width='11' height='15' viewBox='0 0 11 15' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M9.08116 1.53871C8.07644 0.546506 6.74051 0 5.3197 0C3.89861 0 2.56296 0.546506 1.55824 1.53871C-0.301125 3.37464 -0.532194 6.82899 1.05783 8.92187L5.3197 15L9.5752 8.93036C11.1716 6.82899 10.9405 3.37464 9.08116 1.53871ZM5.3688 7.12238C4.29834 7.12238 3.42705 6.26194 3.42705 5.20481C3.42705 4.14769 4.29834 3.28725 5.3688 3.28725C6.43926 3.28725 7.31056 4.14769 7.31056 5.20481C7.31056 6.26194 6.43926 7.12238 5.3688 7.12238Z' fill='#A1A9C3'/></svg>", "roundtrip": false})
+								</div>
+
+								<div class="col-md-auto col-sm col-12 px-10">
+									@@include('search/calendar.html', { "period": true, "setDate": false })
+								</div>
+
+								<div class="col-sm-auto col-12 my-sm-0 my-15 px-10">
+									<button type="submit" class="btn btn--lg btn--orange px-sm-0" disabled="">Search Hotels</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div id="busHotels" class="tab-pane fade @@if( type === 'busHotels' ) { show active }" role="tabpanel">
+				<form action="bus-hotel-outbound.html" novalidate class="js-form-validation">
 					<div class="row justify-content-sm-between align-items-sm-center">
 						<div class="col-sm-auto col-12 order-sm-1">
 							<div class="d-flex mb-5 align-items-center justify-content-sm-start justify-content-between font-size-sm">

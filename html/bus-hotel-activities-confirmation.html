@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  @@include("head.html", {"title": "Hotel Confirmation"})
+  @@include("head.html", {"title": "Bus&Hotel Activities Confirmation"})
   
   <body>
   	@@include("header.html", { "ishome" : false })
@@ -29,9 +29,17 @@
 					<div class="results__box__content line-height-1 p-sm-35 p-20">
 						<p class="results__confirm__number mb-sm-30 mb-25">Your booking number is: <strong class="text-blue">PW5614752</strong> <br>A confirmation email has been sent to your provided email address.</p>
 
+						@@loop('results/ticket.html', [
+					    { "id": "1", "button": "Select Return Ticket", "url": "", "summary": true, "from-to": "Ottawa > New York", "edit": "", "confirm": true, "trip": "Outbound" },
+					    { "id": "2", "button": "Select Return Ticket", "url": "", "summary": true, "from-to": "New York > Ottawa", "edit": "", "confirm": true, "trip": "Return" }
+					  ])
 					  @@loop('results/hotel.html', [
 					    { "button": "Select Hotel", "url": "bus-hotel-rooms.html", "rooms": false, "proceed": "", "summary": true, "text-top": "Tue 5 Feb - Fri 8 Feb, 2 nights, 1 room", "change": "" }
 					  ])
+					  @@loop('results/activity.html', [
+					    { "id": "1", "button": "Select", "url": "activities.html", "options": false, "selected": false, "proceed": "", "summary": true, "text-top": "Tue 5 Feb - Fri 8 Feb, 2 nights, 1 room", "change": "", "confirm": true }
+					  ])
+
 					  <p class="results__confirm__total mt-sm-30 mt-25 font-family-nexa-bold text-sm-right">
 							Total to Pay: $47.00
 							<a href="" class="results__price__info mt-n5 d-inline-block text-center font-size-0 align-top font-family-nexa-bold rounded-circle bg-gray-100">

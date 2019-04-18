@@ -191,7 +191,7 @@ jQuery(document).ready(function($) {
 				$(selector).find('[type="submit"]').prop('disabled', !success);
 			}
 
-			return false;// success;
+			return success;
 		}
 	}
 

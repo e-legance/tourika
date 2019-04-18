@@ -10,20 +10,20 @@
 				<div class="results__selected font-family-nexa-book text-blue bg-gray-100 pt-sm-20 pt-15 order-sm-2">
 					<div class="container">
 						@@loop('results/selected.html', [
-							{"text": "<span class='font-family-nexa-heavy'>Outbound</span>: Tue 5 Feb, 6:15pm - 11:10pm", "price": "$24.00", "edit": "hotel-outbound.html"}
+							{"text": "<span class='font-family-nexa-heavy'>Outbound</span>: Tue 5 Feb, 6:15pm - 11:10pm", "price": "$24.00", "edit": "bus-hotel-outbound.html"}
 						])
 					</div>
 				</div>
 				@@include("results/titles.html", { "type": "2", "title": "Choose return bus ticket", "subTitle": "From Ottawa, ON to New York, NY", "back": "bus-outbound.html", "textBack": "" })
-				@@include("results/search.html", { "type": "hotel", "hideDesktop": false, "edit": false })
+				@@include("results/search.html", { "type": "busHotels", "hideDesktop": false, "edit": false })
 			</header>
 			
 			<div class="container mb-sm-50 mb-30">
 				<div class="results__item mx-auto">
 					@@loop('results/ticket.html', [
-				    { "id": "1", "button": "Select Return Ticket", "url": "hotel-accommodation.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" },
-				    { "id": "2", "button": "Select Return Ticket", "url": "hotel-accommodation.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" },
-				    { "id": "3", "button": "Select Return Ticket", "url": "hotel-accommodation.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" }
+				    { "id": "1", "button": "Select Return Ticket", "url": "bus-hotel-accommodation.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" },
+				    { "id": "2", "button": "Select Return Ticket", "url": "bus-hotel-accommodation.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" },
+				    { "id": "3", "button": "Select Return Ticket", "url": "bus-hotel-accommodation.html", "summary": false, "from-to": "", "edit": "", "confirm": false, "trip": "" }
 				  ])
 				</div>
 			</div>

@@ -18,7 +18,7 @@
 				    { "id": "2", "button": "Select Return Ticket", "url": "", "summary": true, "from-to": "New York > Ottawa", "edit": "bus-return.html", "confirm": false, "trip": "" }
 				  ])
 				</div>
-				  @@include("results/add.html", { "text": "Add hotel and activities to your booking in a second.", "hotel": true, "hotelUrl": "hotel-accommodation.html", "activities": true, "activitiesUrl": "bus-activities.html" })
+				  @@include("results/add.html", { "text": "Add hotel and activities to your booking in a second.", "bus": "false", "busUrl": "", "hotel": true, "hotelUrl": "bus-hotel-accommodation.html", "activities": true, "activitiesUrl": "bus-activities.html" })
 			</div>
 
 			@@include('results/summaries.html', {"url": "bus-passangers.html"})

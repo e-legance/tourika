@@ -96,10 +96,12 @@
 							width: 100%;
 						}
 
-
-
 						.dropdown-toggle {
 							font-size: 14px;
+						}
+
+						.dropdown--opened & {
+							z-index: 9999;
 						}
 				}
 
