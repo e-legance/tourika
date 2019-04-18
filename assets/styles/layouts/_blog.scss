@@ -46,7 +46,16 @@
 .post_single {
 
 	&__thumb {
-		max-width: 1440px;
+		// max-width: 1440px;
+
+			@include media-breakpoint-up(lg) {
+				height: calc(100vh - 105px);
+
+					img {
+						width: auto;
+						height: 100%;
+					}
+			}
 	}
 
 	&__title {

@@ -164,9 +164,14 @@
 		&__list {
 
 				&--two-col {
-					column-count: 2;
-					column-gap: 15px;
-					column-width: 130px;
+					@extend .d-flex;
+					@extend .align-items-start;
+					@extend .flex-wrap;
+
+						li {
+							flex: 0 0 50%;
+							max-width: 50%;
+						}
 				}
 
 				li {

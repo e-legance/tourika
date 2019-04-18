@@ -4,17 +4,17 @@ jQuery(document).ready(function($) {
 
 		$(selector + '[href^="#"]:not([href="#"])').click(function () {
 
-      var offset_top = ( offset_top ) ? offset_top : 0;
-      var target = $(this.hash);
-      
-      if ( target.length ) {
-        $('html, body').animate({
-          scrollTop: target.offset().top - offset_top
-        }, 600);
+			var offset_top = ( offset_top ) ? offset_top : 0;
+			var target = $(this.hash);
+			
+			if ( target.length ) {
+				$('html, body').animate({
+					scrollTop: target.offset().top - offset_top
+				}, 600);
 
-        return false;
-      }
-    });
+				return false;
+			}
+		});
 	}
 
 	function appendCalendar (selector, title, confirm ) {
@@ -23,15 +23,69 @@ jQuery(document).ready(function($) {
 		$(selector).append('<div class="dropdown__confirm d-sm-none mt-auto px-20 py-15 bg-white"><button type="button" class="btn btn--lg btn--orange w-100 js-calandar-close">'+ confirm +'</button></div>');
 	}
 
-	function reEmailValid ( email ) {
-	  var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-	  return re.test(email);
+	function currentSelect(selector) {
+		var lastId,
+			menu = $(selector),
+			fromTop = $(window).scrollTop(),
+			menuItems = menu.find("a"),
+			scrollItems = menuItems.map(function() {
+				var item = $($(this).attr("href"));
+				if (item.length) {
+
+					return item;
+				}
+			});
+
+		var cur = scrollItems.map(function() {
+			if ($(this).offset().top - 60 <= fromTop && $(this).offset().top + $(this).height() >= fromTop) {
+				return this;
+			}
+		});
+
+		// Get the id of the current element
+		cur = cur[cur.length - 1];
+		var id = cur && cur.length ? cur[0].id : "";
+		if (lastId !== id) {
+
+			lastId = id;
+			menuItems.parent().removeClass("active");
+			menuItems.filter('[href="#' + id + '"]').parent().addClass("active");
+		}
 	}
 
-	window.rePhoneNumbers = function ( number ) {
+	function reEmailValid ( email ) {
+		var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+		return re.test(email);
+	}
+
+	function rePhoneNumbers ( number ) {
 		var re = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g;
 		return re.test(number);
-	};
+	}
+
+	function reOnlyNumbers ( number ) {
+		var re = /^[0-9]+$/;
+		return re.test(number);
+	}
+
+	function reCardNumbers ( string ) {
+		var re = /\d{4}-?\d{4}-?\d{4}-?\d{4}/;
+		return re.test(string);
+	}
+
+	function reSringLength ( string, min, max ) {
+		var re = new RegExp("^.{" + min + "," + max +"}$");
+		return re.test(string);
+	}
+
+	function keyPressOnlyNumber ( selector ) {
+		$(document).on('keydown', selector, function(e) {
+			return (e.keyCode >= 48 && e.keyCode <= 57) || 
+						 (e.keyCode >= 96 && e.keyCode <= 105) || 
+						  e.keyCode === 8 || e.keyCode === 46 || 
+						  e.keyCode === 37 || e.keyCode === 39;
+		});
+	}
 
 	function fieldValidation ( selector, echo ) {
 		var success = true;
@@ -53,6 +107,56 @@ jQuery(document).ready(function($) {
 					success = false;
 				}
 			} else if ( $(selector).attr('type') === 'radio' && !$('input[name="'+ $(selector).attr('name') +'"]:checked').length ) {
+				if ( echo ) {
+					$(selector).closest('.form__group').addClass('form--invalid');
+					success = false;
+				} else {
+					success = false;
+				}
+			} else if ( $(selector).hasClass('js-length-2') && !reSringLength( $(selector).val(), 2, 2) ) {
+				if ( echo ) {
+					$(selector).closest('.form__group').addClass('form--invalid');
+					success = false;
+				} else {
+					success = false;
+				}
+			} else if ( $(selector).hasClass('js-length-4') && !reSringLength( $(selector).val(), 4, 4) ) {
+				if ( echo ) {
+					$(selector).closest('.form__group').addClass('form--invalid');
+					success = false;
+				} else {
+					success = false;
+				}
+			} else if ( $(selector).hasClass('js-card-number') && !reCardNumbers( $(selector).val() ) ) {
+				if ( echo ) {
+					$(selector).closest('.form__group').addClass('form--invalid');
+					success = false;
+				} else {
+					success = false;
+				}
+			} else if ( $(selector).hasClass('js-cvv') && ( !reSringLength( $(selector).val(), 3, 3) || !reOnlyNumbers( $(selector).val() ) ) ) {
+				if ( echo ) {
+					$(selector).closest('.form__group').addClass('form--invalid');
+					success = false;
+				} else {
+					success = false;
+				}
+			} else if ( $(selector).closest('.js-card-date') ) {
+				$(selector).closest('.form__group').removeClass('form--invalid');
+
+				var cardDate = $(selector).closest('.js-card-date').find('.js-required');
+
+				cardDate.each(function(i, e) {
+					if ( $(e).hasClass('js-length-2') && !reSringLength( $(e).val(), 2, 2) ) {
+						if ( echo ) {
+							$(e).closest('.form__group').addClass('form--invalid');
+							success = false;
+						} else {
+							success = false;
+						}
+					}
+				});
+			}  else if ( ( $(selector).hasClass('js-number') || $(selector).attr('type') === 'number' ) && !reOnlyNumbers( $(selector).val() ) ) {
 				if ( echo ) {
 					$(selector).closest('.form__group').addClass('form--invalid');
 					success = false;
@@ -87,7 +191,7 @@ jQuery(document).ready(function($) {
 				$(selector).find('[type="submit"]').prop('disabled', !success);
 			}
 
-			return success;
+			return false;// success;
 		}
 	}
 
@@ -166,6 +270,14 @@ jQuery(document).ready(function($) {
 
 	counter();
 	anchorSmoothScroll('.js-anchor');
+	keyPressOnlyNumber('.js-number');
+	currentSelect($('.about__menu'));
+	$(".about__nav").stick_in_parent();
+
+	$(window).scroll(function() {
+		currentSelect($('.about__menu'));
+	});
+
 
 	$('.js-btn-menu').click(function() {
 		$('body').toggleClass('menu--opened');
@@ -216,7 +328,7 @@ jQuery(document).ready(function($) {
 	});
 
 	$(document).on('click', '.js-dropdown-keepopen .dropdown-menu', function (e) {
-	  e.stopPropagation();
+		e.stopPropagation();
 	});
 
 	if ( $('.js-calendar-period').length ) {
@@ -237,31 +349,31 @@ jQuery(document).ready(function($) {
 				dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 				useMouseWheel: false,
 				changeMonth: false,
-		    commandsAsDateFormat: true,
-		    renderer: {
+				commandsAsDateFormat: true,
+				renderer: {
 					day: '{day}'
-		    },
-		    onShow: function(data) {
-		    	appendCalendar(data, $(e).data('title'), $(e).data('confirm'));
-		    	$('body')
-				  	.css('top', -$(window).scrollTop())
-				  	.addClass('dropdown--opened calendar-period');
 				},
-		    onClose: function() {
-		    	$('body')
-				  	.removeClass('dropdown--opened calendar-period')
-				  	.removeAttr('style');
-		    },
-		    onSelect: function() {
+				onShow: function(data) {
+					appendCalendar(data, $(e).data('title'), $(e).data('confirm'));
+					$('body')
+						.css('top', -$(window).scrollTop())
+						.addClass('dropdown--opened calendar-period');
+				},
+				onClose: function() {
+					$('body')
+						.removeClass('dropdown--opened calendar-period')
+						.removeAttr('style');
+				},
+				onSelect: function() {
 					button = wrap.find('.js-calendar-btn');
 					var from = button.find('.js-calendar-from');
 					var to = button.find('.js-calendar-to');
 					button.removeClass('placeholder');
-		    	$(from).html($.datepick.formatDate('D d, M', $(e).datepick('getDate')[0])).removeClass('placeholder');
-		    	$(to).html($.datepick.formatDate('D d, M', $(e).datepick('getDate')[1])).removeClass('placeholder');
-		    	fieldValidation($(e), true);
+					$(from).html($.datepick.formatDate('D d, M', $(e).datepick('getDate')[0])).removeClass('placeholder');
+					$(to).html($.datepick.formatDate('D d, M', $(e).datepick('getDate')[1])).removeClass('placeholder');
+					fieldValidation($(e), true);
 					formValidation( $(e).closest('.js-form-validation') );
-		    }
+				}
 			});
 		});
 	}
@@ -282,27 +394,27 @@ jQuery(document).ready(function($) {
 				dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 				useMouseWheel: false,
 				changeMonth: false,
-		    commandsAsDateFormat: true,
-		    renderer: {
+				commandsAsDateFormat: true,
+				renderer: {
 					day: '{day}'
-		    },
-		    onShow: function(data) {
-		    	appendCalendar(data, $(e).data('title'), $(e).data('confirm'));
-		    	$('body')
-				  	.css('top', -$(window).scrollTop())
-				  	.addClass('dropdown--opened');
 				},
-		    onClose: function() {
-		    	$('body')
-				  	.removeClass('dropdown--opened')
-				  	.removeAttr('style');
-		    },
-		    onSelect: function() {
+				onShow: function(data) {
+					appendCalendar(data, $(e).data('title'), $(e).data('confirm'));
+					$('body')
+						.css('top', -$(window).scrollTop())
+						.addClass('dropdown--opened');
+				},
+				onClose: function() {
+					$('body')
+						.removeClass('dropdown--opened')
+						.removeAttr('style');
+				},
+				onSelect: function() {
 					button = wrap.find('.js-calendar-btn');
-		    	$(button).html($.datepick.formatDate('D d, M', $(e).datepick('getDate')[0])).removeClass('placeholder');
-		    	fieldValidation($(e), true);
+					$(button).html($.datepick.formatDate('D d, M', $(e).datepick('getDate')[0])).removeClass('placeholder');
+					fieldValidation($(e), true);
 					formValidation( $(e).closest('.js-form-validation') );
-		    }
+				}
 			});
 		});
 	}
@@ -324,7 +436,7 @@ jQuery(document).ready(function($) {
 	});
 
 	$(document).on('click', '.js-dropdown-close', function() {
-	  $(this).closest('.dropdown').find('[data-toggle="dropdown"]').dropdown("hide");
+		$(this).closest('.dropdown').find('[data-toggle="dropdown"]').dropdown("hide");
 	});
 
 	$(document).on('click', '.js-calandar-close', function() {
@@ -333,14 +445,14 @@ jQuery(document).ready(function($) {
 
 	$('.dropdown').on('show.bs.dropdown', function () {
 		if ( $(this).find('.dropdown-menu--fixed').length	) {
-		  $('body')
-		  	.css('top', -$(window).scrollTop())
-		  	.addClass('dropdown--opened');
+			$('body')
+				.css('top', -$(window).scrollTop())
+				.addClass('dropdown--opened');
 		}
 	}).on('hidden.bs.dropdown', function () {
-	  $('body')
-	  	.removeClass('dropdown--opened')
-	  	.removeAttr('style');
+		$('body')
+			.removeClass('dropdown--opened')
+			.removeAttr('style');
 	});
 
 	$('[data-toggle="tab-only-show"]:not(.active)').click(function() {
@@ -381,24 +493,24 @@ jQuery(document).ready(function($) {
 	});
 
 	$('.js-tour-slider').on('initialized.owl.carousel', function(event) {
-  	var count = event.item.count < 10 ? '0' + event.item.count : event.item.count;
-  	var progress = ++event.item.index / event.item.count  * 100;
-  	$('.js-tour-slider-cur-num').html('01');
-  	$('.js-tour-slider-total-num').html(count);
-  	$('.js-tour-slider-progress').css('width', progress + "%");
+		var count = event.item.count < 10 ? '0' + event.item.count : event.item.count;
+		var progress = ++event.item.index / event.item.count  * 100;
+		$('.js-tour-slider-cur-num').html('01');
+		$('.js-tour-slider-total-num').html(count);
+		$('.js-tour-slider-progress').css('width', progress + "%");
 	}).owlCarousel({
 		items: 1,
 		smartSpeed: 500,
-    dots: false,
-    autoHeight: true,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    autoplayHoverPause: true
-  }).on('changed.owl.carousel', function(event) {
-  	var index = event.item.index < 10 ? '0' + (++event.item.index) : ++event.item.index;
-  	var progress = event.item.index / event.item.count  * 100;
-  	$('.js-tour-slider-cur-num').html(index);
-  	$('.js-tour-slider-progress').css('width', progress + "%");
+		dots: false,
+		autoHeight: true,
+		autoplay: true,
+		autoplayTimeout: 3000,
+		autoplayHoverPause: true
+	}).on('changed.owl.carousel', function(event) {
+		var index = event.item.index < 10 ? '0' + (++event.item.index) : ++event.item.index;
+		var progress = event.item.index / event.item.count  * 100;
+		$('.js-tour-slider-cur-num').html(index);
+		$('.js-tour-slider-progress').css('width', progress + "%");
 	});
 
 	$('.js-expand').click(function(event) {
@@ -415,5 +527,49 @@ jQuery(document).ready(function($) {
 		}
 		
 		$(this).toggleClass('active');
+	});
+
+	$('.js-destination-switch').click(function() {
+		var form = $(this).closest('form');
+		var destinations = form.find('.js-destination');
+		var data = [];
+
+		destinations.each(function(i, e) {
+			var input = $(e).find('.js-dropdown-input');
+
+			data[i] =  input.val();
+		});
+
+		$.each(data.reverse(), function(i, val) {
+			var input = destinations.eq(i).find('.js-dropdown-input');
+			var button = destinations.eq(i).find('.js-select-toggle');
+
+			input.val(val);
+			if (val !== '') {
+				button.text(val).removeClass('placeholder');
+			} else {
+				button.text( button.data('placeholder') ).addClass('placeholder');
+			}
+		});
+	});
+
+	$('.js-card-number').inputmask({
+		mask: "9999-9999-9999-9999",
+		placeholder: 'XXXX-XXXX-XXXX-XXXX'
+	});
+
+	$('.js-cvv').inputmask({
+		mask: "999",
+		placeholder: ''
+	});
+
+	$('.js-length-2.js-number').inputmask({
+		mask: "99",
+		placeholder: ''
+	});
+
+	$('.js-length-4.js-number').inputmask({
+		mask: "9999",
+		placeholder: ''
 	});
 });

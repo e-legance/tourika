@@ -38,36 +38,39 @@
 
 		&__nav {
 			box-shadow: 0px 4px 8px rgba(19, 41, 104, 0.1);
+			z-index: 2;
 		}
 
 		&__menu {
 			font-size: 0;
 			overflow: auto;
 
-			a {
-				text-decoration: none;
+				a {
+					text-decoration: none;
 
-					&:before {
-				    content: "";
-				    position: absolute;
-				    right: 0;
-				    bottom: 0;
-				    left: 0;
-				    height: 4px;
-				    background-color: $orange;
-				    transform: scaleX(0);
-				    transition: .25s ease-in-out;
-				  }
+						&:after {
+					    content: "";
+					    position: absolute;
+					    right: 0;
+					    bottom: 0;
+					    left: 0;
+					    height: 4px;
+					    background-color: $orange;
+					    transform: scaleX(0);
+					    transition: .25s ease-in-out;
+					  }
 
+						&:hover {
 
-					&.active,
-					&:hover {
+								&:after {
+									transform: scaleX(1);
+								}
+						}
+				}
 
-							&:before {
-								transform: scaleX(1);
-							}
-					}
-			}
+				.active a:after {
+					transform: scaleX(1);
+				}
 		}
 }
 
