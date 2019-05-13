@@ -4,10 +4,20 @@
   
   <body>
   	@@include("header.html", { "ishome" : true, "hideMobile": false })
-    @@include("home/top.html", { "title": "Book your bus trip from Montreal to New York", "subTitle": "We help you find the best bus tickets, hotels, organised tours and activities." })
+    <section class="homeTop">
+      <div class="container">
+        <header class="homeTop__header d-sm-flex align-items-sm-center text-white">
+          <div class="col-sm-12 px-0">
+            <h1 class="text-white font-family-nexa-bold">Book your bus trip from Montreal to New York</h1>
+            <p>We help you find the best bus tickets, hotels, organised tours and activities. <br>Chat with us to plan your next bus trip.</p>
+            <a href="" class="btn btn--orange btn--lg mt-20">Start Chat</a>
+          </div>
+        </header>
+      </div>
+    </section>
+    
     <div class="bg-gray-100">
-      @@include("home/search.html")
-      @@include("home/features.html", {"class": ""})
+      @@include("home/features.html", {"class": "pt-35"})
     </div>
 
     <main class="landing bg-white pt-sm-65 pt-50">
