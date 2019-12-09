@@ -59,7 +59,7 @@ jQuery(document).ready(function($) {
 	}
 
 	function rePhoneNumbers ( number ) {
-		var re = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g;
+		var re = /^\d+(-\d+)*$/g;
 		return re.test(number);
 	}
 
@@ -128,6 +128,13 @@ jQuery(document).ready(function($) {
 					success = false;
 				}
 			} else if ( $(selector).hasClass('js-card-number') && !reCardNumbers( $(selector).val() ) ) {
+				if ( echo ) {
+					$(selector).closest('.form__group').addClass('form--invalid');
+					success = false;
+				} else {
+					success = false;
+				}
+			}else if ( $(selector).hasClass('js-phone') && !rePhoneNumbers( $(selector).val() ) ) {
 				if ( echo ) {
 					$(selector).closest('.form__group').addClass('form--invalid');
 					success = false;
@@ -556,6 +563,11 @@ jQuery(document).ready(function($) {
 	$('.js-card-number').inputmask({
 		mask: "9999-9999-9999-9999",
 		placeholder: 'XXXX-XXXX-XXXX-XXXX'
+	});
+
+	$('.js-phone').inputmask({
+		regex: "^[0-9]+(-[0-9]+)*$",
+		placeholder: ''
 	});
 
 	$('.js-cvv').inputmask({
