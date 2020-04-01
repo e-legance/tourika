@@ -121,8 +121,8 @@
 	<div class="bg-white py-sm-60 py-30 px-15">
 		<div class="results__item mx-auto">
 			<div class="row align-items-center">
-				<div class="col-sm col-12 mb-sm-0 mb-20 text-sm-right text-center">
-					<p class="font-size-sm font-family-nexa-heavy">
+				<div class="col-sm col-12 d-flex justify-content-sm-end justify-content-center mb-sm-0 mb-20">
+					<p class="mr-10 font-size-sm font-family-nexa-heavy">
 						Total to Pay: $47.00
 						<a href="" class="results__price__info mt-n5 d-inline-block text-center font-size-0 align-top font-family-nexa-bold rounded-circle bg-gray-100">
 							<svg width="4" height="6" viewBox="0 0 4 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -130,6 +130,7 @@
 							</svg>
 						</a>
 					</p>
+					@@include('currency.html')
 				</div>
 				<div class="col-sm-auto col-12">
 					<button type="submit" class="results__btn-proceed btn btn--xl btn--orange">Pay by Card</button>

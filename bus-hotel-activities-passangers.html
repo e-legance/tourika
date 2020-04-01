@@ -64,7 +64,7 @@
 
 				<div class="col-sm-auto col-12">
 					<div class="row no-gutters align-items-sm-center">
-						<div class="col-sm-auto col-12 order-sm-2">
+						<div class="col-sm-auto col-12 order-sm-3">
 							<h4 class="header__top-line__title p-15 d-sm-none text-uppercase">Language</h4>
 
 							<div class="p-sm-0 p-15">
@@ -79,11 +79,29 @@
 							</div>
 						</div>
 
-						<div class="col-sm-auto col-12 order-sm-1 mr-sm-35">
+						<div class="col-sm-auto d-sm-block d-none pr-sm-10 pr-md-15 order-sm-2">
+							
+<div class="dropdown js-select-menu">
+  <input type="hidden" value="" class="js-dropdown-input js-required">
+
+  <button type="button" class="currency-btn text-left js-select-toggle position-relative pr-15" type="button" data-toggle="dropdown" aria-haspopup="true" data-flip="false" aria-expanded="false" data-offset="0, 10">CAD $</button>
+
+	<div class="dropdown-menu">
+    <div class="dropdown__select text-nowrap nav" role="tablist">
+      <button type="button" class="dropdown__select__item selected d-block w-100 p-15 text-left js-select-item"><span class="js-select-option">CAD $</span></button>
+      <button type="button" class="dropdown__select__item d-block w-100 p-15 text-left js-select-item"><span class="js-select-option">USD $</span></button>
+      <button type="button" class="dropdown__select__item d-block w-100 p-15 text-left js-select-item"><span class="js-select-option">EUR €</span></button>
+    </div>
+  </div>
+</div>
+						</div>
+
+						<div class="col-sm-auto d-md-block d-sm-none col-12 order-sm-1">
 							<h4 class="header__top-line__title p-15 d-sm-none text-uppercase">Resources</h4>
 
-							<div class="p-sm-0 p-15">
-								<p class="header__top-line__item position-relative pr-sm-0 pr-30"><a href="about-us.html">About Us</a></p>
+							<div class="d-sm-flex p-sm-0 p-15">
+								<p class="header__top-line__item position-relative pr-sm-10 pr-md-15 pr-30"><a href="about-us.html">The Tourika Team</a></p>
+								<p class="header__top-line__item position-relative pr-sm-10 pr-md-15 pr-30"><a href="about-us.html">Login to view your trip</a></p>
 								<p class="header__top-line__item d-sm-none position-relative pr-sm-0 pr-30"><a href="privacy-policy.html">Privacy Policy</a></p>
 								<p class="header__top-line__item d-sm-none position-relative pr-sm-0 pr-30"><a href="terms-conditions.html">Term of Service</a></p>
 							</div>
@@ -3003,7 +3021,7 @@
 			<h3 class="h2 mb-30 font-family-nexa-bold">Passanger(s) Information</h3>
 			<h4 class="mb-30 font-family-nexa-book">Traveler 1: Adult</h4>
 
-			<div class="row mx-n10 mb-sm-15">
+			<div class="row mx-n10 mb-sm-15 js-toggle-fields-wrap">
 				<div class="col-sm col-12 px-10 mb-sm-30 mb-25">
 					<div class="form__group">
 						<label class="d-block mb-10 font-family-nexa-heavy font-size-sm">First Name*</label>
@@ -3038,7 +3056,7 @@
 					</div>
 				</div>
 
-				<div class="col-sm col-12 px-10 mb-sm-30 mb-25">
+				<div class="col-sm col-12 px-10 mb-sm-30 mb-25 js-toggle-field">
 					<div class="form__group">
 						<label class="d-block mb-10 font-family-nexa-heavy font-size-sm">Email*</label>
 
@@ -3046,18 +3064,86 @@
 					</div>
 				</div>
 
-				<div class="col-third col-12 px-10 mb-sm-30 mb-25">
+				<div class="col-sm col-12 px-10 mb-sm-30 mb-25">
+					<div class="form__group">
+						<label class="d-block mb-10 font-family-nexa-heavy font-size-sm">Home phone</label>
+
+						<input type="tel" class="form__control form__control--xl js-phone" placeholder="XXX-XXX-XXXX">
+					</div>
+				</div>
+				
+				<div class="col-third col-12 px-10 mb-sm-30 mb-25 js-toggle-field">
 					<div class="form__group">
 						<label class="d-block mb-10 font-family-nexa-heavy font-size-sm">Cell phone</label>
 
-						<input type="tel" class="form__control form__control--xl js-phone js-required" placeholder="XXX-XXX-XXXX">
+						<input type="tel" class="form__control form__control--xl js-phone" placeholder="XXX-XXX-XXXX">
 					</div>
+				</div>
+
+				<div class="col-sm col-12 px-10 mb-sm-30 mb-25">
+					<label class="d-block mb-10 font-family-nexa-heavy font-size-sm">Passport Nationality</label>
+					<div class="dropdown form__group position-relative js-select-menu">
+  <input type="hidden" value="" class="js-dropdown-input">
+
+  <button type="button" class="form__control form__control--lg text-left text-truncate js-select-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" data-flip="false" aria-expanded="false" data-offset="0, 10"></button>
+
+  <div class="dropdown-menu dropdown-menu--lg dropdown-menu--fixed py-0 font-size-sm">
+  	<div class="d-sm-block d-flex h-100 flex-column">
+      <div class="bg-white dropdown-menu--lg">
+      	<button type="button" class="dropdown__close position-relative text-blue-passive text-left pl-50 font-family-nexa-bold d-sm-none w-100 js-dropdown-close">Country, City, Station</button>
+
+		  	<div data-simplebar data-simplebar-auto-hide="false">
+			    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+						<span class="row no-gutters h-100 align-items-center">
+							<span class="col pr-10">
+								<strong class="js-select-option">UNITED STATES</strong>
+							</span>
+						</span>
+			  		<span class="dropdown-divider d-block"></span>
+			    </button>
+
+			    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+						<span class="row no-gutters h-100 align-items-center">
+							<span class="col pr-10">
+								<strong class="js-select-option">CANADA</strong>
+							</span>
+						</span>
+			  		<span class="dropdown-divider d-block"></span>
+			    </button>
+
+			    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+						<span class="row no-gutters h-100 align-items-center">
+							<span class="col pr-10">
+								<strong class="js-select-option">MEXICO</strong>
+							</span>
+						</span>
+			  		<span class="dropdown-divider d-block"></span>
+			    </button>
+			  </div>
+
+			  <div class="dropdown__confirm d-sm-none mt-auto px-20 py-15 bg-white">
+	        <button type="button" class="btn btn--lg btn--orange js-dropdown-close">Confirm</button>
+	      </div>
+	    </div>
+	  </div>
+  </div>
+</div>
+				</div>
+
+				<div class="form__group col-12 px-10">
+					<label class="form__radio row mb-25 no-gutters">
+						<input type="checkbox" class="js-toggle-fields">
+						<span class="form__radio__check position-relative rounded-circle"></span>
+						<span class="form__radio__label col pl-15 pt-5">
+							Uncheck if you want to add an email address and/or cell phone for this traveler.
+						</span>
+					</label>
 				</div>
 			</div>
 
 			<h4 class="mb-30 font-family-nexa-book">Traveler 2: Children</h4>
 
-			<div class="row mx-n10 mb-sm-15">
+			<div class="row mx-n10 mb-sm-15 js-toggle-fields-wrap"">
 				<div class="col-sm col-12 px-10 mb-sm-30 mb-25">
 					<div class="form__group">
 						<label class="d-block mb-10 font-family-nexa-heavy font-size-sm">First Name*</label>
@@ -3092,7 +3178,7 @@
 					</div>
 				</div>
 
-				<div class="col-sm col-12 px-10 mb-sm-30 mb-25">
+				<div class="col-sm col-12 px-10 mb-sm-30 mb-25 d-none js-toggle-field">
 					<div class="form__group">
 						<label class="d-block mb-10 font-family-nexa-heavy font-size-sm">Email*</label>
 
@@ -3100,12 +3186,80 @@
 					</div>
 				</div>
 
-				<div class="col-third col-12 px-10 mb-sm-30 mb-25">
+				<div class="col-sm col-12 px-10 mb-sm-30 mb-25">
+					<div class="form__group">
+						<label class="d-block mb-10 font-family-nexa-heavy font-size-sm">Home phone</label>
+
+						<input type="tel" class="form__control form__control--xl js-phone" placeholder="XXX-XXX-XXXX">
+					</div>
+				</div>
+				
+				<div class="col-third col-12 px-10 mb-sm-30 mb-25 d-none js-toggle-field">
 					<div class="form__group">
 						<label class="d-block mb-10 font-family-nexa-heavy font-size-sm">Cell phone</label>
 
-						<input type="tel" class="form__control form__control--xl js-phone js-required" placeholder="XXX-XXX-XXXX">
+						<input type="tel" class="form__control form__control--xl js-phone" placeholder="XXX-XXX-XXXX">
 					</div>
+				</div>
+
+				<div class="col-sm col-12 px-10 mb-sm-30 mb-25">
+					<label class="d-block mb-10 font-family-nexa-heavy font-size-sm">Passport Nationality</label>
+					<div class="dropdown form__group position-relative js-select-menu">
+  <input type="hidden" value="" class="js-dropdown-input">
+
+  <button type="button" class="form__control form__control--lg text-left text-truncate js-select-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" data-flip="false" aria-expanded="false" data-offset="0, 10"></button>
+
+  <div class="dropdown-menu dropdown-menu--lg dropdown-menu--fixed py-0 font-size-sm">
+  	<div class="d-sm-block d-flex h-100 flex-column">
+      <div class="bg-white dropdown-menu--lg">
+      	<button type="button" class="dropdown__close position-relative text-blue-passive text-left pl-50 font-family-nexa-bold d-sm-none w-100 js-dropdown-close">Country, City, Station</button>
+
+		  	<div data-simplebar data-simplebar-auto-hide="false">
+			    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+						<span class="row no-gutters h-100 align-items-center">
+							<span class="col pr-10">
+								<strong class="js-select-option">UNITED STATES</strong>
+							</span>
+						</span>
+			  		<span class="dropdown-divider d-block"></span>
+			    </button>
+
+			    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+						<span class="row no-gutters h-100 align-items-center">
+							<span class="col pr-10">
+								<strong class="js-select-option">CANADA</strong>
+							</span>
+						</span>
+			  		<span class="dropdown-divider d-block"></span>
+			    </button>
+
+			    <button type="button" class="dropdown__item w-100 px-20 text-left js-select-item">
+						<span class="row no-gutters h-100 align-items-center">
+							<span class="col pr-10">
+								<strong class="js-select-option">MEXICO</strong>
+							</span>
+						</span>
+			  		<span class="dropdown-divider d-block"></span>
+			    </button>
+			  </div>
+
+			  <div class="dropdown__confirm d-sm-none mt-auto px-20 py-15 bg-white">
+	        <button type="button" class="btn btn--lg btn--orange js-dropdown-close">Confirm</button>
+	      </div>
+	    </div>
+	  </div>
+  </div>
+</div>
+				</div>
+
+				<div class="form__group col-12 px-10">
+					<label class="form__radio row mb-25 no-gutters">
+						<input type="checkbox" class="js-toggle-fields" checked>
+						<span class="form__radio__check position-relative rounded-circle"></span>
+						<span class="form__radio__label col pl-15 pt-5">
+							Uncheck if you want to add an email address and/or cell phone for this traveler.
+						</span>
+					</label>
 				</div>
 			</div>
 		</div>

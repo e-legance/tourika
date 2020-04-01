@@ -213,9 +213,14 @@
 
 				@include media-breakpoint-up(sm) {
 
+						.col-sm {
+							flex: 0 0 calc((100% - 290px) / 2);
+							max-width: calc((100% - 290px) / 2)
+						}
+
 						.col-third {
 							flex: 0 0 290px;
-							max-width: 0 0 290px;
+							max-width: 290px;
 						}
 				}
 

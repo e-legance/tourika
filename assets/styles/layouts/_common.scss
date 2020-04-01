@@ -1,0 +1,26 @@
+.currency-btn {
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			margin: auto;
+			@include size(8px, 2px);
+			background-color: $blue-sub;
+
+				.header--transparent & {
+					background-color: $white;
+				}
+		}
+
+		&:before {
+			transform: translate(-2px, 0) rotate(45deg);
+		}
+
+		&:after {
+			transform: translate(2px, 0) rotate(-45deg);
+		}
+}

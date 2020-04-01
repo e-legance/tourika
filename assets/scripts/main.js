@@ -90,7 +90,7 @@ jQuery(document).ready(function($) {
 	function fieldValidation ( selector, echo ) {
 		var success = true;
 
-		if ( $(selector).length ) {
+		if ( $(selector).length && !$(selector).closest('.d-none').length ) {
 
 			if ( $(selector).val() === '' || $(selector).val() === '0' ) {
 				if ( echo ) {
@@ -322,14 +322,16 @@ jQuery(document).ready(function($) {
 			menu.find('.js-select-item.selected').removeClass('selected');
 			$(this).addClass('selected');
 
-			if ( $(this).data('toggle') !== 'tab' ) {
-				fieldValidation(input, true);
-				formValidation( $(this).closest('.js-form-validation'), false );
-			} else {
-				$(this).on('shown.bs.tab', function (e) {
+			if (menu.hasClass('js-destinatio')) {
+				if ( $(this).data('toggle') !== 'tab' ) {
 					fieldValidation(input, true);
 					formValidation( $(this).closest('.js-form-validation'), false );
-				});
+				} else {
+					$(this).on('shown.bs.tab', function (e) {
+						fieldValidation(input, true);
+						formValidation( $(this).closest('.js-form-validation'), false );
+					});
+				}
 			}
 		}
 	});
@@ -583,5 +585,12 @@ jQuery(document).ready(function($) {
 	$('.js-length-4.js-number').inputmask({
 		mask: "9999",
 		placeholder: ''
+	});
+
+	$('.js-toggle-fields').change(function() {
+		var wrapper = $(this).closest('.js-toggle-fields-wrap');
+		var fields = wrapper.find('.js-toggle-field');
+
+		fields.toggleClass('d-none');
 	});
 });

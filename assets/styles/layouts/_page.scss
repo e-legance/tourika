@@ -32,6 +32,10 @@
 	p {
 		@extend .font-family-nexa-book;
 	}
+
+	a {
+		color: $orange;
+	}
 }
 
 .about {

@@ -1,0 +1,13 @@
+.breadcrumb {
+
+		a {
+
+				&:hover {
+					color: $orange;
+				}
+		}
+}
+
+p > a {
+	color: $orange;
+}
