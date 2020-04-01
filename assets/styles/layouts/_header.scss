@@ -1,10 +1,6 @@
 .header {
 	font-size: 15px;
 
-		p > a {
-			color: $blue;
-		}
-
 		@include media-breakpoint-down(xs) {
 			padding: 14px 0;
 			box-shadow: $box-shadow;
@@ -15,6 +11,10 @@
 		}
 
 		&--transparent {
+
+				p > a {
+					color: $white;
+				}
 
 				@include media-breakpoint-up(sm) {
 					position: absolute;
@@ -31,6 +31,10 @@
 		}
 
 		&:not(.header--transparent) {
+
+				p > a {
+					color: $blue;
+				}
 
 				@include media-breakpoint-up(sm) {
 					border-bottom: 1px solid rgba($gray-900, .1);
