@@ -33,7 +33,7 @@
 		@extend .font-family-nexa-book;
 	}
 
-	a {
+	a:not(.btn) {
 		color: $orange;
 	}
 }

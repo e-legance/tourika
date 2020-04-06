@@ -15,8 +15,9 @@ $black: #000;
 $blue: #132968;
 $blue-sub: #425486;
 $blue-passive: #A1A9C3;
-$orange: #FA6B6B;
-$orange-disabled: #FDB5B5;
+$orange: #1296CF;//#FA6B6B;
+$orange-hover: #68B5D6; //#EC8F8C;
+$orange-disabled: #B0E7FF;
 
 $body-bg:    $white;
 $body-color: $blue-sub;
@@ -61,8 +62,8 @@ $line-height-sm: $line-height-base;
 
 // Headings
 
-$headings-font-family: $font-family-nexa-heavy;
-$headings-font-weight: 900;
+$headings-font-family: $font-family-nexa-extra-bold;
+$headings-font-weight: 800;
 $headings-color: $blue;
 $headings-line-height: 1;
 

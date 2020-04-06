@@ -82,7 +82,7 @@ $btn-colors: (
     color: $white,
     background: $orange,
     hover-color: $white,
-    hover-background: #EC8F8C,
+    hover-background: $orange-hover,
     focus-background: $orange,
     focus-box-shadow: 0 0 10px $orange,
     disabled-background: $orange-disabled

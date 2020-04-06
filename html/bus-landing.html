@@ -5,10 +5,7 @@
   <body>
   	@@include("header.html", { "ishome" : true, "hideMobile": false })
     @@include("home/top.html", { "title": "Book your bus trip from Montreal to New York", "subTitle": "We help you find the best bus tickets, hotels, organised tours and activities." })
-    <div class="bg-gray-100">
-      @@include("home/search.html")
-      @@include("home/features.html", {"class": ""})
-    </div>
+    @@include("home/search.html")
 
     <main class="landing bg-white pt-sm-65 pt-50">
       <div class="container">
@@ -738,6 +735,7 @@
       </div>
     </main>
       	
+    @@include("home/features.html", {"class": ""})
   	@@include("footer.html")
 		@@include("foot.html")
   </body>
