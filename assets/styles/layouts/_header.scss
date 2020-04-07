@@ -12,10 +12,6 @@
 
 		&--transparent {
 
-				p > a {
-					color: $white;
-				}
-
 				@include media-breakpoint-up(sm) {
 					position: absolute;
 					top: 0;
@@ -27,17 +23,21 @@
 						svg path {
 							fill: $white;
 						}
+
+						p > a {
+							color: $white;
+						}
 				}
 		}
 
 		&:not(.header--transparent) {
 
-				p > a {
-					color: $blue;
-				}
-
 				@include media-breakpoint-up(sm) {
 					border-bottom: 1px solid rgba($gray-900, .1);
+
+						p > a {
+							color: $blue;
+						}
 				}
 		}
 
