@@ -87,7 +87,7 @@ jQuery(document).ready(function($) {
 		});
 	}
 
-	function fieldValidation ( selector, echo ) {
+	function fieldValidation(selector, echo) {
 		var success = true;
 
 		if ( $(selector).length && !$(selector).closest('.d-none').length ) {
@@ -178,18 +178,18 @@ jQuery(document).ready(function($) {
 		return success;
 	}
 
-	function formValidation ( selector, echo ) {
+	function formValidation(selector, echo) {
 		if ( $(selector).length ) {
 			var required = $(selector).find('.js-required');
 			var success = true;
 
 			$(required).each(function(i, req) {
 
-				if ( $(req).closest('.tab-pane').length ) {
+				if ($(req).closest('.tab-pane').length) {
 					if ( $(req).closest('.tab-pane').hasClass('active') && !fieldValidation(req, false) ) {
 						success = false;
 					}
-				} else if( !fieldValidation(req, echo) ) {
+				} else if (!fieldValidation(req, echo)) {
 					success = false;
 				}
 			});
@@ -310,7 +310,7 @@ jQuery(document).ready(function($) {
 	});
 
 	$('.js-select-item').click(function(event) {
-		if ( !$(this).hasClass('selected') ) {
+		if (!$(this).hasClass('selected')) {
 			var menu = $(this).parents('.js-select-menu');
 			var toggle = menu.find('.js-select-toggle');
 			var input = menu.find('.js-dropdown-input');
@@ -318,11 +318,17 @@ jQuery(document).ready(function($) {
 
 			toggle.html(option).removeClass('placeholder');
 			input.val(option);
+			
 
 			menu.find('.js-select-item.selected').removeClass('selected');
 			$(this).addClass('selected');
 
-			if (menu.hasClass('js-destinatio')) {
+			if (input.closest('.js-form-validation').length) {
+				fieldValidation(input, true);
+				formValidation(input.closest('.js-form-validation'), false );
+			}
+
+			if (menu.hasClass('js-destination')) {
 				if ( $(this).data('toggle') !== 'tab' ) {
 					fieldValidation(input, true);
 					formValidation( $(this).closest('.js-form-validation'), false );
